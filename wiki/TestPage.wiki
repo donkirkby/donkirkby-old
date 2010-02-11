@@ -77,3 +77,4 @@ Add your content here.  Format your content with:
 "version 55 for workaround described in Google Code bug 582"  
 "version 56 for workaround described in Google Code bug 582"  
 "version 57 for workaround described in Google Code bug 582"  
+"version 58 for workaround described in Google Code bug 582"  
