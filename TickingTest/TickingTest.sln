@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C# Express 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TickingTest", "TickingTest\TickingTest.csproj", "{A6601B3C-F244-4D73-8A5F-4FED46C6C0BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "SampleApp\SampleApp.csproj", "{F2CA0D82-C4FB-4FE4-846A-FDD84D5BC41A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleTest", "SampleTest\SampleTest.csproj", "{B1771897-99E4-48D7-B464-76F29E1A96A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6601B3C-F244-4D73-8A5F-4FED46C6C0BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6601B3C-F244-4D73-8A5F-4FED46C6C0BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6601B3C-F244-4D73-8A5F-4FED46C6C0BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6601B3C-F244-4D73-8A5F-4FED46C6C0BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CA0D82-C4FB-4FE4-846A-FDD84D5BC41A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CA0D82-C4FB-4FE4-846A-FDD84D5BC41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2CA0D82-C4FB-4FE4-846A-FDD84D5BC41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CA0D82-C4FB-4FE4-846A-FDD84D5BC41A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1771897-99E4-48D7-B464-76F29E1A96A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1771897-99E4-48D7-B464-76F29E1A96A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1771897-99E4-48D7-B464-76F29E1A96A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1771897-99E4-48D7-B464-76F29E1A96A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

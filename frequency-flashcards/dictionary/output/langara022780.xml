@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - Lesson 2 - English</name>
+</category>
+<category active='1'>
+<name>Langara - Lesson 2 - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - Lesson 2 - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - Lesson 2 - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - Lesson 2 - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - Lesson 2 - English</cat>
+<Q>Write the character:&lt;br&gt;banana</Q>
+<A>&lt;img src="stroke-images/2780.png"&gt;&lt;br&gt;jiāo&lt;br&gt;香蕉 xiāngjiāo banana</A>
+</item>
+<item id='_1'>
+<cat>Langara - Lesson 2 - Hanzi</cat>
+<Q>蕉</Q>
+<A>jiāo&lt;br&gt;banana&lt;br&gt;香蕉 xiāngjiāo banana</A>
+</item>
+<item id='_2'>
+<cat>Langara - Lesson 2 - Pinyin</cat>
+<Q>Write the character: jiāo&lt;br&gt;(xiāngjiāo de jiāo)</Q>
+<A>&lt;img src="stroke-images/2780.png"&gt;&lt;br&gt;banana&lt;br&gt;香蕉 xiāngjiāo banana</A>
+</item>
+</mnemosyne>

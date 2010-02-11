@@ -1,0 +1,188 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - New Year - English</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;healthy; peaceful; abundant; surname; see also 糠</Q>
+<A>&lt;img src="stroke-images/0745.png"&gt;&lt;br&gt;kāng&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+<item id='_1'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;year; years old; (a measure word)</Q>
+<A>&lt;img src="stroke-images/0759.png"&gt;&lt;br&gt;traditional: 歲&lt;br&gt;suì&lt;br&gt;万岁 (萬歲) wànsuì live long; wish a long life</A>
+</item>
+<item id='_2'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;to guard; to observe (the ritual)</Q>
+<A>&lt;img src="stroke-images/0766.png"&gt;&lt;br&gt;shǒu&lt;br&gt;遵守 zūnshǒu comply with; respect (an agreement)</A>
+</item>
+<item id='_3'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;old (opposite of new); former</Q>
+<A>&lt;img src="stroke-images/0842.png"&gt;&lt;br&gt;traditional: 舊&lt;br&gt;jiù&lt;br&gt;仍旧 (仍舊) réngjiù still (remaining); to remain (the same); yet</A>
+</item>
+<item id='_4'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;cards; game pieces; signboard; plate; tablet</Q>
+<A>牌 (strokes unavailable)&lt;br&gt;pái&lt;br&gt;招牌 zhāopái placard</A>
+</item>
+<item id='_5'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;lucky; abbr. for Jilin 吉林 province in northeast China; surname</Q>
+<A>&lt;img src="stroke-images/0860.png"&gt;&lt;br&gt;jí&lt;br&gt;吉林 Jílín Jilin province (Kirin) in northeast China, abbr. 吉, capital 長春|长春</A>
+</item>
+<item id='_6'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;invoke; pray to; wish; to express good wishes; surname</Q>
+<A>&lt;img src="stroke-images/1065.png"&gt;&lt;br&gt;zhù&lt;br&gt;庆祝 (慶祝) qìngzhù celebrate</A>
+</item>
+<item id='_7'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;lion</Q>
+<A>狮 (strokes unavailable)&lt;br&gt;traditional: 獅&lt;br&gt;shī&lt;br&gt;狮子 (獅子) shīzi lion</A>
+</item>
+<item id='_8'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;food; cuisine; cooked rice; meal</Q>
+<A>&lt;img src="stroke-images/1129.png"&gt;&lt;br&gt;traditional: 飯&lt;br&gt;fàn&lt;br&gt;吃饭 (吃飯) chīfàn to eat a meal</A>
+</item>
+<item id='_9'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;healthy</Q>
+<A>&lt;img src="stroke-images/1138.png"&gt;&lt;br&gt;jiàn&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+<item id='_10'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>康</Q>
+<A>kāng&lt;br&gt;healthy; peaceful; abundant; surname Kang; see also 糠&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+<item id='_11'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>岁</Q>
+<A>traditional: 歲&lt;br&gt;suì&lt;br&gt;year; years old; (a measure word)&lt;br&gt;万岁 (萬歲) wànsuì live long; wish a long life</A>
+</item>
+<item id='_12'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>守</Q>
+<A>shǒu&lt;br&gt;to guard; to observe (the ritual)&lt;br&gt;遵守 zūnshǒu comply with; respect (an agreement)</A>
+</item>
+<item id='_13'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>旧</Q>
+<A>traditional: 舊&lt;br&gt;jiù&lt;br&gt;old (opposite of new); former&lt;br&gt;仍旧 (仍舊) réngjiù still (remaining); to remain (the same); yet</A>
+</item>
+<item id='_14'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>牌</Q>
+<A>pái&lt;br&gt;cards; game pieces; signboard; plate; tablet&lt;br&gt;招牌 zhāopái placard</A>
+</item>
+<item id='_15'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>吉</Q>
+<A>jí&lt;br&gt;lucky; abbr. for Jilin 吉林 province in northeast China; surname Ji&lt;br&gt;吉林 Jílín Jilin province (Kirin) in northeast China, abbr. 吉, capital 長春|长春</A>
+</item>
+<item id='_16'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>祝</Q>
+<A>zhù&lt;br&gt;invoke; pray to; wish; to express good wishes; surname Zhu&lt;br&gt;庆祝 (慶祝) qìngzhù celebrate</A>
+</item>
+<item id='_17'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>狮</Q>
+<A>traditional: 獅&lt;br&gt;shī&lt;br&gt;lion&lt;br&gt;狮子 (獅子) shīzi lion</A>
+</item>
+<item id='_18'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>饭</Q>
+<A>traditional: 飯&lt;br&gt;fàn&lt;br&gt;food; cuisine; cooked rice; meal&lt;br&gt;吃饭 (吃飯) chīfàn to eat a meal</A>
+</item>
+<item id='_19'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>健</Q>
+<A>jiàn&lt;br&gt;healthy&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+<item id='_20'>
+<cat>Langara - New Year - Traditional</cat>
+<Q>歲</Q>
+<A>simplified: 岁&lt;br&gt;suì&lt;br&gt;year; years old; (a measure word)&lt;br&gt;万岁 (萬歲) wànsuì live long; wish a long life</A>
+</item>
+<item id='_21'>
+<cat>Langara - New Year - Traditional</cat>
+<Q>舊</Q>
+<A>simplified: 旧&lt;br&gt;jiù&lt;br&gt;old (opposite of new); former&lt;br&gt;仍旧 (仍舊) réngjiù still (remaining); to remain (the same); yet</A>
+</item>
+<item id='_22'>
+<cat>Langara - New Year - Traditional</cat>
+<Q>獅</Q>
+<A>simplified: 狮&lt;br&gt;shī&lt;br&gt;lion&lt;br&gt;狮子 (獅子) shīzi lion</A>
+</item>
+<item id='_23'>
+<cat>Langara - New Year - Traditional</cat>
+<Q>飯</Q>
+<A>simplified: 饭&lt;br&gt;fàn&lt;br&gt;food; cuisine; cooked rice; meal&lt;br&gt;吃饭 (吃飯) chīfàn to eat a meal</A>
+</item>
+<item id='_24'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: kāng&lt;br&gt;(jiànkāng de kāng)</Q>
+<A>&lt;img src="stroke-images/0745.png"&gt;&lt;br&gt;healthy; peaceful; abundant; surname Kang; see also 糠&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+<item id='_25'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: suì&lt;br&gt;(wànsuì de suì)</Q>
+<A>&lt;img src="stroke-images/0759.png"&gt;&lt;br&gt;traditional: 歲&lt;br&gt;year; years old; (a measure word)&lt;br&gt;万岁 (萬歲) wànsuì live long; wish a long life</A>
+</item>
+<item id='_26'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: shǒu&lt;br&gt;(zūnshǒu de shǒu)</Q>
+<A>&lt;img src="stroke-images/0766.png"&gt;&lt;br&gt;to guard; to observe (the ritual)&lt;br&gt;遵守 zūnshǒu comply with; respect (an agreement)</A>
+</item>
+<item id='_27'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: jiù&lt;br&gt;(réngjiù de jiù)</Q>
+<A>&lt;img src="stroke-images/0842.png"&gt;&lt;br&gt;traditional: 舊&lt;br&gt;old (opposite of new); former&lt;br&gt;仍旧 (仍舊) réngjiù still (remaining); to remain (the same); yet</A>
+</item>
+<item id='_28'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: pái&lt;br&gt;(zhāopái de pái)</Q>
+<A>牌 (strokes unavailable)&lt;br&gt;cards; game pieces; signboard; plate; tablet&lt;br&gt;招牌 zhāopái placard</A>
+</item>
+<item id='_29'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: jí&lt;br&gt;(Jílín de jí)</Q>
+<A>&lt;img src="stroke-images/0860.png"&gt;&lt;br&gt;lucky; abbr. for Jilin 吉林 province in northeast China; surname Ji&lt;br&gt;吉林 Jílín Jilin province (Kirin) in northeast China, abbr. 吉, capital 長春|长春</A>
+</item>
+<item id='_30'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: zhù&lt;br&gt;(qìngzhù de zhù)</Q>
+<A>&lt;img src="stroke-images/1065.png"&gt;&lt;br&gt;invoke; pray to; wish; to express good wishes; surname Zhu&lt;br&gt;庆祝 (慶祝) qìngzhù celebrate</A>
+</item>
+<item id='_31'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: shī&lt;br&gt;(shīzi de shī)</Q>
+<A>狮 (strokes unavailable)&lt;br&gt;traditional: 獅&lt;br&gt;lion&lt;br&gt;狮子 (獅子) shīzi lion</A>
+</item>
+<item id='_32'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: fàn&lt;br&gt;(chīfàn de fàn)</Q>
+<A>&lt;img src="stroke-images/1129.png"&gt;&lt;br&gt;traditional: 飯&lt;br&gt;food; cuisine; cooked rice; meal&lt;br&gt;吃饭 (吃飯) chīfàn to eat a meal</A>
+</item>
+<item id='_33'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: jiàn&lt;br&gt;(jiànkāng de jiàn)</Q>
+<A>&lt;img src="stroke-images/1138.png"&gt;&lt;br&gt;healthy&lt;br&gt;健康 jiànkāng health; healthy</A>
+</item>
+</mnemosyne>

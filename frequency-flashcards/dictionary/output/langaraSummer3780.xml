@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - This Summer - English</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;cuisine; cooking</Q>
+<A>烹 (strokes unavailable)&lt;br&gt;pēng&lt;br&gt;烹调 (烹調) pēngtiáo to cook; cooking</A>
+</item>
+<item id='_1'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;cooked food; cook until well done</Q>
+<A>饪 (strokes unavailable)&lt;br&gt;traditional: 飪&lt;br&gt;rèn&lt;br&gt;烹饪 (烹飪) pēngrèn cooking; culinary arts</A>
+</item>
+<item id='_2'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>烹</Q>
+<A>pēng&lt;br&gt;cuisine; cooking&lt;br&gt;烹调 (烹調) pēngtiáo to cook; cooking</A>
+</item>
+<item id='_3'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>饪</Q>
+<A>traditional: 飪&lt;br&gt;rèn&lt;br&gt;cooked food; cook until well done&lt;br&gt;烹饪 (烹飪) pēngrèn cooking; culinary arts</A>
+</item>
+<item id='_4'>
+<cat>Langara - This Summer - Traditional</cat>
+<Q>飪</Q>
+<A>simplified: 饪&lt;br&gt;rèn&lt;br&gt;cooked food; cook until well done&lt;br&gt;烹饪 (烹飪) pēngrèn cooking; culinary arts</A>
+</item>
+<item id='_5'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: pēng&lt;br&gt;(pēngtiáo de pēng)</Q>
+<A>烹 (strokes unavailable)&lt;br&gt;cuisine; cooking&lt;br&gt;烹调 (烹調) pēngtiáo to cook; cooking</A>
+</item>
+<item id='_6'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: rèn&lt;br&gt;(pēngrèn de rèn)</Q>
+<A>饪 (strokes unavailable)&lt;br&gt;traditional: 飪&lt;br&gt;cooked food; cook until well done&lt;br&gt;烹饪 (烹飪) pēngrèn cooking; culinary arts</A>
+</item>
+</mnemosyne>

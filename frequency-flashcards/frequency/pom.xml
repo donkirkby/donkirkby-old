@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<project>
+	<parent>
+		<artifactId>frequency-flashcards</artifactId>
+		<groupId>com.google.code.donkirkby</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.google.code.donkirkby</groupId>
+	<artifactId>frequency</artifactId>
+	<name>frequency</name>
+	<version>1.0-SNAPSHOT</version>
+	<url>http://maven.apache.org</url>
+</project>

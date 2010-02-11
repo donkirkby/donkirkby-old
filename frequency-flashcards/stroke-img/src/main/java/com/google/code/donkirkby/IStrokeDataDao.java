@@ -1,0 +1,27 @@
+/*
+ * Copyright (c) 2004-2006 Chris Fong and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *     Chris Fong - initial API and implementation
+ */
+package com.google.code.donkirkby;
+
+public interface IStrokeDataDao {
+
+	/**
+	 * Saves stroke data for a particular character.
+	 * @param character
+	 * @param strokeData
+	 */
+	public void saveStrokeData(String character, String strokeData);
+	
+	/**
+	 * Returns the stroke data for a particular character.
+	 * @param character
+	 */
+	public String getStrokeDataForCharacter(String character);
+}
