@@ -90,3 +90,4 @@ Add your content here.  Format your content with:
 "version 68 for workaround described in Google Code bug 582"  
 "version 69 for workaround described in Google Code bug 582"  
 "version 70 for workaround described in Google Code bug 582"  
+"version 71 for workaround described in Google Code bug 582"  
