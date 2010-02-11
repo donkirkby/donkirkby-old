@@ -24,3 +24,4 @@ Add your content here.  Format your content with:
 "version 2 for workaround described in Google Code bug 582"  
 "version 3 for workaround described in Google Code bug 582"  
 "version 4 for workaround described in Google Code bug 582"  
+"version 5 for workaround described in Google Code bug 582"  
