@@ -5,7 +5,6 @@
 
 A word puzzle game that's a bit like Indian poker. Based on one of the games in [http://www.amazon.com/Super-Party-Games-Original-Ideas/dp/0806959150 Super Party Games], this set of PDF files lets you organize the game and still play. Just make sure you don't see your own card.
 
-
 = Details =
 
 Before playing, you should prepare the following:

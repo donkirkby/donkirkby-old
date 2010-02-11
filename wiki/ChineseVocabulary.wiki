@@ -22,6 +22,7 @@ There are several types of flashcards:
 
 Some characters have more than one pronunciation, so you'll get a definition, pinyin, and sample word for each pronunciation.
 
+
 = Installation =
 To use the flashcards on your computer, follow these steps:
  # Download and install [http://mnemosyne-proj.sourceforge.net/ Mnemosyne].
