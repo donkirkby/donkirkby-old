@@ -18,3 +18,4 @@ Add your content here.  Format your content with:
 "version 6 for workaround described in Google Code bug 582"  
 "version 7 for workaround described in Google Code bug 582"  
 "version 8 for workaround described in Google Code bug 582"  
+"version 9 for workaround described in Google Code bug 582"  
