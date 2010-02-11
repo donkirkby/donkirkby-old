@@ -10,4 +10,4 @@ Add your content here.
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+  * Automatic links to other wiki pages"version 1 for workaround described in Google Code bug 582"  
