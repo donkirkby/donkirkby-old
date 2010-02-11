@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - Level 7 Lesson 3 - English</name>
+</category>
+<category active='1'>
+<name>Langara - Level 7 Lesson 3 - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - Level 7 Lesson 3 - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - Level 7 Lesson 3 - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - Level 7 Lesson 3 - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - Level 7 Lesson 3 - English</cat>
+<Q>Write the character:&lt;br&gt;bait; cakes</Q>
+<A>饵 (strokes unavailable)&lt;br&gt;traditional: 餌&lt;br&gt;ěr&lt;br&gt;毒饵 (毒餌) dúěr poison bait</A>
+</item>
+<item id='_1'>
+<cat>Langara - Level 7 Lesson 3 - English</cat>
+<Q>Write the character:&lt;br&gt;Japanese variant of 說|说; to speak; to say</Q>
+<A>&lt;img src="stroke-images/4401.png"&gt;&lt;br&gt;shuō</A>
+</item>
+<item id='_2'>
+<cat>Langara - Level 7 Lesson 3 - Hanzi</cat>
+<Q>饵</Q>
+<A>traditional: 餌&lt;br&gt;ěr&lt;br&gt;bait; cakes&lt;br&gt;毒饵 (毒餌) dúěr poison bait</A>
+</item>
+<item id='_3'>
+<cat>Langara - Level 7 Lesson 3 - Hanzi</cat>
+<Q>説</Q>
+<A>shuō&lt;br&gt;Japanese variant of 說|说; to speak; to say</A>
+</item>
+<item id='_4'>
+<cat>Langara - Level 7 Lesson 3 - Traditional</cat>
+<Q>餌</Q>
+<A>simplified: 饵&lt;br&gt;ěr&lt;br&gt;bait; cakes&lt;br&gt;毒饵 (毒餌) dúěr poison bait</A>
+</item>
+<item id='_5'>
+<cat>Langara - Level 7 Lesson 3 - Pinyin</cat>
+<Q>Write the character: ěr&lt;br&gt;(dúěr de ěr)</Q>
+<A>饵 (strokes unavailable)&lt;br&gt;traditional: 餌&lt;br&gt;bait; cakes&lt;br&gt;毒饵 (毒餌) dúěr poison bait</A>
+</item>
+<item id='_6'>
+<cat>Langara - Level 7 Lesson 3 - Pinyin</cat>
+<Q>Write the character: shuō</Q>
+<A>&lt;img src="stroke-images/4401.png"&gt;&lt;br&gt;Japanese variant of 說|说; to speak; to say</A>
+</item>
+</mnemosyne>

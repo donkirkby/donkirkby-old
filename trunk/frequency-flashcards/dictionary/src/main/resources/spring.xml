@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="baseApp" class="com.google.code.donkirkby.DictionaryApp">
+		<property name="dao">
+			<bean class="com.google.code.donkirkby.DictionaryDaoAggregator">
+				<property name="sources">
+					<list>
+						<bean class="com.google.code.donkirkby.DictionaryDaoImpl">
+							<property name="dataSource" ref="cedictDataSource"/>
+						</bean>
+						<bean class="com.google.code.donkirkby.DictionaryDaoImpl">
+							<property name="dataSource" ref="adsoDataSource"/>
+						</bean>
+					</list>
+				</property>
+			</bean>
+		</property>
+		<property name="rankFinder" ref="rankFinder"/>
+		<property name="sampleBuilder">
+			<bean class="com.google.code.donkirkby.SampleBuilder">
+				<property name="rankFinder" ref="rankFinder"/>
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="dictionaryApp" parent="baseApp">
+		<property name="characterReader" ref="characterReader"/>
+		<property name="wordList">
+			<bean class="com.google.code.donkirkby.WordList">
+				<property name="rankFinder" ref="rankFinder"/>
+				<property name="wordReader" ref="wordReader"/>
+			</bean>
+		</property>
+		<property name="deckNameTemplate" value="output/characters#{maxrank}.xml"/>
+		<property name="categoryTemplate" value="Most common Chinese characters #{minrank}-#{maxrank}"/>
+		<property name="deckSize" value="20"/>
+		<property name="wordsPerDeck" value="20"/>
+		<property name="characterLimit" value="40"/>
+	</bean>
+
+	<bean id="adsoDataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" >
+		<property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
+		<property name="url" value="jdbc:hsqldb:../../net.sourceforge.zdt.adso/adso"/>
+		<property name="username"><value>sa</value></property>
+		<property name="password"><value></value></property>
+	</bean>
+
+	<bean id="cedictDataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource" >
+		<property name="driverClassName"><value>org.hsqldb.jdbcDriver</value></property>
+		<property name="url" value="jdbc:hsqldb:../../net.sourceforge.zdt.cedict/cedict"/>
+		<property name="username"><value>sa</value></property>
+		<property name="password"><value></value></property>
+	</bean>
+
+	
+	<bean id="characterReader" class="com.google.code.donkirkby.DefaultRankReader">
+		<property name="resource" value="classpath:/character_frequency_utf8.txt"/>
+		<property name="headerLineCount" value="8"/>
+	</bean>
+	<bean id="rankFinder" class="com.google.code.donkirkby.RankFinder"
+		init-method="load">
+		<property name="maxCharacters" value="4400"/>
+		<property name="characterReader" ref="characterReader"/>
+		<property name="wordReader" ref="wordReader"/>
+	</bean>
+	<bean id="wordReader" class="com.google.code.donkirkby.DefaultRankReader" singleton="false">
+		<property name="resource" value="classpath:/phrase_frequency_utf8.txt"/>
+	</bean>
+	
+	<bean id="lessonApp" parent="baseApp">
+		<property name="characterReader" ref="lessonCharacterReader"/>
+		<property name="wordList">
+			<bean class="com.google.code.donkirkby.UnfilteredWordList">
+				<property name="wordReader" ref="lessonWordReader"/>
+			</bean>
+		</property>
+		<property name="deckNameTemplate" value="output/langara_lev7_09_#{maxrank}.xml"/>
+		<property name="categoryTemplate" value="Langara - Level 7 Lesson 9"/>
+		<property name="deckSize" value="10"/>
+	</bean>
+	<bean id="lessonCharacterReader" class="com.google.code.donkirkby.SortingRankReader">
+		<property name="rankReader">
+			<bean class="com.google.code.donkirkby.DefaultRankReader">
+				<property name="resource" value="classpath:/langara_lev7_09_utf8.txt"/>
+				<property name="parsingTokens" value="false"/>
+				<property name="onePerLine" value="false"/>
+				<property name="headerLineCount" value="1"/>
+			</bean>
+		</property>
+		<property name="rankFinder" ref="rankFinder"/>
+	</bean>
+	<bean id="lessonWordReader" class="com.google.code.donkirkby.DefaultRankReader" singleton="false">
+		<property name="resource" value="classpath:/langara_lev7_09_utf8.txt"/>
+		<property name="headerLineCount" value="1"/>
+		<property name="minTokenLength" value="2"/>
+	</bean>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	    <property name="locations" value="classpath:/spring.properties"/>
+	</bean>
+</beans>

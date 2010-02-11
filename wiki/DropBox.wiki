@@ -1,0 +1,5 @@
+#summary Descriptions and links to important files in my drop box.
+
+This page is mostly for my records in case I forget where I put stuff. You can either access the files directly through the links, or [http://getdropbox.com install dropbox].
+
+  * [http://dl.getdropbox.com/u/194081/keys.kdb My keys file] needs [http://keepass.info/ Keepass] to read it.

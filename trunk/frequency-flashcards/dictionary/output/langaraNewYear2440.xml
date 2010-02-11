@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - New Year - English</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - New Year - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;evening</Q>
+<A>&lt;img src="stroke-images/1754.png"&gt;&lt;br&gt;xī&lt;br&gt;前夕 qiánxī eve; the day before</A>
+</item>
+<item id='_1'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;play with; to juggle</Q>
+<A>耍 (strokes unavailable)&lt;br&gt;shuǎ&lt;br&gt;玩耍 wánshuǎ to enjoy oneself; an entertainment; to play (of children)</A>
+</item>
+<item id='_2'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;calendar</Q>
+<A>&lt;img src="stroke-images/2209.png"&gt;&lt;br&gt;traditional: 曆&lt;br&gt;lì</A>
+</item>
+<item id='_3'>
+<cat>Langara - New Year - English</cat>
+<Q>Write the character:&lt;br&gt;a whip or lash; to flog; slash or whip</Q>
+<A>鞭 (strokes unavailable)&lt;br&gt;biān&lt;br&gt;鞭子 biānzǐ whip</A>
+</item>
+<item id='_4'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>夕</Q>
+<A>xī&lt;br&gt;evening&lt;br&gt;前夕 qiánxī eve; the day before</A>
+</item>
+<item id='_5'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>耍</Q>
+<A>shuǎ&lt;br&gt;play with; to juggle&lt;br&gt;玩耍 wánshuǎ to enjoy oneself; an entertainment; to play (of children)</A>
+</item>
+<item id='_6'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>历</Q>
+<A>traditional: 曆&lt;br&gt;lì&lt;br&gt;calendar</A>
+</item>
+<item id='_7'>
+<cat>Langara - New Year - Hanzi</cat>
+<Q>鞭</Q>
+<A>biān&lt;br&gt;a whip or lash; to flog; slash or whip&lt;br&gt;鞭子 biānzǐ whip</A>
+</item>
+<item id='_8'>
+<cat>Langara - New Year - Traditional</cat>
+<Q>曆</Q>
+<A>simplified: 历&lt;br&gt;lì&lt;br&gt;calendar</A>
+</item>
+<item id='_9'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: xī&lt;br&gt;(qiánxī de xī)</Q>
+<A>&lt;img src="stroke-images/1754.png"&gt;&lt;br&gt;evening&lt;br&gt;前夕 qiánxī eve; the day before</A>
+</item>
+<item id='_10'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: shuǎ&lt;br&gt;(wánshuǎ de shuǎ)</Q>
+<A>耍 (strokes unavailable)&lt;br&gt;play with; to juggle&lt;br&gt;玩耍 wánshuǎ to enjoy oneself; an entertainment; to play (of children)</A>
+</item>
+<item id='_11'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: lì</Q>
+<A>&lt;img src="stroke-images/2209.png"&gt;&lt;br&gt;traditional: 曆&lt;br&gt;calendar</A>
+</item>
+<item id='_12'>
+<cat>Langara - New Year - Pinyin</cat>
+<Q>Write the character: biān&lt;br&gt;(biānzǐ de biān)</Q>
+<A>鞭 (strokes unavailable)&lt;br&gt;a whip or lash; to flog; slash or whip&lt;br&gt;鞭子 biānzǐ whip</A>
+</item>
+</mnemosyne>

@@ -1,0 +1,68 @@
+
+Search URL
+                                                                                                                                                                                                                           *************************************************                                                              **********************                                                          ************       ???      
+dvd version
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+DVD&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100014&x=13&y=15#focus
+vhs version
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11366028CA756.17609&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+video&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100014&x=7&y=14#focus
+sort by authors
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11R6603R3M957.17622&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+DVD&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100012&x=14&y=15#focus
+
+
+modified versions
+good
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+DVD&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100014&x=13&y=15#focus
+good with page number
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+DVD&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100014&x=13&y=15&page=22#focus
+
+bad
+
+new
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&menu=search&aspect=power&npp=10&ipp=20&spp=20&profile=pac&ri=&index=.TW&term=&matchopt=0%7C0&oper=and&aspect=power&index=.AW&term=&matchopt=0%7C0&oper=and&index=.SW&term=television+programs&matchopt=0%7C0&oper=and&index=.GW&term=&matchopt=0%7C0&source=%7E%21horizon&limitbox_1=VF01+%3D+DVD&ultype=&uloper=%3D&ullimit=&ultype=&uloper=%3D&ullimit=&sort=3100014&x=13&y=15&page=22#focus
+
+
+
+*** next page ***
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&source=~!horizon&profile=pac&page=2&group=0&term=television+programs&index=.SW&uindex=&aspect=power&menu=search&ri=6&ts=1136603720166&deduping=#focus
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&source=~!horizon&profile=pac&page=2&group=0&term=television+programs&index=.SW&uindex=&aspect=power&menu=search&ri=2&ts=1136603270715&deduping=#focus
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&source=~!horizon&profile=pac&page=3&group=0&term=television+programs&index=.SW&uindex=&aspect=power&menu=search&ri=2&ts=1136603294880&deduping=#focus
+
+modified versions
+good
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&source=~!horizon&profile=pac&page=2&group=0&term=television+programs&index=.SW
+
+bad
+
+new
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&source=~!horizon&profile=pac&page=2&group=0
+
+
+
+
+
+
+***** detail pages *******
+scan list page for buildNewList\('http.*full%3D(\d*)%7E%21(\d*)%7E%21(\d*)
+-->                                                                                                             ** a ******* b ** c *    
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&profile=pac&source=~!horizon&view=items&uri=full=3100001~!183612~!210&ri=17&aspect=power&menu=search&ipp=20&spp=20&staffonly=&term=television+programs&index=.SW&uindex=&aspect=power&menu=search&ri=17#focus
+http://ipac3.vpl.ca/ipac20/ipac.jsp?session=11SF602897R29.17613&profile=pac&source=~!horizon&view=items&uri=full=3100001~!1026735~!213&ri=19&aspect=power&menu=search&ipp=20&spp=20&staffonly=&term=television+programs&index=.SW&uindex=&aspect=power&menu=search&ri=19#focus
+
+scan detail page for:
+class="largeAnchor" title="..."
+Other titles: ... Requests: ...
+
+some regExes to try:
+working:
+class="largeAnchor"\s*title="([^"]*)".*
+[^\w\s]([\w\s]+:).*normalBlackFont1"\>([^\<]*)\<.*
+[^\w\s]([\w\s]+:).*normalBlackFont1"\>([^\<]*)\<.*
+[^\w\s]([\w\s]+:).*normalBlackFont1"\>([^\<]*)\<.*
+[^\w\s]([\w\s]+:).*normalBlackFont1"\>([^\<]*)\<.*
+
+Requests
+
+experimental:
+(?:class="largeAnchor"\s*title="([^"]*)")
+|
+(?:[^\w\s]([\w\s]+:).*normalBlackFont1"\>([^\<]*)\<)
+|(normalBlackFont1"\>)

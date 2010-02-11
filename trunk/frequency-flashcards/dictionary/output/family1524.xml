@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Family names and vocabulary - English</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Hanzi</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Traditional</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Pinyin</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Words</name>
+</category>
+<item id='_0'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;to raise (animals); to bring up (children); to keep (pets); to support; to give birth</Q>
+<A>养 (strokes unavailable)&lt;br&gt;traditional: 養&lt;br&gt;yǎng&lt;br&gt;养殖 (養殖) yǎngzhí to cultivate; cultivation; to further; to encourage</A>
+</item>
+<item id='_1'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;to hold; to carry (in one's arms); to hug or embrace; surround; cherish</Q>
+<A>&lt;img src="stroke-images/0798.png"&gt;&lt;br&gt;bào&lt;br&gt;怀抱 (懷抱) huáibào to cherish; (within sb's) embrace</A>
+</item>
+<item id='_2'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;female; mother</Q>
+<A>&lt;img src="stroke-images/0837.png"&gt;&lt;br&gt;mǔ&lt;br&gt;母亲 (母親) mǔqīn mother (formal)</A>
+</item>
+<item id='_3'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;1: father&lt;br&gt;2: father</Q>
+<A>&lt;img src="stroke-images/0861.png"&gt;&lt;br&gt;1: fù 2: fǔ&lt;br&gt;父亲 (父親) fùqin father 父权制 (父權制) fǔquánzhì patriarchy</A>
+</item>
+<item id='_4'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;older sister</Q>
+<A>&lt;img src="stroke-images/0893.png"&gt;&lt;br&gt;jiě&lt;br&gt;姐姐 jiějie older sister</A>
+</item>
+<item id='_5'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;ma; mamma</Q>
+<A>&lt;img src="stroke-images/0971.png"&gt;&lt;br&gt;traditional: 媽&lt;br&gt;mā&lt;br&gt;妈妈 (媽媽) māma mama; mommy; mother</A>
+</item>
+<item id='_6'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;father; dad; pa; papa</Q>
+<A>&lt;img src="stroke-images/1235.png"&gt;&lt;br&gt;bà&lt;br&gt;阿爸 Ābà Abba</A>
+</item>
+<item id='_7'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;ancestor; forefather; grandparents; surname</Q>
+<A>&lt;img src="stroke-images/1302.png"&gt;&lt;br&gt;zǔ&lt;br&gt;祖国 (祖國) zǔguó homeland; motherland</A>
+</item>
+<item id='_8'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;breast; lady; milk</Q>
+<A>&lt;img src="stroke-images/1396.png"&gt;&lt;br&gt;nǎi&lt;br&gt;奶奶 nǎinai (informal) father's mother; paternal grandmother</A>
+</item>
+<item id='_9'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;to relax; surname</Q>
+<A>舒 (strokes unavailable)&lt;br&gt;shū&lt;br&gt;舒服 shūfu comfortable</A>
+</item>
+<item id='_10'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>养</Q>
+<A>traditional: 養&lt;br&gt;yǎng&lt;br&gt;to raise (animals); to bring up (children); to keep (pets); to support; to give birth&lt;br&gt;养殖 (養殖) yǎngzhí to cultivate; cultivation; to further; to encourage</A>
+</item>
+<item id='_11'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>抱</Q>
+<A>bào&lt;br&gt;to hold; to carry (in one's arms); to hug or embrace; surround; cherish&lt;br&gt;怀抱 (懷抱) huáibào to cherish; (within sb's) embrace</A>
+</item>
+<item id='_12'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>母</Q>
+<A>mǔ&lt;br&gt;female; mother&lt;br&gt;母亲 (母親) mǔqīn mother (formal)</A>
+</item>
+<item id='_13'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>父</Q>
+<A>1: fù 2: fǔ&lt;br&gt;1: father&lt;br&gt;2: father&lt;br&gt;父亲 (父親) fùqin father 父权制 (父權制) fǔquánzhì patriarchy</A>
+</item>
+<item id='_14'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>姐</Q>
+<A>jiě&lt;br&gt;older sister&lt;br&gt;姐姐 jiějie older sister</A>
+</item>
+<item id='_15'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>妈</Q>
+<A>traditional: 媽&lt;br&gt;mā&lt;br&gt;ma; mamma&lt;br&gt;妈妈 (媽媽) māma mama; mommy; mother</A>
+</item>
+<item id='_16'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>爸</Q>
+<A>bà&lt;br&gt;father; dad; pa; papa&lt;br&gt;阿爸 Ābà Abba</A>
+</item>
+<item id='_17'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>祖</Q>
+<A>zǔ&lt;br&gt;ancestor; forefather; grandparents; surname Zu&lt;br&gt;祖国 (祖國) zǔguó homeland; motherland</A>
+</item>
+<item id='_18'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>奶</Q>
+<A>nǎi&lt;br&gt;breast; lady; milk&lt;br&gt;奶奶 nǎinai (informal) father's mother; paternal grandmother</A>
+</item>
+<item id='_19'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>舒</Q>
+<A>shū&lt;br&gt;to relax; surname Shu&lt;br&gt;舒服 shūfu comfortable</A>
+</item>
+<item id='_20'>
+<cat>Family names and vocabulary - Traditional</cat>
+<Q>養</Q>
+<A>simplified: 养&lt;br&gt;yǎng&lt;br&gt;to raise (animals); to bring up (children); to keep (pets); to support; to give birth&lt;br&gt;养殖 (養殖) yǎngzhí to cultivate; cultivation; to further; to encourage</A>
+</item>
+<item id='_21'>
+<cat>Family names and vocabulary - Traditional</cat>
+<Q>媽</Q>
+<A>simplified: 妈&lt;br&gt;mā&lt;br&gt;ma; mamma&lt;br&gt;妈妈 (媽媽) māma mama; mommy; mother</A>
+</item>
+<item id='_22'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: yǎng&lt;br&gt;(yǎngzhí de yǎng)</Q>
+<A>养 (strokes unavailable)&lt;br&gt;traditional: 養&lt;br&gt;to raise (animals); to bring up (children); to keep (pets); to support; to give birth&lt;br&gt;养殖 (養殖) yǎngzhí to cultivate; cultivation; to further; to encourage</A>
+</item>
+<item id='_23'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: bào&lt;br&gt;(huáibào de bào)</Q>
+<A>&lt;img src="stroke-images/0798.png"&gt;&lt;br&gt;to hold; to carry (in one's arms); to hug or embrace; surround; cherish&lt;br&gt;怀抱 (懷抱) huáibào to cherish; (within sb's) embrace</A>
+</item>
+<item id='_24'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: mǔ&lt;br&gt;(mǔqīn de mǔ)</Q>
+<A>&lt;img src="stroke-images/0837.png"&gt;&lt;br&gt;female; mother&lt;br&gt;母亲 (母親) mǔqīn mother (formal)</A>
+</item>
+<item id='_25'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: fù&lt;br&gt;(fùqin de fù)</Q>
+<A>&lt;img src="stroke-images/0861.png"&gt;&lt;br&gt;father&lt;br&gt;父亲 (父親) fùqin father</A>
+</item>
+<item id='_26'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: fǔ&lt;br&gt;(fǔquánzhì de fǔ)</Q>
+<A>&lt;img src="stroke-images/0861.png"&gt;&lt;br&gt;father&lt;br&gt;父权制 (父權制) fǔquánzhì patriarchy</A>
+</item>
+<item id='_27'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: jiě&lt;br&gt;(jiějie de jiě)</Q>
+<A>&lt;img src="stroke-images/0893.png"&gt;&lt;br&gt;older sister&lt;br&gt;姐姐 jiějie older sister</A>
+</item>
+<item id='_28'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: mā&lt;br&gt;(māma de mā)</Q>
+<A>&lt;img src="stroke-images/0971.png"&gt;&lt;br&gt;traditional: 媽&lt;br&gt;ma; mamma&lt;br&gt;妈妈 (媽媽) māma mama; mommy; mother</A>
+</item>
+<item id='_29'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: bà&lt;br&gt;(Ābà de bà)</Q>
+<A>&lt;img src="stroke-images/1235.png"&gt;&lt;br&gt;father; dad; pa; papa&lt;br&gt;阿爸 Ābà Abba</A>
+</item>
+<item id='_30'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: zǔ&lt;br&gt;(zǔguó de zǔ)</Q>
+<A>&lt;img src="stroke-images/1302.png"&gt;&lt;br&gt;ancestor; forefather; grandparents; surname Zu&lt;br&gt;祖国 (祖國) zǔguó homeland; motherland</A>
+</item>
+<item id='_31'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: nǎi&lt;br&gt;(nǎinai de nǎi)</Q>
+<A>&lt;img src="stroke-images/1396.png"&gt;&lt;br&gt;breast; lady; milk&lt;br&gt;奶奶 nǎinai (informal) father's mother; paternal grandmother</A>
+</item>
+<item id='_32'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: shū&lt;br&gt;(shūfu de shū)</Q>
+<A>舒 (strokes unavailable)&lt;br&gt;to relax; surname Shu&lt;br&gt;舒服 shūfu comfortable</A>
+</item>
+</mnemosyne>

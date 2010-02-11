@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Family names and vocabulary - English</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Hanzi</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Traditional</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Pinyin</name>
+</category>
+<category active='1'>
+<name>Family names and vocabulary - Words</name>
+</category>
+<item id='_0'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;paternal aunt</Q>
+<A>姑 (strokes unavailable)&lt;br&gt;gū&lt;br&gt;姑娘 gūniang girl</A>
+</item>
+<item id='_1'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;the Tang dynasty (618-907); surname</Q>
+<A>唐 (strokes unavailable)&lt;br&gt;Táng&lt;br&gt;唐绍仪 (唐紹儀) TángShàoyí Tang Shaoyi (1862-1939), politician and diplomat</A>
+</item>
+<item id='_2'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;grandpa; old gentleman</Q>
+<A>&lt;img src="stroke-images/1795.png"&gt;&lt;br&gt;traditional: 爺&lt;br&gt;yé&lt;br&gt;爷爷 (爺爺) yéye (informal) father's father; paternal grandfather</A>
+</item>
+<item id='_3'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;dawn; rising sun</Q>
+<A>&lt;img src="stroke-images/1872.png"&gt;&lt;br&gt;xù</A>
+</item>
+<item id='_4'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;(phonetic); used esp. in girl's names</Q>
+<A>娜 (strokes unavailable)&lt;br&gt;nà&lt;br&gt;安娜 Ānnà Anna (person's name)</A>
+</item>
+<item id='_5'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;maternal uncle</Q>
+<A>舅 (strokes unavailable)&lt;br&gt;jiù&lt;br&gt;舅舅 jiùjiu (informal) mother's brother; maternal uncle</A>
+</item>
+<item id='_6'>
+<cat>Family names and vocabulary - English</cat>
+<Q>Write the character:&lt;br&gt;wife of father's younger brother</Q>
+<A>婶 (strokes unavailable)&lt;br&gt;traditional: 嬸&lt;br&gt;shěn&lt;br&gt;婶子 (嬸子) shěnzi (informal) father's younger brother's wife; aunt</A>
+</item>
+<item id='_7'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>姑</Q>
+<A>gū&lt;br&gt;paternal aunt&lt;br&gt;姑娘 gūniang girl</A>
+</item>
+<item id='_8'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>唐</Q>
+<A>Táng&lt;br&gt;the Tang dynasty (618-907); surname Tang&lt;br&gt;唐绍仪 (唐紹儀) TángShàoyí Tang Shaoyi (1862-1939), politician and diplomat</A>
+</item>
+<item id='_9'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>爷</Q>
+<A>traditional: 爺&lt;br&gt;yé&lt;br&gt;grandpa; old gentleman&lt;br&gt;爷爷 (爺爺) yéye (informal) father's father; paternal grandfather</A>
+</item>
+<item id='_10'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>旭</Q>
+<A>xù&lt;br&gt;dawn; rising sun</A>
+</item>
+<item id='_11'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>娜</Q>
+<A>nà&lt;br&gt;(phonetic na); used esp. in girl's names such as Anna 安娜 or Diana 黛安娜&lt;br&gt;安娜 Ānnà Anna (person's name)</A>
+</item>
+<item id='_12'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>舅</Q>
+<A>jiù&lt;br&gt;maternal uncle&lt;br&gt;舅舅 jiùjiu (informal) mother's brother; maternal uncle</A>
+</item>
+<item id='_13'>
+<cat>Family names and vocabulary - Hanzi</cat>
+<Q>婶</Q>
+<A>traditional: 嬸&lt;br&gt;shěn&lt;br&gt;wife of father's younger brother&lt;br&gt;婶子 (嬸子) shěnzi (informal) father's younger brother's wife; aunt</A>
+</item>
+<item id='_14'>
+<cat>Family names and vocabulary - Traditional</cat>
+<Q>爺</Q>
+<A>simplified: 爷&lt;br&gt;yé&lt;br&gt;grandpa; old gentleman&lt;br&gt;爷爷 (爺爺) yéye (informal) father's father; paternal grandfather</A>
+</item>
+<item id='_15'>
+<cat>Family names and vocabulary - Traditional</cat>
+<Q>嬸</Q>
+<A>simplified: 婶&lt;br&gt;shěn&lt;br&gt;wife of father's younger brother&lt;br&gt;婶子 (嬸子) shěnzi (informal) father's younger brother's wife; aunt</A>
+</item>
+<item id='_16'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: gū&lt;br&gt;(gūniang de gū)</Q>
+<A>姑 (strokes unavailable)&lt;br&gt;paternal aunt&lt;br&gt;姑娘 gūniang girl</A>
+</item>
+<item id='_17'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: Táng&lt;br&gt;(TángShàoyí de Táng)</Q>
+<A>唐 (strokes unavailable)&lt;br&gt;the Tang dynasty (618-907); surname Tang&lt;br&gt;唐绍仪 (唐紹儀) TángShàoyí Tang Shaoyi (1862-1939), politician and diplomat</A>
+</item>
+<item id='_18'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: yé&lt;br&gt;(yéye de yé)</Q>
+<A>&lt;img src="stroke-images/1795.png"&gt;&lt;br&gt;traditional: 爺&lt;br&gt;grandpa; old gentleman&lt;br&gt;爷爷 (爺爺) yéye (informal) father's father; paternal grandfather</A>
+</item>
+<item id='_19'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: xù</Q>
+<A>&lt;img src="stroke-images/1872.png"&gt;&lt;br&gt;dawn; rising sun</A>
+</item>
+<item id='_20'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: nà&lt;br&gt;(Ānnà de nà)</Q>
+<A>娜 (strokes unavailable)&lt;br&gt;(phonetic na); used esp. in girl's names such as Anna 安娜 or Diana 黛安娜&lt;br&gt;安娜 Ānnà Anna (person's name)</A>
+</item>
+<item id='_21'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: jiù&lt;br&gt;(jiùjiu de jiù)</Q>
+<A>舅 (strokes unavailable)&lt;br&gt;maternal uncle&lt;br&gt;舅舅 jiùjiu (informal) mother's brother; maternal uncle</A>
+</item>
+<item id='_22'>
+<cat>Family names and vocabulary - Pinyin</cat>
+<Q>Write the character: shěn&lt;br&gt;(shěnzi de shěn)</Q>
+<A>婶 (strokes unavailable)&lt;br&gt;traditional: 嬸&lt;br&gt;wife of father's younger brother&lt;br&gt;婶子 (嬸子) shěnzi (informal) father's younger brother's wife; aunt</A>
+</item>
+</mnemosyne>

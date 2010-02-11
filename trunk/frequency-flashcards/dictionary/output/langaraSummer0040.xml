@@ -1,0 +1,583 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mnemosyne core_version='1'>
+<category active='1'>
+<name>Langara - This Summer - English</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Hanzi</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Traditional</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Pinyin</name>
+</category>
+<category active='1'>
+<name>Langara - This Summer - Words</name>
+</category>
+<item id='_0'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;is; are; am; yes; to be</Q>
+<A>&lt;img src="stroke-images/0002.png"&gt;&lt;br&gt;shì&lt;br&gt;就是 jiùshì (emphasizes that something is precisely or exactly what is stated); precisely; exactly; even; if; just like; in the same way as</A>
+</item>
+<item id='_1'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;(negative prefix); not; no</Q>
+<A>&lt;img src="stroke-images/0003.png"&gt;&lt;br&gt;bù&lt;br&gt;不能 bùnéng cannot; must not; should not</A>
+</item>
+<item id='_2'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;to have; there is; there are; to exist; to be</Q>
+<A>&lt;img src="stroke-images/0006.png"&gt;&lt;br&gt;yǒu&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be</A>
+</item>
+<item id='_3'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;(located) at; (to be) in; to exist; in the middle of doing sth; (indicating an action in progress)</Q>
+<A>&lt;img src="stroke-images/0008.png"&gt;&lt;br&gt;zài&lt;br&gt;现在 (現在) xiànzài now; at present; modern; current; nowadays</A>
+</item>
+<item id='_4'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;man; person; people</Q>
+<A>&lt;img src="stroke-images/0009.png"&gt;&lt;br&gt;rén&lt;br&gt;人民 rénmín (the) people</A>
+</item>
+<item id='_5'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;to come</Q>
+<A>&lt;img src="stroke-images/0024.png"&gt;&lt;br&gt;traditional: 來&lt;br&gt;lái&lt;br&gt;出来 (出來) chūlái to come out; to emerge</A>
+</item>
+<item id='_6'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;to use</Q>
+<A>&lt;img src="stroke-images/0029.png"&gt;&lt;br&gt;yòng&lt;br&gt;作用 zuòyòng action; activity; actions; acts; effect; to play a role</A>
+</item>
+<item id='_7'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;o'clock; time; when; hour; season; period; surname</Q>
+<A>&lt;img src="stroke-images/0032.png"&gt;&lt;br&gt;traditional: 時&lt;br&gt;shí&lt;br&gt;同时 (同時) tóngshí at the same time; simultaneously</A>
+</item>
+<item id='_8'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;1: (negative prefix for verbs); have not; not&lt;br&gt;2: drowned; to end; to die; to inundate</Q>
+<A>&lt;img src="stroke-images/0035.png"&gt;&lt;br&gt;traditional: 沒&lt;br&gt;1: méi 2: mò&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be 没收 (沒收) mòshōu confiscate</A>
+</item>
+<item id='_9'>
+<cat>Langara - This Summer - English</cat>
+<Q>Write the character:&lt;br&gt;to be born; to give birth; life; to grow</Q>
+<A>&lt;img src="stroke-images/0040.png"&gt;&lt;br&gt;shēng&lt;br&gt;生产 (生產) shēngchǎn to produce; manufacture</A>
+</item>
+<item id='_10'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>是</Q>
+<A>shì&lt;br&gt;is; are; am; yes; to be&lt;br&gt;就是 jiùshì (emphasizes that something is precisely or exactly what is stated); precisely; exactly; even; if; just like; in the same way as</A>
+</item>
+<item id='_11'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>不</Q>
+<A>bù&lt;br&gt;(negative prefix); not; no&lt;br&gt;不能 bùnéng cannot; must not; should not</A>
+</item>
+<item id='_12'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>有</Q>
+<A>yǒu&lt;br&gt;to have; there is; there are; to exist; to be&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be</A>
+</item>
+<item id='_13'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>在</Q>
+<A>zài&lt;br&gt;(located) at; (to be) in; to exist; in the middle of doing sth; (indicating an action in progress)&lt;br&gt;现在 (現在) xiànzài now; at present; modern; current; nowadays</A>
+</item>
+<item id='_14'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>人</Q>
+<A>rén&lt;br&gt;man; person; people&lt;br&gt;人民 rénmín (the) people</A>
+</item>
+<item id='_15'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>来</Q>
+<A>traditional: 來&lt;br&gt;lái&lt;br&gt;to come&lt;br&gt;出来 (出來) chūlái to come out; to emerge</A>
+</item>
+<item id='_16'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>用</Q>
+<A>yòng&lt;br&gt;to use&lt;br&gt;作用 zuòyòng action; activity; actions; acts; effect; to play a role</A>
+</item>
+<item id='_17'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>时</Q>
+<A>traditional: 時&lt;br&gt;shí&lt;br&gt;o'clock; time; when; hour; season; period; surname Shi&lt;br&gt;同时 (同時) tóngshí at the same time; simultaneously</A>
+</item>
+<item id='_18'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>没</Q>
+<A>traditional: 沒&lt;br&gt;1: méi 2: mò&lt;br&gt;1: (negative prefix for verbs); have not; not&lt;br&gt;2: drowned; to end; to die; to inundate&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be 没收 (沒收) mòshōu confiscate</A>
+</item>
+<item id='_19'>
+<cat>Langara - This Summer - Hanzi</cat>
+<Q>生</Q>
+<A>shēng&lt;br&gt;to be born; to give birth; life; to grow&lt;br&gt;生产 (生產) shēngchǎn to produce; manufacture</A>
+</item>
+<item id='_20'>
+<cat>Langara - This Summer - Traditional</cat>
+<Q>來</Q>
+<A>simplified: 来&lt;br&gt;lái&lt;br&gt;to come&lt;br&gt;出来 (出來) chūlái to come out; to emerge</A>
+</item>
+<item id='_21'>
+<cat>Langara - This Summer - Traditional</cat>
+<Q>時</Q>
+<A>simplified: 时&lt;br&gt;shí&lt;br&gt;o'clock; time; when; hour; season; period; surname Shi&lt;br&gt;同时 (同時) tóngshí at the same time; simultaneously</A>
+</item>
+<item id='_22'>
+<cat>Langara - This Summer - Traditional</cat>
+<Q>沒</Q>
+<A>simplified: 没&lt;br&gt;1: méi 2: mò&lt;br&gt;1: (negative prefix for verbs); have not; not&lt;br&gt;2: drowned; to end; to die; to inundate&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be 没收 (沒收) mòshōu confiscate</A>
+</item>
+<item id='_23'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: shì&lt;br&gt;(jiùshì de shì)</Q>
+<A>&lt;img src="stroke-images/0002.png"&gt;&lt;br&gt;is; are; am; yes; to be&lt;br&gt;就是 jiùshì (emphasizes that something is precisely or exactly what is stated); precisely; exactly; even; if; just like; in the same way as</A>
+</item>
+<item id='_24'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: bù&lt;br&gt;(bùnéng de bù)</Q>
+<A>&lt;img src="stroke-images/0003.png"&gt;&lt;br&gt;(negative prefix); not; no&lt;br&gt;不能 bùnéng cannot; must not; should not</A>
+</item>
+<item id='_25'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: yǒu&lt;br&gt;(méiyǒu de yǒu)</Q>
+<A>&lt;img src="stroke-images/0006.png"&gt;&lt;br&gt;to have; there is; there are; to exist; to be&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be</A>
+</item>
+<item id='_26'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: zài&lt;br&gt;(xiànzài de zài)</Q>
+<A>&lt;img src="stroke-images/0008.png"&gt;&lt;br&gt;(located) at; (to be) in; to exist; in the middle of doing sth; (indicating an action in progress)&lt;br&gt;现在 (現在) xiànzài now; at present; modern; current; nowadays</A>
+</item>
+<item id='_27'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: rén&lt;br&gt;(rénmín de rén)</Q>
+<A>&lt;img src="stroke-images/0009.png"&gt;&lt;br&gt;man; person; people&lt;br&gt;人民 rénmín (the) people</A>
+</item>
+<item id='_28'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: lái&lt;br&gt;(chūlái de lái)</Q>
+<A>&lt;img src="stroke-images/0024.png"&gt;&lt;br&gt;traditional: 來&lt;br&gt;to come&lt;br&gt;出来 (出來) chūlái to come out; to emerge</A>
+</item>
+<item id='_29'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: yòng&lt;br&gt;(zuòyòng de yòng)</Q>
+<A>&lt;img src="stroke-images/0029.png"&gt;&lt;br&gt;to use&lt;br&gt;作用 zuòyòng action; activity; actions; acts; effect; to play a role</A>
+</item>
+<item id='_30'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: shí&lt;br&gt;(tóngshí de shí)</Q>
+<A>&lt;img src="stroke-images/0032.png"&gt;&lt;br&gt;traditional: 時&lt;br&gt;o'clock; time; when; hour; season; period; surname Shi&lt;br&gt;同时 (同時) tóngshí at the same time; simultaneously</A>
+</item>
+<item id='_31'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: méi&lt;br&gt;(méiyǒu de méi)</Q>
+<A>&lt;img src="stroke-images/0035.png"&gt;&lt;br&gt;traditional: 沒&lt;br&gt;(negative prefix for verbs); have not; not&lt;br&gt;没有 (沒有) méiyǒu haven't; hasn't; doesn't exist; to not have; to not be</A>
+</item>
+<item id='_32'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: mò&lt;br&gt;(mòshōu de mò)</Q>
+<A>&lt;img src="stroke-images/0035.png"&gt;&lt;br&gt;traditional: 沒&lt;br&gt;drowned; to end; to die; to inundate&lt;br&gt;没收 (沒收) mòshōu confiscate</A>
+</item>
+<item id='_33'>
+<cat>Langara - This Summer - Pinyin</cat>
+<Q>Write the character: shēng&lt;br&gt;(shēngchǎn de shēng)</Q>
+<A>&lt;img src="stroke-images/0040.png"&gt;&lt;br&gt;to be born; to give birth; life; to grow&lt;br&gt;生产 (生產) shēngchǎn to produce; manufacture</A>
+</item>
+<item id='_34'>
+<cat>Langara - This Summer - Words</cat>
+<Q>天气</Q>
+<A>traditional: 天氣&lt;br&gt;tiānqì weather</A>
+</item>
+<item id='_35'>
+<cat>Langara - This Summer - Words</cat>
+<Q>假期</Q>
+<A>jìaqī vacation</A>
+</item>
+<item id='_36'>
+<cat>Langara - This Summer - Words</cat>
+<Q>度假</Q>
+<A>dùjìa go on holiday</A>
+</item>
+<item id='_37'>
+<cat>Langara - This Summer - Words</cat>
+<Q>打算</Q>
+<A>dǎsuàn to plan; to intend; to calculate; plan; intention; calculation</A>
+</item>
+<item id='_38'>
+<cat>Langara - This Summer - Words</cat>
+<Q>气温</Q>
+<A>traditional: 氣溫&lt;br&gt;qìwēn air temperature</A>
+</item>
+<item id='_39'>
+<cat>Langara - This Summer - Words</cat>
+<Q>周末</Q>
+<A>zhōumò weekend</A>
+</item>
+<item id='_40'>
+<cat>Langara - This Summer - Words</cat>
+<Q>附近</Q>
+<A>fùjìn (in the) vicinity; nearby; neighboring; next to</A>
+</item>
+<item id='_41'>
+<cat>Langara - This Summer - Words</cat>
+<Q>海边</Q>
+<A>traditional: 海邊&lt;br&gt;hǎibiān seaside</A>
+</item>
+<item id='_42'>
+<cat>Langara - This Summer - Words</cat>
+<Q>晒太阳</Q>
+<A>traditional: 曬太陽&lt;br&gt;shàitàiyáng bask</A>
+</item>
+<item id='_43'>
+<cat>Langara - This Summer - Words</cat>
+<Q>参加</Q>
+<A>traditional: 參加&lt;br&gt;cānjīa to participate; to take part; to join</A>
+</item>
+<item id='_44'>
+<cat>Langara - This Summer - Words</cat>
+<Q>夏令营</Q>
+<A>traditional: 夏令營&lt;br&gt;xìalìngyíng summer camp</A>
+</item>
+<item id='_45'>
+<cat>Langara - This Summer - Words</cat>
+<Q>准备</Q>
+<A>traditional: 準備&lt;br&gt;zhǔnbèi preparation; prepare</A>
+</item>
+<item id='_46'>
+<cat>Langara - This Summer - Words</cat>
+<Q>托福</Q>
+<A>tuōfú TOEFL; Test of English as a Foreign Language</A>
+</item>
+<item id='_47'>
+<cat>Langara - This Summer - Words</cat>
+<Q>考试</Q>
+<A>traditional: 考試&lt;br&gt;kǎoshì exam</A>
+</item>
+<item id='_48'>
+<cat>Langara - This Summer - Words</cat>
+<Q>招待</Q>
+<A>zhāodài to receive (guests); to entertain; reception</A>
+</item>
+<item id='_49'>
+<cat>Langara - This Summer - Words</cat>
+<Q>亲戚</Q>
+<A>traditional: 親戚&lt;br&gt;qīnqi a relative (i.e. family relation)</A>
+</item>
+<item id='_50'>
+<cat>Langara - This Summer - Words</cat>
+<Q>聊天</Q>
+<A>liáotiān to chat; to gossip</A>
+</item>
+<item id='_51'>
+<cat>Langara - This Summer - Words</cat>
+<Q>烹饪</Q>
+<A>traditional: 烹飪&lt;br&gt;pēngrèn cooking; culinary arts</A>
+</item>
+<item id='_52'>
+<cat>Langara - This Summer - Words</cat>
+<Q>现成</Q>
+<A>traditional: 現成&lt;br&gt;xiànchéng ready made</A>
+</item>
+<item id='_53'>
+<cat>Langara - This Summer - Words</cat>
+<Q>熟食</Q>
+<A>shúshí cooked food</A>
+</item>
+<item id='_54'>
+<cat>Langara - This Summer - Words</cat>
+<Q>紧张</Q>
+<A>traditional: 緊張&lt;br&gt;jǐnzhāng nervous; keyed up; intense; tense; strained; in short supply; scarce</A>
+</item>
+<item id='_55'>
+<cat>Langara - This Summer - Words</cat>
+<Q>超过</Q>
+<A>traditional: 超過&lt;br&gt;chāoguò to surpass; to exceed; to outstrip</A>
+</item>
+<item id='_56'>
+<cat>Langara - This Summer - Words</cat>
+<Q>加班</Q>
+<A>jīabān (v) work overtime</A>
+</item>
+<item id='_57'>
+<cat>Langara - This Summer - Words</cat>
+<Q>辛苦</Q>
+<A>xīnkǔ hard; exhausting; with much toil</A>
+</item>
+<item id='_58'>
+<cat>Langara - This Summer - Words</cat>
+<Q>各种</Q>
+<A>traditional: 各種&lt;br&gt;gèzhǒng every kind of; all kinds of; various kinds</A>
+</item>
+<item id='_59'>
+<cat>Langara - This Summer - Words</cat>
+<Q>办理</Q>
+<A>traditional: 辦理&lt;br&gt;bànlǐ to handle; to transact; to conduct</A>
+</item>
+<item id='_60'>
+<cat>Langara - This Summer - Words</cat>
+<Q>离婚</Q>
+<A>traditional: 離婚&lt;br&gt;líhūn to divorce; to be divorced from (one's wife or husband)</A>
+</item>
+<item id='_61'>
+<cat>Langara - This Summer - Words</cat>
+<Q>手续</Q>
+<A>traditional: 手續&lt;br&gt;shǒuxù formalities</A>
+</item>
+<item id='_62'>
+<cat>Langara - This Summer - Words</cat>
+<Q>婚姻</Q>
+<A>hūnyīn matrimony; wedding; marriage</A>
+</item>
+<item id='_63'>
+<cat>Langara - This Summer - Words</cat>
+<Q>发生</Q>
+<A>traditional: 發生&lt;br&gt;fāshēng to happen; to occur; to take place</A>
+</item>
+<item id='_64'>
+<cat>Langara - This Summer - Words</cat>
+<Q>丈夫</Q>
+<A>zhàngfu husband</A>
+</item>
+<item id='_65'>
+<cat>Langara - This Summer - Words</cat>
+<Q>外遇</Q>
+<A>wàiyù an extramarital affair</A>
+</item>
+<item id='_66'>
+<cat>Langara - This Summer - Words</cat>
+<Q>伤心</Q>
+<A>traditional: 傷心&lt;br&gt;shāngxīn grieve</A>
+</item>
+<item id='_67'>
+<cat>Langara - This Summer - Words</cat>
+<Q>难过</Q>
+<A>traditional: 難過&lt;br&gt;nánguò feel sorry; be grieved</A>
+</item>
+<item id='_68'>
+<cat>Langara - This Summer - Words</cat>
+<Q>利用</Q>
+<A>lìyòng exploit; make use of; to use; to take advantage of; to utilize</A>
+</item>
+<item id='_69'>
+<cat>Langara - This Summer - Words</cat>
+<Q>享受</Q>
+<A>xiǎngshòu to enjoy (rights, benefits etc)</A>
+</item>
+<item id='_70'>
+<cat>Langara - This Summer - Words</cat>
+<Q>人生</Q>
+<A>rénshēng life</A>
+</item>
+<item id='_71'>
+<cat>Langara - This Summer - Words</cat>
+<Q>今年</Q>
+<A>jīnnián this year</A>
+</item>
+<item id='_72'>
+<cat>Langara - This Summer - Words</cat>
+<Q>去年</Q>
+<A>qùnián last year</A>
+</item>
+<item id='_73'>
+<cat>Langara - This Summer - Words</cat>
+<Q>前年</Q>
+<A>qiánnián the year before last</A>
+</item>
+<item id='_74'>
+<cat>Langara - This Summer - Words</cat>
+<Q>明年</Q>
+<A>míngnián next year</A>
+</item>
+<item id='_75'>
+<cat>Langara - This Summer - Words</cat>
+<Q>后年</Q>
+<A>traditional: 後年&lt;br&gt;hòunián the year after next</A>
+</item>
+<item id='_76'>
+<cat>Langara - This Summer - Words</cat>
+<Q>春天</Q>
+<A>chūntiān spring (season)</A>
+</item>
+<item id='_77'>
+<cat>Langara - This Summer - Words</cat>
+<Q>夏天</Q>
+<A>xìatiān summer</A>
+</item>
+<item id='_78'>
+<cat>Langara - This Summer - Words</cat>
+<Q>秋天</Q>
+<A>qiūtiān autumn</A>
+</item>
+<item id='_79'>
+<cat>Langara - This Summer - Words</cat>
+<Q>冬天</Q>
+<A>dōngtiān winter</A>
+</item>
+<item id='_80'>
+<cat>Langara - This Summer - Words</cat>
+<Q>季节</Q>
+<A>traditional: 季節&lt;br&gt;jìjié time; season; period</A>
+</item>
+<item id='_81'>
+<cat>Langara - This Summer - Words</cat>
+<Q>现在</Q>
+<A>traditional: 現在&lt;br&gt;xiànzài now; at present; modern; current; nowadays</A>
+</item>
+<item id='_82'>
+<cat>Langara - This Summer - Words</cat>
+<Q>过去</Q>
+<A>traditional: 過去&lt;br&gt;guòqu (in the) past; former; previous; to go over; to pass by</A>
+</item>
+<item id='_83'>
+<cat>Langara - This Summer - Words</cat>
+<Q>未来</Q>
+<A>traditional: 未來&lt;br&gt;wèilái future; tomorrow; approaching; coming; pending</A>
+</item>
+<item id='_84'>
+<cat>Langara - This Summer - Words</cat>
+<Q>将来</Q>
+<A>traditional: 將來&lt;br&gt;jiānglái (the) future</A>
+</item>
+<item id='_85'>
+<cat>Langara - This Summer - Words</cat>
+<Q>从前</Q>
+<A>traditional: 從前&lt;br&gt;cóngqián previously; formerly</A>
+</item>
+<item id='_86'>
+<cat>Langara - This Summer - Words</cat>
+<Q>目前</Q>
+<A>mùqián at the present time; currently</A>
+</item>
+<item id='_87'>
+<cat>Langara - This Summer - Words</cat>
+<Q>春假</Q>
+<A>chūnjìa spring break</A>
+</item>
+<item id='_88'>
+<cat>Langara - This Summer - Words</cat>
+<Q>暑假</Q>
+<A>shǔjìa summer vacation</A>
+</item>
+<item id='_89'>
+<cat>Langara - This Summer - Words</cat>
+<Q>寒假</Q>
+<A>hánjìa winter vacation</A>
+</item>
+<item id='_90'>
+<cat>Langara - This Summer - Words</cat>
+<Q>假期</Q>
+<A>jìaqī vacation</A>
+</item>
+<item id='_91'>
+<cat>Langara - This Summer - Words</cat>
+<Q>假日</Q>
+<A>jìarì holiday; non-working day</A>
+</item>
+<item id='_92'>
+<cat>Langara - This Summer - Words</cat>
+<Q>节日</Q>
+<A>traditional: 節日&lt;br&gt;jiérì holiday; festival</A>
+</item>
+<item id='_93'>
+<cat>Langara - This Summer - Words</cat>
+<Q>通常</Q>
+<A>tōngcháng regular; usual; ordinary; normal</A>
+</item>
+<item id='_94'>
+<cat>Langara - This Summer - Words</cat>
+<Q>经常</Q>
+<A>traditional: 經常&lt;br&gt;jīngcháng day to day; everyday; daily; frequently; constantly; regularly; often</A>
+</item>
+<item id='_95'>
+<cat>Langara - This Summer - Words</cat>
+<Q>常常</Q>
+<A>chángcháng frequently; usually; often</A>
+</item>
+<item id='_96'>
+<cat>Langara - This Summer - Words</cat>
+<Q>往往</Q>
+<A>wǎngwǎng often; frequently</A>
+</item>
+<item id='_97'>
+<cat>Langara - This Summer - Words</cat>
+<Q>总是</Q>
+<A>traditional: 總是&lt;br&gt;zǒngshì always</A>
+</item>
+<item id='_98'>
+<cat>Langara - This Summer - Words</cat>
+<Q>有时候</Q>
+<A>traditional: 有時候&lt;br&gt;yǒushíhou sometimes</A>
+</item>
+<item id='_99'>
+<cat>Langara - This Summer - Words</cat>
+<Q>偶而</Q>
+<A>ǒuér betweenwhiles</A>
+</item>
+<item id='_100'>
+<cat>Langara - This Summer - Words</cat>
+<Q>很少</Q>
+<A>hěnshǎo seldom</A>
+</item>
+<item id='_101'>
+<cat>Langara - This Summer - Words</cat>
+<Q>不再</Q>
+<A>bùzài no more; no longer</A>
+</item>
+<item id='_102'>
+<cat>Langara - This Summer - Words</cat>
+<Q>从来没</Q>
+<A>traditional: 從來沒&lt;br&gt;cóngláiméi never</A>
+</item>
+<item id='_103'>
+<cat>Langara - This Summer - Words</cat>
+<Q>已经</Q>
+<A>traditional: 已經&lt;br&gt;yǐjīng already</A>
+</item>
+<item id='_104'>
+<cat>Langara - This Summer - Words</cat>
+<Q>曾经</Q>
+<A>traditional: 曾經&lt;br&gt;céngjīng once; already; former; previously; (past tense marker used before verb or clause)</A>
+</item>
+<item id='_105'>
+<cat>Langara - This Summer - Words</cat>
+<Q>正在</Q>
+<A>zhèngzài in the process of (doing something or happening); while (doing)</A>
+</item>
+<item id='_106'>
+<cat>Langara - This Summer - Words</cat>
+<Q>现代</Q>
+<A>traditional: 現代&lt;br&gt;xiàndài modern times; modern age; modern era; Hyundai, South Korean company</A>
+</item>
+<item id='_107'>
+<cat>Langara - This Summer - Words</cat>
+<Q>古代</Q>
+<A>gǔdài ancient times; olden times</A>
+</item>
+<item id='_108'>
+<cat>Langara - This Summer - Words</cat>
+<Q>当代</Q>
+<A>traditional: 當代&lt;br&gt;dāngdài the present age; the contemporary era</A>
+</item>
+<item id='_109'>
+<cat>Langara - This Summer - Words</cat>
+<Q>时代</Q>
+<A>traditional: 時代&lt;br&gt;shídài age; era; epoch; period</A>
+</item>
+<item id='_110'>
+<cat>Langara - This Summer - Words</cat>
+<Q>年代</Q>
+<A>niándài a decade of a century (e.g. the Sixties); age; era; period</A>
+</item>
+<item id='_111'>
+<cat>Langara - This Summer - Words</cat>
+<Q>最近</Q>
+<A>zuìjìn recent; recently; soon</A>
+</item>
+<item id='_112'>
+<cat>Langara - This Summer - Words</cat>
+<Q>近来</Q>
+<A>traditional: 近來&lt;br&gt;jìnlái recently; lately</A>
+</item>
+</mnemosyne>
