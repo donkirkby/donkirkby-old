@@ -13,3 +13,4 @@ Add your content here.  Format your content with:
   * Automatic links to other wiki pages"version 1 for workaround described in Google Code bug 582"  
 "version 2 for workaround described in Google Code bug 582"  
 "version 3 for workaround described in Google Code bug 582"  
+"version 4 for workaround described in Google Code bug 582"  
