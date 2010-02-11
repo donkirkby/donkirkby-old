@@ -9,6 +9,7 @@ I found a web site that lists a bunch of Chinese language research results. The 
 == Chinese - English dictionary ==
 This was part of the [http://zdt.sourceforge.net/ ZDT project]. The database script is in the cedict subproject and originally came from the CEDICT project. I also used the dictionary in the adso subproject. I did not include either of these data files in my subversion repository, so you have to check out ZDT separately if you want to regenerate the flashcards yourself.
 
+
 == Stroke order ==
 This also came from the [http://zdt.sourceforge.net/ ZDT project]. The data file and a bunch of source code is in the strokeanimation subproject and seems to have originally come from [http://www.euroasiasoftware.com/ht/index.html Euroasia software]. I used the static image style designed by the [http://commons.wikimedia.org/wiki/Commons:CJK_stroke_order:Tutorials wiki commons stroke order project]. I included the stroke order data file and some ZDT source code in my subversion repository. The data is very useful, but there's a mix of fonts used. I really like this font:
 
