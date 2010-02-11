@@ -1,4 +1,5 @@
 #summary A list of data sources for the ChineseVocabulary project.
+#labels Chinese
 
 When I created all my Chinese vocabulary flashcards, I just combined data from a bunch of places. The only significant work I did was converting the stroke order animations to static graphics. Following are descriptions of all the projects I used:
 
