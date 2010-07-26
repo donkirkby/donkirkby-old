@@ -75,14 +75,14 @@
 				<property name="wordReader" ref="lessonWordReader"/>
 			</bean>
 		</property>
-		<property name="deckNameTemplate" value="output/langara_lev7_09_#{maxrank}.xml"/>
-		<property name="categoryTemplate" value="Langara - Level 7 Lesson 9"/>
+		<property name="deckNameTemplate" value="output/langara_lev7b_04_#{maxrank}.xml"/>
+		<property name="categoryTemplate" value="Langara - Level 7b Lesson 04"/>
 		<property name="deckSize" value="10"/>
 	</bean>
 	<bean id="lessonCharacterReader" class="com.google.code.donkirkby.SortingRankReader">
 		<property name="rankReader">
 			<bean class="com.google.code.donkirkby.DefaultRankReader">
-				<property name="resource" value="classpath:/langara_lev7_09_utf8.txt"/>
+				<property name="resource" value="classpath:/langara_lev7b_04_utf8.txt"/>
 				<property name="parsingTokens" value="false"/>
 				<property name="onePerLine" value="false"/>
 				<property name="headerLineCount" value="1"/>
@@ -91,7 +91,7 @@
 		<property name="rankFinder" ref="rankFinder"/>
 	</bean>
 	<bean id="lessonWordReader" class="com.google.code.donkirkby.DefaultRankReader" singleton="false">
-		<property name="resource" value="classpath:/langara_lev7_09_utf8.txt"/>
+		<property name="resource" value="classpath:/langara_lev7b_04_utf8.txt"/>
 		<property name="headerLineCount" value="1"/>
 		<property name="minTokenLength" value="2"/>
 	</bean>
