@@ -44,25 +44,42 @@ namespace WindowSettings
         public Size Size { get; set; }
         public FormWindowState WindowState { get; set; }
         public int[] SplitterDistances { get; set; }
+        public int[] SplitterSizes { get; set; }
+
+        public WindowSettings()
+        {
+            // default to an invalid location
+            Location = new Point(Int32.MinValue, Int32.MinValue);
+        }
 
         public void Record(Form form, params SplitContainer[] splitters)
         {
             bool shouldRecordSplitters;
-            switch (form.WindowState)
+            if (form == null)
             {
-                case FormWindowState.Maximized:
-                    RecordWindowPosition(form.RestoreBounds);
-                    shouldRecordSplitters = true;
-                    break;
-                case FormWindowState.Normal:
-                    shouldRecordSplitters =
-                        RecordWindowPosition(form.Bounds);
-                    break;
-                default:
-                    // Don't record anything when closing while minimized.
-                    return;
+                shouldRecordSplitters =
+                    splitters.Length > 0 &&
+                    splitters[0].FindForm().WindowState != FormWindowState.Minimized;
             }
-            WindowState = form.WindowState;
+            else
+            {
+                switch (form.WindowState)
+                {
+                    case FormWindowState.Maximized:
+                        RecordWindowPosition(form.RestoreBounds);
+                        shouldRecordSplitters = true;
+                        break;
+                    case FormWindowState.Normal:
+                        shouldRecordSplitters =
+                            RecordWindowPosition(form.Bounds);
+                        break;
+                    default:
+                        // Don't record anything when closing while minimized.
+                        return;
+                }
+                WindowState = form.WindowState;
+            }
+
             if (shouldRecordSplitters)
             {
                 RecordSplitters(splitters);
@@ -70,9 +87,19 @@ namespace WindowSettings
 
         }
 
+        /// <summary>
+        /// Restore a form's position and that of several splitters.
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="splitters">The splitters to restore. You can change some entries
+        /// to null if you no longer use that position in the list.</param>
         public void Restore(Form form, params SplitContainer[] splitters)
         {
-            if (IsOnScreen(Location, Size))
+            if (form == null)
+            {
+                RestoreSplitters(splitters);
+            }
+            else if (IsOnScreen(Location, Size))
             {
                 form.Location = Location;
                 form.Size = Size;
@@ -87,14 +114,25 @@ namespace WindowSettings
 
         private void RestoreSplitters(SplitContainer[] splitters)
         {
-            for (int i = 0; i < splitters.Length && i < SplitterDistances.Length; i++)
+            for (
+                int i = 0; 
+                i < splitters.Length && 
+                SplitterDistances != null &&
+                i < SplitterDistances.Length; 
+                i++)
             {
                 var splitter = splitters[i];
+                if (splitter == null)
+                {
+                    continue;
+                }
                 int splitterDistance = SplitterDistances[i];
-                int splitterSize =
-                    splitter.Orientation == Orientation.Vertical
-                    ? splitter.Width
-                    : splitter.Height;
+                if (SplitterSizes != null)
+                {
+                    splitterDistance =
+                        splitterDistance * GetSplitterSize(splitter) / SplitterSizes[i];
+                }
+                int splitterSize = GetSplitterSize(splitter);
                 bool isDistanceLegal =
                     splitter.Panel1MinSize <= splitterDistance
                     && splitterDistance <= splitterSize - splitter.Panel2MinSize;
@@ -103,6 +141,15 @@ namespace WindowSettings
                     splitter.SplitterDistance = splitterDistance;
                 }
             }
+        }
+
+        private static int GetSplitterSize(SplitContainer splitter)
+        {
+            int splitterSize =
+                splitter.Orientation == Orientation.Vertical
+                ? splitter.Width
+                : splitter.Height;
+            return splitterSize;
         }
 
         private bool RecordWindowPosition(Rectangle bounds)
@@ -119,9 +166,14 @@ namespace WindowSettings
         private void RecordSplitters(SplitContainer[] splitters)
         {
             SplitterDistances = new int[splitters.Length];
+            SplitterSizes = new int[splitters.Length];
             for (int i = 0; i < splitters.Length; i++)
             {
-                SplitterDistances[i] = splitters[i].SplitterDistance;
+                if (splitters[i] != null)
+                {
+                    SplitterDistances[i] = splitters[i].SplitterDistance;
+                    SplitterSizes[i] = GetSplitterSize(splitters[i]);
+                }
             }
         }
 
@@ -134,7 +186,11 @@ namespace WindowSettings
         {
             foreach (var screen in Screen.AllScreens)
             {
-                if (screen.WorkingArea.Contains(location))
+                Rectangle workingArea = new Rectangle(
+                    screen.WorkingArea.Location, 
+                    screen.WorkingArea.Size);
+                workingArea.Inflate(1, 1);
+                if (workingArea.Contains(location))
                 {
                     return true;
                 }
