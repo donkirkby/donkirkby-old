@@ -1,7 +1,9 @@
 package com.google.code.donkirkby;
 
+import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +31,7 @@ public class DictionaryApp
 	private RankFinder rankFinder;
 	private SampleBuilder sampleBuilder;
 	private WordListInterface wordList;
+	private WordConnector wordConnector = new WordConnector();
 
 	private StrokeImageFacade strokeImageFacade;
 	
@@ -50,7 +53,7 @@ public class DictionaryApp
 				new ClassPathXmlApplicationContext("spring.xml");
 			
 			app = (DictionaryApp) springContext.getBean(
-					"lessonApp", 
+					"dictionaryApp", 
 					DictionaryApp.class);
 
 			app.generateCards();
@@ -404,9 +407,38 @@ public class DictionaryApp
 					categoryName, 
 					simplifiedChars, 
 					answer.toString());
+			wordConnector.addWord(simplifiedChars);
 			wordCount++;
 		}
+		//runQuiz(writer);
 		return wordCount;
+	}
+
+	private void runQuiz(DeckWriter writer) {
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		for (Puzzle puzzle : wordConnector.generatePuzzles()) {
+			System.out.println(
+					puzzle.getStart() + "-" + puzzle.getEnd() + 
+					" Press enter for length, then again for each step.");
+			try
+			{
+				reader.readLine();
+				System.out.println(puzzle.size() + " words.");
+				for (int i = 0; i < puzzle.size() - 1; i++) {
+					System.out.println(puzzle.getWord(i) + "-");
+					reader.readLine();
+				}
+				System.out.println(puzzle.getEnd());
+			}
+			catch (IOException ex)
+			{
+				throw new RuntimeException(ex);
+			}
+			writer.writeCard(
+					"puzzle",
+					puzzle.toString(),
+					"z");
+		}
 	}
 
 	/** Checks if the current deck has room for more word cards.

@@ -12,6 +12,7 @@
 						<bean class="com.google.code.donkirkby.DictionaryDaoImpl">
 							<property name="dataSource" ref="adsoDataSource"/>
 						</bean>
+						<bean class="com.google.code.donkirkby.CustomDictionaryDao"/>
 					</list>
 				</property>
 			</bean>
