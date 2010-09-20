@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
+﻿<?xml version='1.0' encoding='UTF-8'?>
 <mnemosyne core_version='1'>
 <category active='1'>
 <name>Most common Chinese characters  301- 320 - English</name>
@@ -32,8 +32,8 @@
 </item>
 <item id='_3'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
-<Q>Write the character:&lt;br&gt;1: surname; of the Southern dynasties (557-589)&lt;br&gt;2: arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain</Q>
-<A>陈 (strokes unavailable)&lt;br&gt;traditional: 陳&lt;br&gt;1: Chén 2: chén&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China 陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
+<Q>Write the character:&lt;br&gt;arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain</Q>
+<A>陈 (strokes unavailable)&lt;br&gt;traditional: 陳&lt;br&gt;chén&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
 </item>
 <item id='_4'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
@@ -62,385 +62,400 @@
 </item>
 <item id='_9'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
+<Q>Write the character:&lt;br&gt;to change; to become different; to transform; to vary; rebellion</Q>
+<A>&lt;img src="stroke-images/0310.png"&gt;&lt;br&gt;traditional: 變&lt;br&gt;biàn&lt;br&gt;变化 (變化) biànhuà change; vary</A>
+</item>
+<item id='_10'>
+<cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;gas; air; smell; weather; vital breath; to anger; to get angry; to be enraged</Q>
 <A>&lt;img src="stroke-images/0311.png"&gt;&lt;br&gt;traditional: 氣&lt;br&gt;qì&lt;br&gt;空气 (空氣) kōngqì air; atmosphere</A>
 </item>
-<item id='_10'>
+<item id='_11'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;the west; Spain (abbr.); Spanish</Q>
 <A>&lt;img src="stroke-images/0312.png"&gt;&lt;br&gt;Xī&lt;br&gt;东西 (東西) dōngxī east and west</A>
 </item>
-<item id='_11'>
+<item id='_12'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;to test; to try; experiment; examination; test</Q>
 <A>试 (strokes unavailable)&lt;br&gt;traditional: 試&lt;br&gt;shì&lt;br&gt;试验 (試驗) shìyàn experiment; test; experimental</A>
 </item>
-<item id='_12'>
+<item id='_13'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;rare; infrequent</Q>
 <A>&lt;img src="stroke-images/0314.png"&gt;&lt;br&gt;xī&lt;br&gt;希望 xīwàng to wish for; to desire; to hope</A>
 </item>
-<item id='_13'>
+<item id='_14'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;God; unusual; mysterious; soul; spirit; divine essence; lively; spiritual being</Q>
 <A>&lt;img src="stroke-images/0315.png"&gt;&lt;br&gt;shén&lt;br&gt;精神 jīngshén vigor; vitality; drive; spiritual; mental; psychological</A>
 </item>
-<item id='_14'>
+<item id='_15'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;to take; to get; to choose; to fetch</Q>
 <A>&lt;img src="stroke-images/0316.png"&gt;&lt;br&gt;qǔ&lt;br&gt;取得 qǔdé to acquire; to get; to obtain</A>
 </item>
-<item id='_15'>
-<cat>Most common Chinese characters  301- 320 - English</cat>
-<Q>Write the character:&lt;br&gt;to make into; to change into; -ization; to ... -ize; to transform; abbr. for chemistry 化学</Q>
-<A>&lt;img src="stroke-images/0317.png"&gt;&lt;br&gt;huà&lt;br&gt;变化 (變化) biànhuà change; vary</A>
-</item>
 <item id='_16'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
-<Q>Write the character:&lt;br&gt;thing; object; matter; abbr. for physics 物理</Q>
-<A>&lt;img src="stroke-images/0318.png"&gt;&lt;br&gt;wù&lt;br&gt;物质 (物質) wùzhì matter; substance; material; materialistic</A>
+<Q>Write the character:&lt;br&gt;to make into; to change into; -ization; to ... -ize; to transform; abbr. for chemistry</Q>
+<A>&lt;img src="stroke-images/0317.png"&gt;&lt;br&gt;huà&lt;br&gt;变化 (變化) biànhuà change; vary</A>
 </item>
 <item id='_17'>
+<cat>Most common Chinese characters  301- 320 - English</cat>
+<Q>Write the character:&lt;br&gt;thing; object; matter; abbr. for physics</Q>
+<A>&lt;img src="stroke-images/0318.png"&gt;&lt;br&gt;wù&lt;br&gt;物质 (物質) wùzhì matter; substance; material; materialistic</A>
+</item>
+<item id='_18'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;king; surname</Q>
 <A>&lt;img src="stroke-images/0319.png"&gt;&lt;br&gt;Wáng&lt;br&gt;王朝 wángcháo dynasty</A>
 </item>
-<item id='_18'>
+<item id='_19'>
 <cat>Most common Chinese characters  301- 320 - English</cat>
 <Q>Write the character:&lt;br&gt;to assign; to appoint; office; responsibility; surname</Q>
 <A>&lt;img src="stroke-images/0320.png"&gt;&lt;br&gt;rèn&lt;br&gt;任何 rènhé any; whatever; whichever; whatsoever</A>
 </item>
-<item id='_19'>
+<item id='_20'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>研</Q>
 <A>yán&lt;br&gt;grind fine&lt;br&gt;研究 yánjiū research</A>
 </item>
-<item id='_20'>
+<item id='_21'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>直</Q>
 <A>zhí&lt;br&gt;straight; vertical; frank; directly; straightly; upright&lt;br&gt;直接 zhíjiē direct (opposite of indirect); immediate; directly; straightforward</A>
 </item>
-<item id='_21'>
+<item id='_22'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>设</Q>
 <A>traditional: 設&lt;br&gt;shè&lt;br&gt;to set up; to arrange; to establish; to found; to display&lt;br&gt;建设 (建設) jiànshè to build; to construct; construction; constructive</A>
 </item>
-<item id='_22'>
+<item id='_23'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>陈</Q>
-<A>traditional: 陳&lt;br&gt;1: Chén 2: chén&lt;br&gt;1: surname Chen; Chen of the Southern dynasties (557-589)&lt;br&gt;2: arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China 陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
+<A>traditional: 陳&lt;br&gt;chén&lt;br&gt;arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
 </item>
-<item id='_23'>
+<item id='_24'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>报</Q>
 <A>traditional: 報&lt;br&gt;bào&lt;br&gt;to announce; to inform; report; newspaper; recompense; revenge&lt;br&gt;报告 (報告) bàogào to inform; report; make known; speech; talk; lecture</A>
 </item>
-<item id='_24'>
+<item id='_25'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>转</Q>
 <A>traditional: 轉&lt;br&gt;1: zhuǎn 2: zhuàn&lt;br&gt;1: to convey; to forward (mail); to transfer; to turn; to shift&lt;br&gt;2: to revolve; to turn; to circle about; to walk about&lt;br&gt;转动 (轉動) zhuǎndòng turn 转子 (轉子) zhuànzi rotor</A>
 </item>
-<item id='_25'>
+<item id='_26'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>党</Q>
 <A>traditional: 黨&lt;br&gt;dǎng&lt;br&gt;party; association; club; society; surname Dang&lt;br&gt;共产党 (共產黨) gòngchǎndǎng Communist party</A>
 </item>
-<item id='_26'>
+<item id='_27'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>指</Q>
 <A>zhǐ&lt;br&gt;finger; to point; to direct; to indicate&lt;br&gt;指出 zhǐchū to indicate; to point out</A>
 </item>
-<item id='_27'>
+<item id='_28'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>五</Q>
 <A>wǔ&lt;br&gt;five; 5&lt;br&gt;五年计划 (五年計劃) wǔniánjìhuà Five-Year Plan</A>
 </item>
-<item id='_28'>
+<item id='_29'>
+<cat>Most common Chinese characters  301- 320 - Hanzi</cat>
+<Q>变</Q>
+<A>traditional: 變&lt;br&gt;biàn&lt;br&gt;to change; to become different; to transform; to vary; rebellion&lt;br&gt;变化 (變化) biànhuà change; vary</A>
+</item>
+<item id='_30'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>气</Q>
 <A>traditional: 氣&lt;br&gt;qì&lt;br&gt;gas; air; smell; weather; vital breath; to anger; to get angry; to be enraged&lt;br&gt;空气 (空氣) kōngqì air; atmosphere</A>
 </item>
-<item id='_29'>
+<item id='_31'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>西</Q>
 <A>Xī&lt;br&gt;the west; Spain (abbr.); Spanish&lt;br&gt;东西 (東西) dōngxī east and west</A>
 </item>
-<item id='_30'>
+<item id='_32'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>试</Q>
 <A>traditional: 試&lt;br&gt;shì&lt;br&gt;to test; to try; experiment; examination; test&lt;br&gt;试验 (試驗) shìyàn experiment; test; experimental</A>
 </item>
-<item id='_31'>
+<item id='_33'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>希</Q>
 <A>xī&lt;br&gt;rare; infrequent&lt;br&gt;希望 xīwàng to wish for; to desire; to hope</A>
 </item>
-<item id='_32'>
+<item id='_34'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>神</Q>
 <A>shén&lt;br&gt;God; unusual; mysterious; soul; spirit; divine essence; lively; spiritual being&lt;br&gt;精神 jīngshén vigor; vitality; drive; spiritual; mental; psychological</A>
 </item>
-<item id='_33'>
+<item id='_35'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>取</Q>
 <A>qǔ&lt;br&gt;to take; to get; to choose; to fetch&lt;br&gt;取得 qǔdé to acquire; to get; to obtain</A>
 </item>
-<item id='_34'>
+<item id='_36'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>化</Q>
 <A>huà&lt;br&gt;to make into; to change into; -ization; to ... -ize; to transform; abbr. for chemistry 化学&lt;br&gt;变化 (變化) biànhuà change; vary</A>
 </item>
-<item id='_35'>
+<item id='_37'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>物</Q>
 <A>wù&lt;br&gt;thing; object; matter; abbr. for physics 物理&lt;br&gt;物质 (物質) wùzhì matter; substance; material; materialistic</A>
 </item>
-<item id='_36'>
+<item id='_38'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>王</Q>
 <A>Wáng&lt;br&gt;king; surname Wang&lt;br&gt;王朝 wángcháo dynasty</A>
 </item>
-<item id='_37'>
+<item id='_39'>
 <cat>Most common Chinese characters  301- 320 - Hanzi</cat>
 <Q>任</Q>
 <A>rèn&lt;br&gt;to assign; to appoint; office; responsibility; surname Ren&lt;br&gt;任何 rènhé any; whatever; whichever; whatsoever</A>
 </item>
-<item id='_38'>
+<item id='_40'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>設</Q>
 <A>simplified: 设&lt;br&gt;shè&lt;br&gt;to set up; to arrange; to establish; to found; to display&lt;br&gt;建设 (建設) jiànshè to build; to construct; construction; constructive</A>
 </item>
-<item id='_39'>
+<item id='_41'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>陳</Q>
-<A>simplified: 陈&lt;br&gt;1: Chén 2: chén&lt;br&gt;1: surname Chen; Chen of the Southern dynasties (557-589)&lt;br&gt;2: arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China 陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
+<A>simplified: 陈&lt;br&gt;chén&lt;br&gt;arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
 </item>
-<item id='_40'>
+<item id='_42'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>報</Q>
 <A>simplified: 报&lt;br&gt;bào&lt;br&gt;to announce; to inform; report; newspaper; recompense; revenge&lt;br&gt;报告 (報告) bàogào to inform; report; make known; speech; talk; lecture</A>
 </item>
-<item id='_41'>
+<item id='_43'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>轉</Q>
 <A>simplified: 转&lt;br&gt;1: zhuǎn 2: zhuàn&lt;br&gt;1: to convey; to forward (mail); to transfer; to turn; to shift&lt;br&gt;2: to revolve; to turn; to circle about; to walk about&lt;br&gt;转动 (轉動) zhuǎndòng turn 转子 (轉子) zhuànzi rotor</A>
 </item>
-<item id='_42'>
+<item id='_44'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>黨</Q>
 <A>simplified: 党&lt;br&gt;dǎng&lt;br&gt;party; association; club; society; surname Dang&lt;br&gt;共产党 (共產黨) gòngchǎndǎng Communist party</A>
 </item>
-<item id='_43'>
+<item id='_45'>
+<cat>Most common Chinese characters  301- 320 - Traditional</cat>
+<Q>變</Q>
+<A>simplified: 变&lt;br&gt;biàn&lt;br&gt;to change; to become different; to transform; to vary; rebellion&lt;br&gt;变化 (變化) biànhuà change; vary</A>
+</item>
+<item id='_46'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>氣</Q>
 <A>simplified: 气&lt;br&gt;qì&lt;br&gt;gas; air; smell; weather; vital breath; to anger; to get angry; to be enraged&lt;br&gt;空气 (空氣) kōngqì air; atmosphere</A>
 </item>
-<item id='_44'>
+<item id='_47'>
 <cat>Most common Chinese characters  301- 320 - Traditional</cat>
 <Q>試</Q>
 <A>simplified: 试&lt;br&gt;shì&lt;br&gt;to test; to try; experiment; examination; test&lt;br&gt;试验 (試驗) shìyàn experiment; test; experimental</A>
 </item>
-<item id='_45'>
+<item id='_48'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: yán&lt;br&gt;(yánjiū de yán)</Q>
 <A>&lt;img src="stroke-images/0301.png"&gt;&lt;br&gt;grind fine&lt;br&gt;研究 yánjiū research</A>
 </item>
-<item id='_46'>
+<item id='_49'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: zhí&lt;br&gt;(zhíjiē de zhí)</Q>
 <A>&lt;img src="stroke-images/0302.png"&gt;&lt;br&gt;straight; vertical; frank; directly; straightly; upright&lt;br&gt;直接 zhíjiē direct (opposite of indirect); immediate; directly; straightforward</A>
 </item>
-<item id='_47'>
+<item id='_50'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: shè&lt;br&gt;(jiànshè de shè)</Q>
 <A>&lt;img src="stroke-images/0303.png"&gt;&lt;br&gt;traditional: 設&lt;br&gt;to set up; to arrange; to establish; to found; to display&lt;br&gt;建设 (建設) jiànshè to build; to construct; construction; constructive</A>
 </item>
-<item id='_48'>
-<cat>Most common Chinese characters  301- 320 - Pinyin</cat>
-<Q>Write the character: Chén&lt;br&gt;(Chényì de Chén)</Q>
-<A>陈 (strokes unavailable)&lt;br&gt;traditional: 陳&lt;br&gt;surname Chen; Chen of the Southern dynasties (557-589)&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
-</item>
-<item id='_49'>
+<item id='_51'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: chén&lt;br&gt;(Chényì de chén)</Q>
 <A>陈 (strokes unavailable)&lt;br&gt;traditional: 陳&lt;br&gt;arrange; exhibit; narrate; tell; old; stale; to state; to display; to explain&lt;br&gt;陈毅 (陳毅) Chényì Chen Yi, former mayor of Shanghai and highest ranking military commander in China</A>
 </item>
-<item id='_50'>
+<item id='_52'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: bào&lt;br&gt;(bàogào de bào)</Q>
 <A>&lt;img src="stroke-images/0305.png"&gt;&lt;br&gt;traditional: 報&lt;br&gt;to announce; to inform; report; newspaper; recompense; revenge&lt;br&gt;报告 (報告) bàogào to inform; report; make known; speech; talk; lecture</A>
 </item>
-<item id='_51'>
+<item id='_53'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: zhuǎn&lt;br&gt;(zhuǎndòng de zhuǎn)</Q>
 <A>转 (strokes unavailable)&lt;br&gt;traditional: 轉&lt;br&gt;to convey; to forward (mail); to transfer; to turn; to shift&lt;br&gt;转动 (轉動) zhuǎndòng turn</A>
 </item>
-<item id='_52'>
+<item id='_54'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: zhuàn&lt;br&gt;(zhuànzi de zhuàn)</Q>
 <A>转 (strokes unavailable)&lt;br&gt;traditional: 轉&lt;br&gt;to revolve; to turn; to circle about; to walk about&lt;br&gt;转子 (轉子) zhuànzi rotor</A>
 </item>
-<item id='_53'>
+<item id='_55'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: dǎng&lt;br&gt;(gòngchǎndǎng de dǎng)</Q>
 <A>&lt;img src="stroke-images/0307.png"&gt;&lt;br&gt;traditional: 黨&lt;br&gt;party; association; club; society; surname Dang&lt;br&gt;共产党 (共產黨) gòngchǎndǎng Communist party</A>
 </item>
-<item id='_54'>
+<item id='_56'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: zhǐ&lt;br&gt;(zhǐchū de zhǐ)</Q>
 <A>&lt;img src="stroke-images/0308.png"&gt;&lt;br&gt;finger; to point; to direct; to indicate&lt;br&gt;指出 zhǐchū to indicate; to point out</A>
 </item>
-<item id='_55'>
+<item id='_57'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: wǔ&lt;br&gt;(wǔniánjìhuà de wǔ)</Q>
 <A>&lt;img src="stroke-images/0309.png"&gt;&lt;br&gt;five; 5&lt;br&gt;五年计划 (五年計劃) wǔniánjìhuà Five-Year Plan</A>
 </item>
-<item id='_56'>
+<item id='_58'>
+<cat>Most common Chinese characters  301- 320 - Pinyin</cat>
+<Q>Write the character: biàn&lt;br&gt;(biànhuà de biàn)</Q>
+<A>&lt;img src="stroke-images/0310.png"&gt;&lt;br&gt;traditional: 變&lt;br&gt;to change; to become different; to transform; to vary; rebellion&lt;br&gt;变化 (變化) biànhuà change; vary</A>
+</item>
+<item id='_59'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: qì&lt;br&gt;(kōngqì de qì)</Q>
 <A>&lt;img src="stroke-images/0311.png"&gt;&lt;br&gt;traditional: 氣&lt;br&gt;gas; air; smell; weather; vital breath; to anger; to get angry; to be enraged&lt;br&gt;空气 (空氣) kōngqì air; atmosphere</A>
 </item>
-<item id='_57'>
+<item id='_60'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: Xī&lt;br&gt;(dōngxī de Xī)</Q>
 <A>&lt;img src="stroke-images/0312.png"&gt;&lt;br&gt;the west; Spain (abbr.); Spanish&lt;br&gt;东西 (東西) dōngxī east and west</A>
 </item>
-<item id='_58'>
+<item id='_61'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: shì&lt;br&gt;(shìyàn de shì)</Q>
 <A>试 (strokes unavailable)&lt;br&gt;traditional: 試&lt;br&gt;to test; to try; experiment; examination; test&lt;br&gt;试验 (試驗) shìyàn experiment; test; experimental</A>
 </item>
-<item id='_59'>
+<item id='_62'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: xī&lt;br&gt;(xīwàng de xī)</Q>
 <A>&lt;img src="stroke-images/0314.png"&gt;&lt;br&gt;rare; infrequent&lt;br&gt;希望 xīwàng to wish for; to desire; to hope</A>
 </item>
-<item id='_60'>
+<item id='_63'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: shén&lt;br&gt;(jīngshén de shén)</Q>
 <A>&lt;img src="stroke-images/0315.png"&gt;&lt;br&gt;God; unusual; mysterious; soul; spirit; divine essence; lively; spiritual being&lt;br&gt;精神 jīngshén vigor; vitality; drive; spiritual; mental; psychological</A>
 </item>
-<item id='_61'>
+<item id='_64'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: qǔ&lt;br&gt;(qǔdé de qǔ)</Q>
 <A>&lt;img src="stroke-images/0316.png"&gt;&lt;br&gt;to take; to get; to choose; to fetch&lt;br&gt;取得 qǔdé to acquire; to get; to obtain</A>
 </item>
-<item id='_62'>
+<item id='_65'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: huà&lt;br&gt;(biànhuà de huà)</Q>
 <A>&lt;img src="stroke-images/0317.png"&gt;&lt;br&gt;to make into; to change into; -ization; to ... -ize; to transform; abbr. for chemistry 化学&lt;br&gt;变化 (變化) biànhuà change; vary</A>
 </item>
-<item id='_63'>
+<item id='_66'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: wù&lt;br&gt;(wùzhì de wù)</Q>
 <A>&lt;img src="stroke-images/0318.png"&gt;&lt;br&gt;thing; object; matter; abbr. for physics 物理&lt;br&gt;物质 (物質) wùzhì matter; substance; material; materialistic</A>
 </item>
-<item id='_64'>
+<item id='_67'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
-<Q>Write the character: Wáng&lt;br&gt;(wángcháo de Wáng)</Q>
+<Q>Write the character: wáng&lt;br&gt;(wángcháo de wáng)</Q>
 <A>&lt;img src="stroke-images/0319.png"&gt;&lt;br&gt;king; surname Wang&lt;br&gt;王朝 wángcháo dynasty</A>
 </item>
-<item id='_65'>
+<item id='_68'>
 <cat>Most common Chinese characters  301- 320 - Pinyin</cat>
 <Q>Write the character: rèn&lt;br&gt;(rènhé de rèn)</Q>
 <A>&lt;img src="stroke-images/0320.png"&gt;&lt;br&gt;to assign; to appoint; office; responsibility; surname Ren&lt;br&gt;任何 rènhé any; whatever; whichever; whatsoever</A>
 </item>
-<item id='_66'>
+<item id='_69'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>变化</Q>
 <A>traditional: 變化&lt;br&gt;biànhuà change; vary</A>
 </item>
-<item id='_67'>
+<item id='_70'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>建设</Q>
 <A>traditional: 建設&lt;br&gt;jiànshè to build; to construct; construction; constructive</A>
 </item>
-<item id='_68'>
+<item id='_71'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>指出</Q>
 <A>zhǐchū to indicate; to point out</A>
 </item>
-<item id='_69'>
+<item id='_72'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>任何</Q>
 <A>rènhé any; whatever; whichever; whatsoever</A>
 </item>
-<item id='_70'>
+<item id='_73'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>直接</Q>
 <A>zhíjiē direct (opposite of indirect); immediate; directly; straightforward</A>
 </item>
-<item id='_71'>
+<item id='_74'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>取得</Q>
 <A>qǔdé to acquire; to get; to obtain</A>
 </item>
-<item id='_72'>
+<item id='_75'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>改变</Q>
 <A>traditional: 改變&lt;br&gt;gǎibiàn to change; to alter; to transform</A>
 </item>
-<item id='_73'>
+<item id='_76'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>物体</Q>
 <A>traditional: 物體&lt;br&gt;wùtǐ object; body; substance</A>
 </item>
-<item id='_74'>
+<item id='_77'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>东西</Q>
 <A>traditional: 東西&lt;br&gt;dōngxi thing; person&lt;br&gt;dōngxī east and west</A>
 </item>
-<item id='_75'>
+<item id='_78'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>变成</Q>
 <A>traditional: 變成&lt;br&gt;biànchéng to change into; to turn into; to become</A>
 </item>
-<item id='_76'>
+<item id='_79'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>气体</Q>
 <A>traditional: 氣體&lt;br&gt;qìtǐ gas (i.e. gaseous substance)</A>
 </item>
-<item id='_77'>
+<item id='_80'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>设计</Q>
 <A>traditional: 設計&lt;br&gt;shèjì plan; design; to design; to plan</A>
 </item>
-<item id='_78'>
+<item id='_81'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>文化</Q>
 <A>wénhuà culture; civilization; cultural</A>
 </item>
-<item id='_79'>
+<item id='_82'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>事物</Q>
 <A>shìwù thing; object</A>
 </item>
-<item id='_80'>
+<item id='_83'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>希望</Q>
 <A>xīwàng to wish for; to desire; to hope</A>
 </item>
-<item id='_81'>
+<item id='_84'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>希望</Q>
 <A>xīwàng to wish for; to desire; to hope</A>
 </item>
-<item id='_82'>
+<item id='_85'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>一直</Q>
 <A>yìzhí continuous&lt;br&gt;yīzhí straight (in a straight line); continuously; always; from the beginning of ... up to ...; all along; always</A>
 </item>
-<item id='_83'>
+<item id='_86'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>报告</Q>
 <A>traditional: 報告&lt;br&gt;bàogào to inform; report; make known; speech; talk; lecture</A>
 </item>
-<item id='_84'>
+<item id='_87'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>人物</Q>
 <A>rénwù a person; a character (in a play, novel etc); a protagonist</A>
 </item>
-<item id='_85'>
+<item id='_88'>
 <cat>Most common Chinese characters  301- 320 - Words</cat>
 <Q>化学</Q>
 <A>traditional: 化學&lt;br&gt;huàxué chemistry; chemical</A>
