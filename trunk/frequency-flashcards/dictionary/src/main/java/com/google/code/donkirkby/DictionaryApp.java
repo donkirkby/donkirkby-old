@@ -42,6 +42,7 @@ public class DictionaryApp
 	private int deckSize;
 	private int wordsPerDeck = -1;
 	private int characterLimit;
+	private boolean isQuizRequested = false;
 	
     public static void main( String[] args )
     {
@@ -410,7 +411,10 @@ public class DictionaryApp
 			wordConnector.addWord(simplifiedChars);
 			wordCount++;
 		}
-		//runQuiz(writer);
+		if (isQuizRequested)
+		{
+			runQuiz(writer);
+		}
 		return wordCount;
 	}
 
