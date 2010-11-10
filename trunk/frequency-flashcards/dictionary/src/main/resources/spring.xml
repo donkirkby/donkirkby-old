@@ -98,18 +98,31 @@
 	</bean>
 	
 	<bean 
-		id="twitterApp" 
-		class="com.google.code.donkirkby.TwitterApp" 
+		id="twitterFetchApp" 
+		class="com.google.code.donkirkby.TwitterFetchApp" 
 		singleton="false">
+		<property name="rankFinder" ref="rankFinder"/>
+		<property name="characterReader" ref="characterReader"/>
 		<property 
 			name="searchUrl" 
-			value="http://www.google.com/uds/GwebSearch?rsz=large&amp;q=site:twitter.com%20inurl:status&amp;v=1.0&amp;lr=lang_zh-CN"/>
+			value="http://www.google.com/uds/GwebSearch?rsz=large&amp;v=1.0&amp;lr=lang_zh-TW"/>
 <!-- 
+			value="http://www.google.com/uds/GwebSearch?rsz=large&amp;q=site:twitter.com%20inurl:status&amp;v=1.0&amp;lr=lang_zh-TW"/>
+ 			value="http://www.google.com/search?q=site:twitter.com&amp;lr=lang_zh-CN"/>
 			value="http://www.google.com/uds/GwebSearch?callback=google.search.WebSearch.RawCompletion&amp;context=0&amp;lstkp=0&amp;rsz=small&amp;hl=en-GB&amp;source=gsc&amp;gss=.com&amp;sig=65c34cdc0d9879a3fbb7801409ac35c3&amp;q=site:twitter.com%20inurl:status&amp;gl=www.google.com&amp;qid=12c0382936b4de62&amp;key=notsupplied&amp;v=1.0&amp;lr=lang_zh-CN"/>
 			value="http://www.google.com/uds/GwebSearch?callback=google.search.WebSearch.RawCompletion&amp;context=0&amp;lstkp=0&amp;rsz=small&amp;hl=en-GB&amp;source=gsc&amp;gss=.com&amp;sig=65c34cdc0d9879a3fbb7801409ac35c3&amp;q=VW%20GTIx&amp;gl=www.google.com&amp;qid=12c0382936b4de62&amp;key=notsupplied&amp;v=1.0"/>
 			value="http://www.google.com/uds/GwebSearch?rsz=small&amp;hl=en-GB&amp;sig=65c34cdc0d9879a3fbb7801409ac35c3&amp;site:twitter.com&amp;gl=www.google.com&amp;qid=12c0382936b4de62&amp;key=notsupplied&amp;v=1.0&amp;lr=lang_zh-CN"/>
- 			value="http://www.google.com/search?q=site:twitter.com&amp;lr=lang_zh-CN"/>
  -->
+	</bean>
+
+	<bean 
+		id="twitterSortApp" 
+		class="com.google.code.donkirkby.TwitterSortApp" 
+		singleton="false">
+		<property name="rankFinder" ref="rankFinder"/>
+		<property name="characterClassifier">
+			<bean class="com.google.code.donkirkby.CharacterClassifier"/>
+		</property>
 	</bean>
 
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
