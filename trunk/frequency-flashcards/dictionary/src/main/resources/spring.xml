@@ -102,11 +102,12 @@
 		class="com.google.code.donkirkby.TwitterFetchApp" 
 		singleton="false">
 		<property name="rankFinder" ref="rankFinder"/>
-		<property name="characterReader" ref="characterReader"/>
+		<property name="characterReader" ref="wordReader"/>
 		<property 
 			name="searchUrl" 
 			value="http://www.google.com/uds/GwebSearch?rsz=large&amp;v=1.0&amp;lr=lang_zh-TW"/>
 <!-- 
+			value="http://www.google.com/uds/GwebSearch?callback=google.search.WebSearch.RawCompletion&amp;context=0&amp;lstkp=0&amp;rsz=large&amp;hl=en&amp;source=gsc&amp;gss=.com&amp;sig=e266cfa875b6dca1dcc49b8b12376c11&amp;gl=www.google.com&amp;qid=12c37f48077d66b4&amp;key=notsupplied&amp;v=1.0"/>
 			value="http://www.google.com/uds/GwebSearch?rsz=large&amp;q=site:twitter.com%20inurl:status&amp;v=1.0&amp;lr=lang_zh-TW"/>
  			value="http://www.google.com/search?q=site:twitter.com&amp;lr=lang_zh-CN"/>
 			value="http://www.google.com/uds/GwebSearch?callback=google.search.WebSearch.RawCompletion&amp;context=0&amp;lstkp=0&amp;rsz=small&amp;hl=en-GB&amp;source=gsc&amp;gss=.com&amp;sig=65c34cdc0d9879a3fbb7801409ac35c3&amp;q=site:twitter.com%20inurl:status&amp;gl=www.google.com&amp;qid=12c0382936b4de62&amp;key=notsupplied&amp;v=1.0&amp;lr=lang_zh-CN"/>
