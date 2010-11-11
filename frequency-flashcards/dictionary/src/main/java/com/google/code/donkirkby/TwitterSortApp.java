@@ -1,15 +1,24 @@
 package com.google.code.donkirkby;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.HashSet;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.xml.namespace.QName;
+import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamReader;
 import javax.xml.stream.XMLStreamWriter;
 
 import org.apache.commons.logging.Log;
@@ -38,10 +47,10 @@ public class TwitterSortApp {
 				new ClassPathXmlApplicationContext("spring.xml");
 			
 			app = (TwitterSortApp) springContext.getBean(
-					"twitterApp", 
+					"twitterSortApp", 
 					TwitterSortApp.class);
 
-			app.fetchTweets();
+			app.sortTweets();
 			log.info("Success");
 		} catch (Exception e) {
 			String msg = "Failure";
@@ -50,22 +59,54 @@ public class TwitterSortApp {
 		}
     }
 	
-    public void fetchTweets() throws IOException, TwitterException
+    public void sortTweets() throws IOException, TwitterException
     {
-    	OutputStreamWriter fileWriter;
+    	XMLStreamReader xmlReader;
     	XMLStreamWriter xmlWriter;
     	String encoding = "UTF-8";
 		try {
-			FileOutputStream outStream = new FileOutputStream("output/tweets.xml");
-			fileWriter = new OutputStreamWriter(outStream, encoding);
-			XMLOutputFactory factory = XMLOutputFactory.newInstance();
-			xmlWriter = factory.createXMLStreamWriter(fileWriter);
+			xmlReader = XMLInputFactory.newInstance().createXMLStreamReader(
+					new FileInputStream("output/tweets/tweets4.xml"), encoding);
+			xmlWriter = XMLOutputFactory.newInstance().createXMLStreamWriter(
+					new FileOutputStream("output/tweets/sortedTweets4.xml"), encoding);
 			try
 			{
 				xmlWriter.writeStartDocument(encoding, "1.0");
 				xmlWriter.writeStartElement("tweets");
+				
+				String statusId = null;
+				StringBuilder textBuilder = null;
+				while (xmlReader.hasNext())
+				{
+					int event = xmlReader.next();
+					if (event == XMLStreamReader.START_ELEMENT && 
+							xmlReader.getName().getLocalPart().equals("tweet"))
+					{
+						statusId = xmlReader.getAttributeValue(null, "id");
+						textBuilder = new StringBuilder();
+					}
+					if (event == XMLStreamReader.CHARACTERS && textBuilder != null)
+					{
+						textBuilder.append(xmlReader.getText());
+					}
+					if (event == XMLStreamReader.END_ELEMENT && textBuilder != null)
+					{
+		        		String text = textBuilder.toString();
+						int rank = maxRank(text);
+						if (rank < 500)
+						{
+							xmlWriter.writeStartElement("tweet");
+							xmlWriter.writeAttribute("id", statusId);
+							xmlWriter.writeAttribute("rank", Integer.toString(rank));
+							xmlWriter.writeCharacters(text);
+							xmlWriter.writeEndElement();
+						}
+						statusId = null;
+						textBuilder = null;
+					}
+				}
+				/*
 		    	//"url":"http://twitter.com/kaifulee/status/4695878440"
-		    	Pattern pattern = Pattern.compile("\"url\":\"[^\"]*/status/(\\d*)\"");
 		    	Twitter twitter = new TwitterFactory().getInstance();
 		    	String targets = "以二三四五十世是";
 		    	for (char target: targets.toCharArray())
@@ -96,13 +137,12 @@ public class TwitterSortApp {
 			        	}
 			        	totalResultCount += resultCount;
 			        }
-		    	}
+		    	}*/
 		    	xmlWriter.writeEndElement();
 			}
 			finally
 			{
 				xmlWriter.close();
-				fileWriter.close();
 			}
 		} catch (Exception e) {
 			throw new RuntimeException(e);
@@ -139,6 +179,40 @@ public class TwitterSortApp {
 		result = scanner.next();
 		return result;
     }
+
+	private HashSet<Long> readTweets(
+			String tweetIdsFilename, 
+			StringBuilder startTarget)
+	throws FileNotFoundException, IOException 
+	{
+		HashSet<Long> fetchedTweetIds = new HashSet<Long>();
+		File tweetIdsFile = new File(tweetIdsFilename);
+		if ( ! tweetIdsFile.exists())
+		{
+			return fetchedTweetIds;
+		}
+		FileInputStream stream = new FileInputStream(tweetIdsFilename);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+		try
+		{
+			startTarget.append(reader.readLine());
+			String line;
+			do
+			{
+				line = reader.readLine();
+				if (line != null)
+				{
+					fetchedTweetIds.add(Long.decode(line));
+				}
+			}while (line != null);
+		}
+		finally
+		{
+			reader.close();
+		}
+		return fetchedTweetIds;
+	}
+
 	public String getSearchUrl() {
 		return searchUrl;
 	}
