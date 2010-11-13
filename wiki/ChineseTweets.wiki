@@ -1,0 +1,12 @@
+#summary Twitter updates in Chinese for reading practice
+#labels Chinese
+
+I've been looking for some Chinese text that I could sort through looking for sentences that only use characters I know. That way I could practice my reading without getting too frustrated by having to look up a ton of vocabulary. I realized that Twitter contains small chunks of text, so I got Google to find all the tweets in Chinese. Then I wrote a program to fetch the search results from Google, get the tweets from Twitter, and then find the ones that only use the 500 most frequently used characters. Here are some of my favourites so far:
+
+
+|| User || Tweet || My Translation ||
+|| [http://twitter.com/JingRuFans/status/29263814174 JingRuFans] || 買還是不買，這是個問題....Amazon Kindle.... || To buy or not to buy, that is the question... Amazon Kindle.... (This is my favourite so far.) ||
+|| [http://twitter.com/LeeHomOfficial/status/24286635846 LeeHomOfficial] || 生日快樂 Uncle Leslie... 太想念你了。 Happy Birthday Leslie... miss you so much. http://twitpic.com/2nrmp9 || This one is great, because it includes its own translation. Unfortunately, it appears that Leslie may have died, so I feel a bit awkward using this as reading practice. ||
+|| [http://twitter.com/at17at17/status/15032108965 at17at17] || 台灣的朋友，我們7月又來了`~~~` http://www.legacy.com.tw/program_detail.php?ln=tw&amp;BID=93 http://fb.me/yqwdeGhW || Taiwanese friends, we're coming again in July. (Looks like they're a band.) ||
+|| [http://twitter.com/happy1122/status/29176944927 happy1122] || @deception_tw 因為你還沒有小孩 || Because you still don't have kids. (I don't know the context for that one.) ||
+|| [http://twitter.com/teresaaub/status/27756324801 teresaaub] || @man720 無問題無問題, 有心有力...KEKE || Without question, you've got heart and you've got power. (I'm not really sure what this is about.) ||
