@@ -51,20 +51,51 @@ namespace CountDown
         private void timer_Tick(object sender, EventArgs e)
         {
             var diff = endTime - DateTime.Now;
-            timeRemaining.Text = diff.ToString();
-            if (diff.Minutes > 0)
+            timeRemaining.Text = String.Format(
+                "{0:00}:{1:00}:{2:00}", 
+                diff.TotalHours,
+                diff.Minutes,
+                diff.Seconds);
+            if (diff.TotalSeconds > 0)
             {
-                Text = String.Format("{0} minutes", diff.Minutes);
-            }
-            else if (diff.Seconds > 0)
-            {
-                Text = String.Format("{0} seconds", diff.Seconds);
+                Text = FormatRemainingTime(diff);
             }
             else
             {
-                Text = "Finished";
                 timeRemaining.Text = "0";
+                Text = "Finished";
                 StopCounter();
+            }
+        }
+
+        private string FormatRemainingTime(TimeSpan diff)
+        {
+            if (diff.Days > 0)
+            {
+                return String.Format("{0} days", diff.Days);
+            }
+            if (diff.Hours > 0)
+            {
+                return String.Format("{0} hours", diff.Hours);
+            }
+            if (diff.Minutes > 0)
+            {
+                return String.Format("{0} minutes", diff.Minutes);
+            }
+            return String.Format("{0:0} seconds", diff.TotalSeconds);
+        }
+
+        private void timeRemaining_TextChanged(object sender, EventArgs e)
+        {
+            TimeSpan diff;
+            bool isValid = TimeSpan.TryParse(timeRemaining.Text, out diff);
+            if (isValid)
+            {
+                Text = FormatRemainingTime(diff);
+            }
+            else
+            {
+                Text = "Count Down";
             }
         }
     }
