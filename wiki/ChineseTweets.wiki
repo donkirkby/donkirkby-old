@@ -6,6 +6,7 @@ I've been looking for some Chinese text that I could sort through looking for se
 
 || Rank || User || Tweet || My Translation ||
 || 209 || [http://twitter.com/Chanter0/status/26562459372 Chanter0] || 我在這裡!!! || Here I am!!! ||
+|| 238 || [http://twitter.com/randywei/status/3408650349576192 randywei] || @eyayo 你比較機車！！ || (機車 is Taiwanese slang for difficult to get along with.) You're more difficult to get along with. ||
 || 267 || [http://twitter.com/JingRuFans/status/29263814174 JingRuFans] || 買還是不買，這是個問題....Amazon Kindle.... || To buy or not to buy, that is the question... Amazon Kindle.... (This is my favourite so far.) ||
 || 303 || [http://twitter.com/wanszezit/status/3645710134 wanszezit] || 一個 UI 的設計過程 http://ff.im/-7o0A2 || A user interface designed by an engineer ||
 || 398 || [http://twitter.com/1_malaysia/status/29545308898 1_malaysia] || 想要的，不等於需要的！|| Wanted doesn't equal needed! ||
@@ -25,5 +26,6 @@ The rank column refers to the rank of the least common character used in each tw
 || 438 || [http://twitter.com/happy1122/status/29176944927 happy1122] || @deception_tw 因為你還沒有小孩 || Because you still don't have kids. (I don't know the context for that one.) ||
 || 443 || [http://twitter.com/lordcolus/status/27334006503 lordcolus] || @dahma XBOX 720 什麼時候會出？|| @dahma, when is the XBOX 720 coming out? ||
 || 453 || [http://twitter.com/UKobserverTW/status/8452842878 UKobserverTW] || 許多英國人說是英國最美的女人，Cheryl Cole。 http://bit.ly/93SXQf || Many British people say she's Britain's most beautiful woman: Cheryl Cole. ||
+|| 453 || [http://twitter.com/niwahoshi/status/5643492843851776 niwahoshi] || @Rosier0917 英文的會比較快嗎? || Can the English one go faster? (Rosier0917 had [http://twitter.com/Rosier0917/status/5633199854063616 tweeted] asking why the Japanese Twitter takes so long to load.) ||
 || 479 || [http://twitter.com/DesBear/status/28603100008 DesBear] || 不知道為什麼..開始聽一些英文歌了 || Don't know why, I've started listening to some English songs. ||
 || 498 || [http://twitter.com/amos31wu/status/777354022 amos31wu] || 我跟美國文學課的重要小說家Henry James生日同天耶。其實還有天才Leonardo da Vinci喔，哈哈！|| I have the same birthday as American literature's important novelist, Henry James. Not only that, but Leonardo da Vinci, ha ha! ||
