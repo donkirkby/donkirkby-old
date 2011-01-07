@@ -21,6 +21,16 @@ public class CharacterClassifier {
 //			add(UnicodeBlock.KANGXI_RADICALS);
 //			add(UnicodeBlock.IDEOGRAPHIC_DESCRIPTION_CHARACTERS);
 		
-		return chineseUnicodeBlocks.contains(UnicodeBlock.of(c));
+		UnicodeBlock block = UnicodeBlock.of(c);
+		return chineseUnicodeBlocks.contains(block);
+	}
+	
+	public boolean isJapanese(char c) {
+		Set<UnicodeBlock> japaneseUnicodeBlocks = new HashSet<UnicodeBlock>();
+		japaneseUnicodeBlocks.add(UnicodeBlock.KATAKANA);
+		japaneseUnicodeBlocks.add(UnicodeBlock.HIRAGANA);
+		
+		UnicodeBlock block = UnicodeBlock.of(c);
+		return japaneseUnicodeBlocks.contains(block);
 	}
 }

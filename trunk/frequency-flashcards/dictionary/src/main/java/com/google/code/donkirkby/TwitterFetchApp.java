@@ -28,6 +28,7 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import twitter4j.RateLimitStatus;
+import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
@@ -70,6 +71,7 @@ public class TwitterFetchApp {
     	
     	String lastTarget = fetchTweets(fetchedTweetIds, startTarget.toString());
 		
+    	
 		writeTweetIds(fetchedTweetIds, lastTarget, tweetIdsFilename);
     }
 
@@ -152,7 +154,7 @@ public class TwitterFetchApp {
 				xmlWriter.writeStartDocument(encoding, "1.0");
 				xmlWriter.writeStartElement("tweets");
 		    	//"url":"http://twitter.com/kaifulee/status/4695878440"
-		    	Pattern pattern = Pattern.compile("\"url\":\"[^\"]*/status/(\\d*)\"");
+		    	Pattern pattern = Pattern.compile("\"url\":\"([^\"]*/status/(\\d*))\"");
 		    	characterReader.open();
 				try
 				{
@@ -235,28 +237,45 @@ public class TwitterFetchApp {
 			
 			while (matcher.find() && remainingHits > 0) 
 			{
-				long statusId = Long.decode(matcher.group(1));
+				long statusId = Long.decode(matcher.group(2));
 				if ( ! fetchedTweetIds.contains(statusId))
 				{
+					String statusUrl = matcher.group(1);
 					fetchedTweetIds.add(statusId);
 					String text;
 					try {
-						text = twitter.showStatus(statusId).getText();
+						Status status = twitter.showStatus(statusId);
+						text = status.getText();
 						xmlWriter.writeStartElement("tweet");
 						xmlWriter.writeAttribute("id", Long.toString(statusId));
+						xmlWriter.writeAttribute("url", statusUrl);
 						//write id and maybe url
 						xmlWriter.writeCharacters(text);
 						xmlWriter.writeEndElement();
 						xmlWriter.flush();
+						remainingHits = 
+							status.getRateLimitStatus().getRemainingHits();
 					} catch (TwitterException e) {
-						if (e.getStatusCode() != Twitter.NOT_FOUND &&
-								e.getStatusCode() != Twitter.FORBIDDEN)
+						RateLimitStatus limitStatus = e.getRateLimitStatus();
+						remainingHits = 
+							limitStatus == null
+							? remainingHits
+							: limitStatus.getRemainingHits();
+						if (e.getStatusCode() == Twitter.NOT_FOUND ||
+								e.getStatusCode() == Twitter.FORBIDDEN)
 						{
-							throw new RuntimeException(e);
+							log.warn(
+									"Unable to retrieve " + statusUrl +
+									" response code " + e.getStatusCode());
+						}
+						else if (e.getStatusCode() == Twitter.BAD_REQUEST)
+						{
+							if (remainingHits != 0)
+							{
+								throw new RuntimeException(e);
+							}
 						}
 					}
-					//log.info("found status with rank " + rank + ": " + statusId + ": " + text);
-					remainingHits--;
 				}
 				resultCount++;
 			}
