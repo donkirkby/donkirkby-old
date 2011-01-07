@@ -4,38 +4,35 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.PrintWriter;
 
-import javax.xml.namespace.QName;
+import javax.xml.stream.FactoryConfigurationError;
 import javax.xml.stream.XMLInputFactory;
-import javax.xml.stream.XMLOutputFactory;
+import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamReader;
-import javax.xml.stream.XMLStreamWriter;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import twitter4j.Twitter;
 import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
 
 public class TwitterSortApp {
 	private static Log log = LogFactory.getLog(TwitterSortApp.class);
-	private static final String END_OF_INPUT = "\\Z";
 
+	private static String stateFile = "output/tweets/sortState.txt";
+	
 	private String searchUrl;
 	private RankFinder rankFinder;
 	private CharacterClassifier characterClassifier;
+	private BufferedReader consoleReader = 
+		new BufferedReader(new InputStreamReader(System.in));
+	private PrintWriter consoleWriter = new PrintWriter(System.out);
+
 	
     public static void main( String[] args )
     {
@@ -61,95 +58,142 @@ public class TwitterSortApp {
 	
     public void sortTweets() throws IOException, TwitterException
     {
-    	XMLStreamReader xmlReader;
-    	XMLStreamWriter xmlWriter;
-    	String encoding = "UTF-8";
 		try {
-			xmlReader = XMLInputFactory.newInstance().createXMLStreamReader(
-					new FileInputStream("output/tweets/tweets4.xml"), encoding);
-			xmlWriter = XMLOutputFactory.newInstance().createXMLStreamWriter(
-					new FileOutputStream("output/tweets/sortedTweets4.xml"), encoding);
-			try
+			int[] sortState = readSortState();
+			int fileIndex = sortState[0];
+			int tweetsToSkip = sortState[1];
+			do
 			{
-				xmlWriter.writeStartDocument(encoding, "1.0");
-				xmlWriter.writeStartElement("tweets");
-				
-				String statusId = null;
-				StringBuilder textBuilder = null;
-				while (xmlReader.hasNext())
-				{
-					int event = xmlReader.next();
-					if (event == XMLStreamReader.START_ELEMENT && 
-							xmlReader.getName().getLocalPart().equals("tweet"))
-					{
-						statusId = xmlReader.getAttributeValue(null, "id");
-						textBuilder = new StringBuilder();
-					}
-					if (event == XMLStreamReader.CHARACTERS && textBuilder != null)
-					{
-						textBuilder.append(xmlReader.getText());
-					}
-					if (event == XMLStreamReader.END_ELEMENT && textBuilder != null)
-					{
-		        		String text = textBuilder.toString();
-						int rank = maxRank(text);
-						if (rank < 500)
-						{
-							xmlWriter.writeStartElement("tweet");
-							xmlWriter.writeAttribute("id", statusId);
-							xmlWriter.writeAttribute("rank", Integer.toString(rank));
-							xmlWriter.writeCharacters(text);
-							xmlWriter.writeEndElement();
-						}
-						statusId = null;
-						textBuilder = null;
-					}
+				tweetsToSkip = sortFile(fileIndex, tweetsToSkip);
+				if (tweetsToSkip == 0) {
+					fileIndex++;
 				}
-				/*
-		    	//"url":"http://twitter.com/kaifulee/status/4695878440"
-		    	Twitter twitter = new TwitterFactory().getInstance();
-		    	String targets = "以二三四五十世是";
-		    	for (char target: targets.toCharArray())
-		    	{
-			    	int totalResultCount = 0;
-			    	for (int i = 0; i < 8; i++)
-			    	{
-				    	String result = getSearchPage(totalResultCount, target);
-				        Matcher matcher = pattern.matcher(result);
-				        int resultCount = 0;
-			
-			        	while (matcher.find()) 
-			        	{
-			        		long statusId = Long.decode(matcher.group(1));
-			        		String text = twitter.showStatus(statusId).getText();
-			        		int rank = maxRank(text);
-			        		xmlWriter.writeStartElement("tweet");
-			        		xmlWriter.writeAttribute("rank", Integer.toString(rank));
-			        		//write id and maybe url
-			        		xmlWriter.writeCharacters(text);
-			        		xmlWriter.writeEndElement();
-			        		//log.info("found status with rank " + rank + ": " + statusId + ": " + text);
-			        		resultCount++;
-			        	}
-			        	if (resultCount == 0)
-			        	{
-			        		log.error("After totalResultCount " + totalResultCount + result);
-			        	}
-			        	totalResultCount += resultCount;
-			        }
-		    	}*/
-		    	xmlWriter.writeEndElement();
-			}
-			finally
-			{
-				xmlWriter.close();
-			}
+			} while (tweetsToSkip == 0);
+			writeSortState(fileIndex, tweetsToSkip);
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
     }
 
-    private int maxRank(String text) {
+	private void writeSortState(int fileIndex, int tweetsToSkip) {
+		try
+		{
+			PrintWriter writer = new PrintWriter(new FileWriter(stateFile));
+			try
+			{
+				writer.println(fileIndex);
+				writer.println(tweetsToSkip);
+			}
+			finally
+			{
+				writer.close();
+			}
+		}
+		catch (IOException ex)
+		{
+			throw new RuntimeException(ex);
+		}
+		
+	}
+
+	// print out any "good" tweets in the requested file, skipping the first
+	// few tweets in the file (good or bad).
+	// return 0 if we should continue to the next file, or the number of tweets
+	// we've scanned so far in this file if it's time to quit. return -1 if
+	// the file doesn't exist.
+	private int sortFile(int fileIndex, int tweetsToSkip)
+			throws XMLStreamException, FactoryConfigurationError,
+			FileNotFoundException, IOException {
+		String encoding = "UTF-8";
+		String filename = "output/tweets/tweets" + fileIndex + ".xml";
+		if ( ! new File(filename).exists()) {
+			return -1;
+		}
+		XMLStreamReader xmlReader = 
+			XMLInputFactory.newInstance().createXMLStreamReader(
+				new FileInputStream(
+						filename), 
+						encoding);
+		try
+		{
+			String url = null;
+			StringBuilder textBuilder = null;
+			int tweetCount = 0;
+			while (xmlReader.hasNext())
+			{
+				int event = xmlReader.next();
+				if (event == XMLStreamReader.START_ELEMENT && 
+						xmlReader.getName().getLocalPart().equals("tweet"))
+				{
+					url = xmlReader.getAttributeValue(null, "url");
+					textBuilder = new StringBuilder();
+				}
+				if (event == XMLStreamReader.CHARACTERS && textBuilder != null)
+				{
+					textBuilder.append(xmlReader.getText());
+				}
+				if (event == XMLStreamReader.END_ELEMENT && textBuilder != null)
+				{
+					tweetCount++;
+					if (tweetCount > tweetsToSkip)
+					{
+			    		String text = textBuilder.toString();
+						int rank = maxRank(text);
+						if (0 < rank && rank < 500)
+						{
+							System.out.println(
+									"|| " + rank + " || [" + url + " ] || " + 
+									text + " ||  ||");
+							consoleWriter.println("[C]ontinue or (q)uit?");
+							consoleWriter.flush();
+							String line = consoleReader.readLine();
+							if (line == null ||
+									(line.length() != 0 && line.equalsIgnoreCase("Q")))
+							{
+								// User wants to quit.
+								return tweetCount;
+							}
+						}
+					}
+					textBuilder = null;
+				}
+			}
+		}
+		finally
+		{
+			xmlReader.close();
+		}
+		return 0; // next file, please.
+	}
+
+	// returns array with fileIndex, tweetsToSkip.
+    private int[] readSortState() {
+    	try {
+    		int[] result = new int[] {0, 0};
+    		if ( ! new File(stateFile).exists()) {
+    			return result;
+    		}
+			BufferedReader reader = new BufferedReader(new FileReader(stateFile));
+			try
+			{
+				result[0] = Integer.parseInt(reader.readLine());
+				result[1] = Integer.parseInt(reader.readLine());
+				return result;
+			}
+			finally
+			{
+				reader.close();
+			}
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException(e);
+		} catch (NumberFormatException e) {
+			throw new RuntimeException(e);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
+		}
+	}
+
+	private int maxRank(String text) {
     	int maxRank = 0;
     	for(char c: text.toCharArray())
     	{
@@ -161,56 +205,12 @@ public class TwitterSortApp {
 	    			maxRank = rank;
 	    		}
     		}
+    		else if (characterClassifier.isJapanese(c))
+    		{
+    			maxRank = Integer.MAX_VALUE;
+    		}
     	}
 		return maxRank;
-	}
-
-	private String getSearchPage(int start, char target) throws IOException
-    {
-		//http://www.javapractices.com/topic/TopicAction.do?Id=147
-		URL url = new URL(
-				searchUrl + "&start=" + start + 
-				"&q=site:twitter.com%20inurl:status%20" + target);
-		String result = null;
-		URLConnection connection = null;
-		connection = url.openConnection();
-		Scanner scanner = new Scanner(connection.getInputStream());
-		scanner.useDelimiter(END_OF_INPUT);
-		result = scanner.next();
-		return result;
-    }
-
-	private HashSet<Long> readTweets(
-			String tweetIdsFilename, 
-			StringBuilder startTarget)
-	throws FileNotFoundException, IOException 
-	{
-		HashSet<Long> fetchedTweetIds = new HashSet<Long>();
-		File tweetIdsFile = new File(tweetIdsFilename);
-		if ( ! tweetIdsFile.exists())
-		{
-			return fetchedTweetIds;
-		}
-		FileInputStream stream = new FileInputStream(tweetIdsFilename);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-		try
-		{
-			startTarget.append(reader.readLine());
-			String line;
-			do
-			{
-				line = reader.readLine();
-				if (line != null)
-				{
-					fetchedTweetIds.add(Long.decode(line));
-				}
-			}while (line != null);
-		}
-		finally
-		{
-			reader.close();
-		}
-		return fetchedTweetIds;
 	}
 
 	public String getSearchUrl() {
