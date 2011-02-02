@@ -25,6 +25,7 @@ I've been looking for some Chinese text that I could sort through looking for se
 
 The rank column refers to the rank of the least common character used in each tweet. Here are some more that aren't quite as entertaining:
 || 141 || [http://twitter.com/teresaaub/status/27756324801 teresaaub] || @man720 無問題無問題, 有心有力...KEKE || Without question, you've got heart and you've got power. (I'm not really sure what this is about.) ||
+|| 209 || [http://twitter.com/haojung_blogger/status/1476437607 haojung_blogger] || 這裡的人們都一樣 || People here are all the same. ||
 || 223 || [http://twitter.com/junbun/status/8505981956788224 junbun] || 不管有沒有位子，都應該去做理想中要做的事 || Whether or not there's an opportunity, you should pursue your dreams above all else. (That's my best guess. Anybody want to suggest an improvement?) ||
 || 343 || [http://twitter.com/yaksirius/status/20796791981 yaksirius] || @qiushuihan 我不認為這個國家數學水平好 || I don't believe this country's math proficiency is very high. ||
 || 338 || [http://twitter.com/stupid77/status/28862905521 stupid77] || 人一定要有自己的事業~ http://murmur.tw/stupid77/2819692 || I'm not sure whether this is "People should mind their own business," or "People should run their own business." ||
