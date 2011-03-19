@@ -82,8 +82,8 @@
 </item>
 <item id='_13'>
 <cat>Most common Chinese characters   61-  80 - English</cat>
-<Q>Write the character:&lt;br&gt;Taiwan</Q>
-<A>&lt;img src="stroke-images/0074.png"&gt;&lt;br&gt;tái&lt;br&gt;台湾 (台灣) Táiwān Taiwan</A>
+<Q>Write the character:&lt;br&gt;(classifier for vehicles or machines); platform; stage; terrace; stand; support; desk; station; broadcasting station; Taiwan (abbr.)</Q>
+<A>&lt;img src="stroke-images/0074.png"&gt;&lt;br&gt;traditional: 台 or 臺&lt;br&gt;tái&lt;br&gt;台湾 (台灣 or 臺灣) Táiwān Taiwan</A>
 </item>
 <item id='_14'>
 <cat>Most common Chinese characters   61-  80 - English</cat>
@@ -183,7 +183,7 @@
 <item id='_33'>
 <cat>Most common Chinese characters   61-  80 - Hanzi</cat>
 <Q>台</Q>
-<A>tái&lt;br&gt;Taiwan&lt;br&gt;台湾 (台灣) Táiwān Taiwan</A>
+<A>traditional: 台 or 臺&lt;br&gt;tái&lt;br&gt;(classifier for vehicles or machines); platform; stage; terrace; stand; support; desk; station; broadcasting station; Taiwan (abbr.)&lt;br&gt;台湾 (台灣 or 臺灣) Táiwān Taiwan</A>
 </item>
 <item id='_34'>
 <cat>Most common Chinese characters   61-  80 - Hanzi</cat>
@@ -214,6 +214,11 @@
 <cat>Most common Chinese characters   61-  80 - Hanzi</cat>
 <Q>道</Q>
 <A>dào&lt;br&gt;direction; way; method; road; path; principle; truth; reason; skill; method; Tao (of Taoism); a measure word; to say; to speak; to talk&lt;br&gt;道路 dàolù road; path; way</A>
+</item>
+<item id='_39b'>
+<cat>Most common Chinese characters  61- 80 - Traditional</cat>
+<Q>臺</Q>
+<A>simplified: 台&lt;br&gt;tái&lt;br&gt;(classifier for vehicles or machines); platform; stage; terrace; stand; support; desk; station; broadcasting station; Taiwan (abbr.)&lt;br&gt;台湾 (台灣 or 臺灣) Táiwān Taiwan</A>
 </item>
 <item id='_40'>
 <cat>Most common Chinese characters   61-  80 - Traditional</cat>
@@ -303,7 +308,7 @@
 <item id='_57'>
 <cat>Most common Chinese characters   61-  80 - Pinyin</cat>
 <Q>Write the character: tái&lt;br&gt;(Táiwān de tái)</Q>
-<A>&lt;img src="stroke-images/0074.png"&gt;&lt;br&gt;Taiwan&lt;br&gt;台湾 (台灣) Táiwān Taiwan</A>
+<A>&lt;img src="stroke-images/0074.png"&gt;&lt;br&gt;traditional: 台 or 臺&lt;br&gt;(classifier for vehicles or machines); platform; stage; terrace; stand; support; desk; station; broadcasting station; Taiwan (abbr.)&lt;br&gt;台湾 (台灣 or 臺灣) Táiwān Taiwan</A>
 </item>
 <item id='_58'>
 <cat>Most common Chinese characters   61-  80 - Pinyin</cat>

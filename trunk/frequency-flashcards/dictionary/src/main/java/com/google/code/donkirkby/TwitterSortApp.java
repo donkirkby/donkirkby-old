@@ -22,6 +22,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import twitter4j.TwitterException;
 
 public class TwitterSortApp {
+	private static final int MAXIMUM_LEARNED_RANK = 360;
+
 	private static Log log = LogFactory.getLog(TwitterSortApp.class);
 
 	private static String stateFile = "output/tweets/sortState.txt";
@@ -139,12 +141,14 @@ public class TwitterSortApp {
 					{
 			    		String text = textBuilder.toString();
 						int rank = maxRank(text);
-						if (0 < rank && rank < 500)
+						if (0 < rank && rank < MAXIMUM_LEARNED_RANK)
 						{
 							System.out.println(
 									"|| " + rank + " || [" + url + " ] || " + 
 									text + " ||  ||");
-							consoleWriter.println("[C]ontinue or (q)uit?");
+							consoleWriter.println(
+									"[C]ontinue or (q)uit after " + filename +
+									" tweet " + tweetCount + "?");
 							consoleWriter.flush();
 							String line = consoleReader.readLine();
 							if (line == null ||
@@ -158,6 +162,12 @@ public class TwitterSortApp {
 					textBuilder = null;
 				}
 			}
+		}
+		catch (Exception ex)
+		{
+			throw new RuntimeException(
+					"Error occurred reading file " + filename, 
+					ex);
 		}
 		finally
 		{
