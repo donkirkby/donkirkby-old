@@ -201,6 +201,7 @@ public class TwitterFetchApp {
 			String filename = "output/tweets/tweets" + i + ".xml";
 			if ( ! new File(filename).exists())
 			{
+				log.info("Writing to file " + filename);
 				return filename;
 			}
 			i++;
