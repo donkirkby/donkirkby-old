@@ -19,19 +19,18 @@ namespace WindowSettings
 
         private void CustomSplitterForm_Load(object sender, EventArgs e)
         {
-            if (Settings.Default.CustomWindowSettings != null)
-            {
-                Settings.Default.CustomWindowSettings.Restore(this, splitContainer1);
-            }
+            WindowSettings.Restore(
+                Settings.Default.CustomWindowSettings, 
+                this, 
+                splitContainer1);
         }
 
         private void CustomSplitterForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Settings.Default.CustomWindowSettings == null)
-            {
-                Settings.Default.CustomWindowSettings = new WindowSettings();
-            }
-            Settings.Default.CustomWindowSettings.Record(this, splitContainer1);
+            Settings.Default.CustomWindowSettings = WindowSettings.Record(
+                Settings.Default.CustomWindowSettings,
+                this, 
+                splitContainer1);
         }
     }
 }
