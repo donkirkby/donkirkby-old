@@ -7,4 +7,4 @@ You can [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowT
 
 http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png
 
-If you play the game, please tweet about it using the #`TimeTow` hash tag or send a note to donkirkby `[`at`]` google `[`dot`]` com. You can link to this page at [http://tinyurl.com/timetow tinyurl.com/timetow].
+If you play the game, please tweet about it using the [http://twitter.com/#!/search?q=%23TimeTow #TimeTow] hash tag or send a note to donkirkby `[`at`]` google `[`dot`]` com. You can link to this page at [http://tinyurl.com/timetow tinyurl.com/timetow].
