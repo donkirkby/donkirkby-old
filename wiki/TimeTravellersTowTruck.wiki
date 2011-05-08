@@ -1,4 +1,5 @@
 #summary Guide your rescuers to find you in time.
+#labels Featured
 
 = The Time Traveller's Tow Truck =
 == A print-and-play game for history enthusiasts ==
