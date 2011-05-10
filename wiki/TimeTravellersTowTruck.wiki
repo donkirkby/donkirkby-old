@@ -3,8 +3,10 @@
 
 = The Time Traveller's Tow Truck =
 == A print-and-play game for history enthusiasts ==
-You can [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.html read the rules] or print out the [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.pdf PDF version]. The game is is licensed under a [http://creativecommons.org/licenses/by-nc-sa/3.0/ Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License].
-
-http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png
+You can [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.html read the rules] or print out the [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.pdf PDF version]. 
 
 If you play the game, please tweet about it using the [http://twitter.com/#!/search?q=%23TimeTow #TimeTow] hash tag or send a note to donkirkby `[`at`]` google `[`dot`]` com. You can link to this page at [http://tinyurl.com/timetow tinyurl.com/timetow].
+
+The game is is licensed under a [http://creativecommons.org/licenses/by-nc-sa/3.0/ Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License].
+
+http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png
