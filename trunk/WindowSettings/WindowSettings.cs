@@ -1,282 +1,264 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
 
 namespace WindowSettings
 {
-	/* Author: Don Kirkby http://donkirkby.googlecode.com/
-	 * Released under the MIT licence http://www.opensource.org/licenses/mit-license.php
-	 * Installation:
-	 * - Copy this file into your project.
-	 * - Change the namespace above to match your project's namespace.
-	 * - Compile your project.
-	 * - Edit the project properties using the Project Properties... item in 
-	 * the project menu.
-	 * - Go to the settings tab.
-	 * - Add a new setting for each form whose position you want to save, and 
-	 * type a name for it like MainFormPosition.
-	 * - In the type column, select Browse... from the bottom of the list.
-	 * - You won't see WindowSettings in the list, but you can just type the
-	 * namespace and class name, and click OK. For example, if you changed this
-	 * class's namespace to UltimateApp, then you would type 
-	 * UltimateApp.WindowSettings and click OK.
-	 * - Add Load and FormClosing event handlers to any forms you want to save.
-	 * See the forms in this project for example code.
-	 * - Add a call to Settings.Default.Save() somewhere in your shutdown code.
-	 * The FormClosed event of your main form is a good spot. If you have 
-	 * subforms open, you may have to explicitly call their FormClosing events 
-	 * when shutting down the app, because they're not called by default.
-	 */
+    /* Author: Don Kirkby http://donkirkby.googlecode.com/
+     * Released under the MIT licence http://www.opensource.org/licenses/mit-license.php
+     * Installation:
+     * - Copy this file into your project.
+     * - Change the namespace above to match your project's namespace.
+     * - Compile your project.
+     * - Edit the project properties using the Project Properties... item in 
+     * the project menu.
+     * - Go to the settings tab.
+     * - Add a new setting for each form whose position you want to save, and 
+     * type a name for it like MainFormPosition.
+     * - In the type column, select Browse... from the bottom of the list.
+     * - You won't see WindowSettings in the list, but you can just type the
+     * namespace and class name, and click OK. For example, if you changed this
+     * class's namespace to UltimateApp, then you would type 
+     * UltimateApp.WindowSettings and click OK.
+     * - Add Load and FormClosing event handlers to any forms you want to save.
+     * See the forms in this project for example code.
+     * - Add a call to Settings.Default.Save() somewhere in your shutdown code.
+     * The FormClosed event of your main form is a good spot. If you have 
+     * subforms open, you may have to explicitly call their FormClosing events 
+     * when shutting down the app, because they're not called by default.
+     */
     /// <summary>
-    /// Serializes the location, size, and other state, of several controls to 
-    /// a single application setting. Then you can just create a 
+    /// Serializes a window's location, size, state, and any splitter 
+    /// positions to a single application setting. Then you can just create a 
     /// setting of this type for each form in the application, save on close, 
     /// and restore on load.
     /// </summary>
-	[Serializable()]
-	public class WindowSettings
-	{
-		public ControlSetting[] settings { get; set; }
+    [Serializable()]
+    public class WindowSettings
+    {
+        public Point Location { get; set; }
+        public Size Size { get; set; }
+        public FormWindowState WindowState { get; set; }
+        public int[] SplitterDistances { get; set; }
+        public int[] SplitterSizes { get; set; }
+
+        public WindowSettings()
+        {
+            // default to an invalid location
+            Location = new Point(Int32.MinValue, Int32.MinValue);
+        }
 
         /// <summary>
-        /// Record the position and state of several controls.
+        /// Record a form's position and that of several splitters.
         /// </summary>
         /// <param name="windowSettings">Where the settings should be recorded,
         /// or null.</param>
-        /// <param name="controls">The controls to record. You can change 
-        /// some entries to null if you no longer use those positions in the 
+        /// <param name="form">The form to record. May be null if you just want 
+        /// to record splitter positions.</param>
+        /// <param name="splitters">The splitters to record. You can change 
+        /// some entries to null if you no longer use that position in the 
         /// list.</param>
         /// <returns>The windowSettings parameter, or a new WindowSettings 
         /// object if that was null.</returns>
         public static WindowSettings Record(
-            WindowSettings windowSettings,
-            params Control[] controls)
+            WindowSettings windowSettings, 
+            Form form, 
+            params SplitContainer[] splitters)
         {
             if (windowSettings == null)
             {
                 windowSettings = new WindowSettings();
             }
-            windowSettings.Record(controls);
+            windowSettings.Record(form, splitters);
             return windowSettings;
         }
 
         /// <summary>
-        /// Record the position and state of several controls.
+        /// Record a form's position and that of several splitters.
         /// </summary>
-        /// <param name="controls">The controls to record. You can change 
-        /// some entries to null if you no longer use those positions in the 
+        /// <param name="form">The form to record. May be null if you just want 
+        /// to record splitter positions.</param>
+        /// <param name="splitters">The splitters to record. You can change 
+        /// some entries to null if you no longer use that position in the 
         /// list.</param>
-        public void Record(params Control[] controls)
-		{
-			settings = new ControlSetting[controls.Length];
+        public void Record(Form form, params SplitContainer[] splitters)
+        {
+            bool shouldRecordSplitters;
+            if (form == null)
+            {
+                shouldRecordSplitters = false;
+                foreach (var splitter in splitters)
+                {
+                    if (splitter != null)
+                    {
+                        var formState = splitter.FindForm().WindowState;
+                        shouldRecordSplitters = 
+                            formState != FormWindowState.Minimized;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                switch (form.WindowState)
+                {
+                    case FormWindowState.Maximized:
+                        RecordWindowPosition(form.RestoreBounds);
+                        shouldRecordSplitters = true;
+                        break;
+                    case FormWindowState.Normal:
+                        shouldRecordSplitters =
+                            RecordWindowPosition(form.Bounds);
+                        break;
+                    default:
+                        // Don't record anything when closing while minimized.
+                        return;
+                }
+                WindowState = form.WindowState;
+            }
 
-			int i = 0;
-			foreach (Control c in controls)
-			{
-				ControlSetting s = ControlSetting.Create(c);
-				if (s != null)
-				{
-					settings[i] = s;
-					s.Save(c);
-				}
-				++i;
-			}
-		}
+            if (shouldRecordSplitters)
+            {
+                RecordSplitters(splitters);
+            }
+        }
 
         /// <summary>
-        /// Restore the position and state of several controls.
+        /// Restore a form's position and that of several splitters.
         /// </summary>
         /// <param name="windowSettings">Holds the settings to restore.</param>
-        /// <param name="controls">The controls to restore. You can change 
-        /// some entries to null if you no longer use those positions in the 
+        /// <param name="form">The form to restore. May be null if you just want 
+        /// to record splitter positions.</param>
+        /// <param name="splitters">The splitters to restore. You can change 
+        /// some entries to null if you no longer use that position in the 
         /// list.</param>
         public static void Restore(
             WindowSettings windowSettings,
-            params Control[] controls)
+            Form form,
+            params SplitContainer[] splitters)
         {
             if (windowSettings != null)
             {
-                windowSettings.Restore(controls);
+                windowSettings.Restore(form, splitters);
             }
         }
 
         /// <summary>
-        /// Restore the position and state of several controls.
+        /// Restore a form's position and that of several splitters.
         /// </summary>
-        /// <param name="controls">The controls to restore. You can change 
-        /// some entries to null if you no longer use those positions in the 
+        /// <param name="form">The form to restore. May be null if you just want 
+        /// to record splitter positions.</param>
+        /// <param name="splitters">The splitters to restore. You can change 
+        /// some entries to null if you no longer use that position in the 
         /// list.</param>
-        public void Restore(params Control[] controls)
-		{
-			if (settings != null)
-			{
-				for (int i = 0; i < controls.Length && i < settings.Length; i++)
-				{
-					Control control = controls[i];
-					ControlSetting setting = settings[i];
-					if (control != null &&
-						setting != null &&
-						setting.IsOf(control))
-					{
-						setting.Restore(control);
-					}
-				}
-			}
-		}
-
-        [Serializable()]
-        [System.Xml.Serialization.XmlInclude(typeof(FormSetting))]
-        [System.Xml.Serialization.XmlInclude(typeof(SplitterSetting))]
-        public abstract class ControlSetting
+        public void Restore(Form form, params SplitContainer[] splitters)
         {
-            public abstract void Save(Control control);
-            public abstract void Restore(Control control);
-            public abstract bool IsOf(Control control);
-
-            // Little factory - add new types here
-            public static ControlSetting Create(Control c)
+            if (form == null)
             {
-                if (c is Form) return new FormSetting();
-                else if (c is SplitContainer) return new SplitterSetting();
-                else return null;
+                RestoreSplitters(splitters);
+            }
+            else if (IsOnScreen(Location, Size))
+            {
+                form.Location = Location;
+                form.Size = Size;
+                form.WindowState = WindowState;
+                RestoreSplitters(splitters);
+            }
+            else
+            {
+                form.WindowState = WindowState;
             }
         }
 
-        [Serializable()]
-        public class FormSetting : ControlSetting
+        private void RestoreSplitters(SplitContainer[] splitters)
         {
-            public Point Location { get; set; }
-            public Size Size { get; set; }
-            public FormWindowState WindowState { get; set; }
-
-            public override void Save(Control control)
+            for (
+                int i = 0; 
+                i < splitters.Length && 
+                SplitterDistances != null &&
+                i < SplitterDistances.Length; 
+                i++)
             {
-                Form form = control as Form;
-                if (form != null)
+                var splitter = splitters[i];
+                if (splitter == null)
                 {
-                    switch (form.WindowState)
-                    {
-                        case FormWindowState.Maximized:
-                            RecordWindowPosition(form.RestoreBounds);
-                            break;
-                        case FormWindowState.Normal:
-                            RecordWindowPosition(form.Bounds);
-                            break;
-                        default:
-                            // Don't record anything when closing while minimized.
-                            return;
-                    }
-                    WindowState = form.WindowState;
+                    continue;
                 }
-            }
-
-            public override void Restore(Control control)
-            {
-                Form form = control as Form;
-                if (form != null)
+                int splitterDistance = SplitterDistances[i];
+                if (SplitterSizes != null)
                 {
-                    form.WindowState = WindowState;
-                    form.Location = Location;
-                    form.Size = Size;
-                    Debug.WriteLine(String.Format(
-                        "Restore: Location: {0}, Size: {1}", 
-                        Location, 
-                        Size));
+                    splitterDistance =
+                        splitterDistance * GetSplitterSize(splitter) / SplitterSizes[i];
                 }
-            }
-
-            public override bool IsOf(Control control)
-            {
-                return control is Form;
-            }
-
-            private bool RecordWindowPosition(Rectangle bounds)
-            {
-                bool isOnScreen = IsOnScreen(bounds.Location, bounds.Size);
-                if (isOnScreen)
+                int splitterSize = GetSplitterSize(splitter);
+                bool isDistanceLegal =
+                    splitter.Panel1MinSize <= splitterDistance
+                    && splitterDistance <= splitterSize - splitter.Panel2MinSize;
+                if (isDistanceLegal)
                 {
-                    Location = bounds.Location;
-                    Size = bounds.Size;
-                    Debug.WriteLine(String.Format(
-                        "Save: Location: {0}, Size: {1}", 
-                        Location, 
-                        Size));
+                    splitter.SplitterDistance = splitterDistance;
                 }
-                else
-                {
-                    Debug.WriteLine("Save: Not on screen!");
-                }
-                return isOnScreen;
-            }
-
-            private bool IsOnScreen(Point location, Size size)
-            {
-                return IsOnScreen(location) && IsOnScreen(location + size);
-            }
-
-            private bool IsOnScreen(Point location)
-            {
-                foreach (var screen in Screen.AllScreens)
-                {
-                    Rectangle workingArea = new Rectangle(
-                        screen.WorkingArea.Location,
-                        screen.WorkingArea.Size);
-                    workingArea.Inflate(1, 1);
-                    if (workingArea.Contains(location))
-                    {
-                        return true;
-                    }
-                }
-                return false;
             }
         }
 
-        [Serializable()]
-        public class SplitterSetting : ControlSetting
+        private static int GetSplitterSize(SplitContainer splitter)
         {
-            public int distance { get; set; }
-            public int size { get; set; }
+            int splitterSize =
+                splitter.Orientation == Orientation.Vertical
+                ? splitter.Width
+                : splitter.Height;
+            return splitterSize;
+        }
 
-            public override void Save(Control control)
+        private bool RecordWindowPosition(Rectangle bounds)
+        {
+            bool isOnScreen = IsOnScreen(bounds.Location, bounds.Size);
+            if (isOnScreen)
             {
-                SplitContainer splitContainer = control as SplitContainer;
-                if (splitContainer != null)
+                Location = bounds.Location;
+                Size = bounds.Size;
+            }
+            return isOnScreen;
+        }
+
+        private void RecordSplitters(SplitContainer[] splitters)
+        {
+            SplitterDistances = new int[splitters.Length];
+            SplitterSizes = new int[splitters.Length];
+            for (int i = 0; i < splitters.Length; i++)
+            {
+                if (splitters[i] != null)
                 {
-                    distance = splitContainer.SplitterDistance;
-                    size = GetSplitterSize(splitContainer);
+                    SplitterDistances[i] = splitters[i].SplitterDistance;
+                    SplitterSizes[i] = GetSplitterSize(splitters[i]);
                 }
-            }
-
-            public override void Restore(Control control)
-            {
-                SplitContainer splitter = control as SplitContainer;
-                if (splitter != null)
-                {
-                    int curSplitterSize = GetSplitterSize(splitter);
-                    int splitterDistance = distance * curSplitterSize / size;
-                    if (splitter.Panel1MinSize <= splitterDistance &&
-                        splitterDistance <= curSplitterSize - splitter.Panel2MinSize)
-                    {
-                        splitter.SplitterDistance = splitterDistance;
-                    }
-                }
-            }
-
-            public override bool IsOf(Control control)
-            {
-                return control is SplitContainer;
-            }
-
-            private static int GetSplitterSize(SplitContainer splitter)
-            {
-                int splitterSize =
-                    splitter.Orientation == Orientation.Vertical
-                    ? splitter.Width
-                    : splitter.Height;
-                return splitterSize;
             }
         }
+
+        private bool IsOnScreen(Point location, Size size)
+        {
+            return IsOnScreen(location) && IsOnScreen(location + size);
+        }
+
+        private bool IsOnScreen(Point location)
+        {
+            foreach (var screen in Screen.AllScreens)
+            {
+                Rectangle workingArea = new Rectangle(
+                    screen.WorkingArea.Location, 
+                    screen.WorkingArea.Size);
+                workingArea.Inflate(1, 1);
+                if (workingArea.Contains(location))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
     }
 }
