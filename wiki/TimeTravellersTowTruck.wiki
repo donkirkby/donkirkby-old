@@ -5,7 +5,7 @@
 == A print-and-play game for history enthusiasts ==
 You can [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.html read the rules] or print out the [http://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.pdf PDF version]. 
 
-If you play the game, please tweet about it using the [http://twitter.com/#!/search?q=%23TimeTow #TimeTow] hash tag or send a note to donkirkby `[`at`]` google `[`dot`]` com. You can link to this page at [http://tinyurl.com/timetow tinyurl.com/timetow].
+If you play the game, please tweet about it using the [http://twitter.com/#!/search?q=%23TimeTow #TimeTow] hash tag or send a note to donkirkby `[`at`]` google `[`dot`]` com. You can link to this page at [http://tinyurl.com/timetow tinyurl.com/timetow]. Once you've tried a couple of rescues, both teams can rescue in parallel. Just take turns giving clues. That way each agent can think of the next clue while the other team is choosing a year to jump to.
 
 The game is is licensed under a [http://creativecommons.org/licenses/by-nc-sa/3.0/ Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License].
 
