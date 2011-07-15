@@ -139,6 +139,60 @@ namespace SampleTest
             }
         }
 
+        /// <summary>
+        /// Add a new thread to the set during the test. Useful for receiving
+        /// multithreaded events. See the ResponderThread() method for details
+        /// on what you must do in your new thread to register with the ticker.
+        /// </summary>
+        [Test]
+        public void SeparateThread()
+        {
+            TestFramework.RunOnce(new SeparateThreads());
+        }
+
+        private class SeparateThreads : WaiterTestThreads
+        {
+            [TestThread]
+            public void RequesterThread()
+            {
+                // fire a background thread for the responder.
+                Action responder = ResponderThread;
+                responder.BeginInvoke(null, null);
+
+                WaitForTick(2);
+                int response1 = waiter.Request(27);
+                int response2 = waiter.Request(28);
+                Assert.AreEqual(
+                    54,
+                    response1,
+                    "response 1");
+                Assert.AreEqual(
+                    55,
+                    response2,
+                    "response 2");
+                AssertTick(2);
+            }
+
+            // Not a test thread!
+            private void ResponderThread()
+            {
+                // IMPORTANT! The first thing you have to do is call 
+                // WaitForTick(). Tick zero is acceptable. If you don't do 
+                // this, the framework doesn't know about this thread and
+                // won't wait for it to block before advancing the tick.
+                WaitForTick(1);
+
+                waiter.ReceiveResponse(54);
+                waiter.ReceiveResponse(55);
+                AssertTick(1);
+
+                // IMPORTANT! The last thing you have to do is call
+                // WaitForTick() with a int.MaxValue. This keeps
+                // your thread alive until the end of the test run.
+                WaitForTick(int.MaxValue);
+            }
+        }
+
         private class WaiterTestThreads : MultithreadedTestCase
         {
             protected Waiter waiter;
