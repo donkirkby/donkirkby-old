@@ -30,6 +30,10 @@ namespace TickingTest
                     "{0} waiting for tick {1}",
                     Thread.CurrentThread.Name,
                     tick);
+                if ( ! threadTickRequests.ContainsKey(Thread.CurrentThread))
+                {
+                    AddCurrentThread();
+                }
                 threadTickRequests[Thread.CurrentThread] = tick;
                 while (currentTick < tick && !isBlocked)
                 {

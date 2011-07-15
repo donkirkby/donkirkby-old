@@ -14,8 +14,8 @@ namespace SampleTest
             ILog log = LogManager.GetLogger(typeof(Program));
             log.Info("Starting test.");
 
-            var test = new BlockingTest();
-            test.Blocking();
+            var test = new WaiterTest();
+            test.SeparateThread();
         }
     }
 }
