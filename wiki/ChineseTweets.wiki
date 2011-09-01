@@ -41,7 +41,7 @@ The rank column refers to the rank of the least common character used in each tw
 
 
 || 141 || [http://twitter.com/teresaaub/status/27756324801 teresaaub] || @man720 無問題無問題, 有心有力...KEKE || Without question, you've got heart and you've got power. (I'm not really sure what this is about.) ||
-|| 160 || [http://twitter.com/tintin0108/status/52546109163315200 tintin0108] || 相同的事情,請不要在發生了 || If it's all the same to you, please don't let it happen. (I'm not really sure about this translation.) ||
+|| 160 || [http://twitter.com/tintin0108/status/52546109163315200 tintin0108] || 相同的事情,請不要在發生了 || This unpleasantness, please don't let it happen again. ||
 || 199 || [http://twitter.com/nofour/status/29559607565 nofour] || iOS 4.2 GM @ 3GS 感覺上沒有什麼大分別 || iOS 4.2 GM @ 3GS doesn't feel like there's a big difference. ||
 || 209 || [http://twitter.com/haojung_blogger/status/1476437607 haojung_blogger] || 這裡的人們都一樣 || People here are all the same. ||
 || 223 || [http://twitter.com/junbun/status/8505981956788224 junbun] || 不管有沒有位子，都應該去做理想中要做的事 || Whether or not there's an opportunity, you should pursue your dreams above all else. (That's my best guess. Anybody want to suggest an improvement?) ||
