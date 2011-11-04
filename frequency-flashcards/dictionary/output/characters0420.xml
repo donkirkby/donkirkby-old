@@ -47,8 +47,8 @@
 </item>
 <item id='_6'>
 <cat>Most common Chinese characters  401- 420 - English</cat>
-<Q>Write the character:&lt;br&gt;1: surname; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;2: horse; horse chess piece</Q>
-<A>&lt;img src="stroke-images/0407.png"&gt;&lt;br&gt;traditional: 馬&lt;br&gt;1: Mǎ 2: mǎ&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately 马上 (馬上) mǎshàng at once; right away; immediately</A>
+<Q>Write the character:&lt;br&gt;horse; horse chess piece; surname; abbr. for Malaysia</Q>
+<A>&lt;img src="stroke-images/0407.png"&gt;&lt;br&gt;traditional: 馬&lt;br&gt;mǎ&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
 </item>
 <item id='_7'>
 <cat>Most common Chinese characters  401- 420 - English</cat>
@@ -57,7 +57,7 @@
 </item>
 <item id='_8'>
 <cat>Most common Chinese characters  401- 420 - English</cat>
-<Q>Write the character:&lt;br&gt;1: take part in; participate; join; attend; to join; unequal; varied; irregular; to counsel; uneven; not uniform; abbr. for 參議院|参议院 Senate, Upper House&lt;br&gt;2: ginseng</Q>
+<Q>Write the character:&lt;br&gt;1: take part in; participate; join; attend; to join; unequal; varied; irregular; to counsel; uneven; not uniform; abbr. for Senate, Upper House&lt;br&gt;2: ginseng</Q>
 <A>&lt;img src="stroke-images/0409.png"&gt;&lt;br&gt;traditional: 參&lt;br&gt;1: cān 2: shēn&lt;br&gt;参加 (參加) cānjīa to participate; to take part; to join 海参 (海參) hǎishēn sea cucumber</A>
 </item>
 <item id='_9'>
@@ -148,7 +148,7 @@
 <item id='_26'>
 <cat>Most common Chinese characters  401- 420 - Hanzi</cat>
 <Q>马</Q>
-<A>traditional: 馬&lt;br&gt;1: Mǎ 2: mǎ&lt;br&gt;1: surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;2: horse; horse chess piece&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately 马上 (馬上) mǎshàng at once; right away; immediately</A>
+<A>traditional: 馬&lt;br&gt;mǎ&lt;br&gt;horse; horse chess piece; surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
 </item>
 <item id='_27'>
 <cat>Most common Chinese characters  401- 420 - Hanzi</cat>
@@ -228,7 +228,7 @@
 <item id='_42'>
 <cat>Most common Chinese characters  401- 420 - Traditional</cat>
 <Q>馬</Q>
-<A>simplified: 马&lt;br&gt;1: Mǎ 2: mǎ&lt;br&gt;1: surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;2: horse; horse chess piece&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately 马上 (馬上) mǎshàng at once; right away; immediately</A>
+<A>simplified: 马&lt;br&gt;mǎ&lt;br&gt;horse; horse chess piece; surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
 </item>
 <item id='_43'>
 <cat>Most common Chinese characters  401- 420 - Traditional</cat>
@@ -295,15 +295,10 @@
 <Q>Write the character: xiàn&lt;br&gt;(zhíxiàn de xiàn)</Q>
 <A>线 (strokes unavailable)&lt;br&gt;traditional: 線&lt;br&gt;thread; string; wire; line&lt;br&gt;直线 (直線) zhíxiàn straight line</A>
 </item>
-<item id='_56'>
-<cat>Most common Chinese characters  401- 420 - Pinyin</cat>
-<Q>Write the character: Mǎ&lt;br&gt;(mǎshàng de Mǎ)</Q>
-<A>&lt;img src="stroke-images/0407.png"&gt;&lt;br&gt;traditional: 馬&lt;br&gt;surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
-</item>
 <item id='_57'>
 <cat>Most common Chinese characters  401- 420 - Pinyin</cat>
 <Q>Write the character: mǎ&lt;br&gt;(mǎshàng de mǎ)</Q>
-<A>&lt;img src="stroke-images/0407.png"&gt;&lt;br&gt;traditional: 馬&lt;br&gt;horse; horse chess piece&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
+<A>&lt;img src="stroke-images/0407.png"&gt;&lt;br&gt;traditional: 馬&lt;br&gt;horse; horse chess piece; surname Ma; abbr. for Malaysia 馬來西亞|马来西亚&lt;br&gt;马上 (馬上) mǎshàng at once; right away; immediately</A>
 </item>
 <item id='_58'>
 <cat>Most common Chinese characters  401- 420 - Pinyin</cat>
@@ -369,11 +364,6 @@
 <cat>Most common Chinese characters  401- 420 - Pinyin</cat>
 <Q>Write the character: ér&lt;br&gt;(értóng de ér)</Q>
 <A>&lt;img src="stroke-images/0418.png"&gt;&lt;br&gt;traditional: 兒&lt;br&gt;son&lt;br&gt;儿童 (兒童) értóng child</A>
-</item>
-<item id='_71'>
-<cat>Most common Chinese characters  401- 420 - Pinyin</cat>
-<Q>Write the character: &lt;br&gt;(zhèr de )</Q>
-<A>&lt;img src="stroke-images/0418.png"&gt;&lt;br&gt;traditional: 兒&lt;br&gt;non-syllabic diminutive suffix; retroflex final&lt;br&gt;这儿 (這兒) zhèr here</A>
 </item>
 <item id='_72'>
 <cat>Most common Chinese characters  401- 420 - Pinyin</cat>
