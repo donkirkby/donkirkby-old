@@ -22,7 +22,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import twitter4j.TwitterException;
 
 public class TwitterSortApp {
-	private static final int MAXIMUM_LEARNED_RANK = 360;
+	private static final int MAXIMUM_LEARNED_RANK = 420;
 
 	private static Log log = LogFactory.getLog(TwitterSortApp.class);
 
