@@ -262,14 +262,14 @@ public class TwitterFetchApp {
 							limitStatus == null
 							? remainingHits
 							: limitStatus.getRemainingHits();
-						if (e.getStatusCode() == Twitter.NOT_FOUND ||
-								e.getStatusCode() == Twitter.FORBIDDEN)
+						if (e.getStatusCode() == TwitterException.NOT_FOUND ||
+								e.getStatusCode() == TwitterException.FORBIDDEN)
 						{
 							log.warn(
 									"Unable to retrieve " + statusUrl +
 									" response code " + e.getStatusCode());
 						}
-						else if (e.getStatusCode() == Twitter.BAD_REQUEST)
+						else if (e.getStatusCode() == TwitterException.BAD_REQUEST)
 						{
 							if (remainingHits != 0)
 							{

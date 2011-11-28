@@ -74,7 +74,6 @@ public class DictionaryApp
 		strokeImageFacade = new StrokeImageFacade();
 		List<CharacterSummary> summaries = new ArrayList<CharacterSummary>();
 		
-		int numCardsInDeck = 0;
 		int totalNumCards = 0;
 		int totalNumCharacters = 0;
 		int totalNumWords = 0;
@@ -134,13 +133,11 @@ public class DictionaryApp
 				int numCards = countCards(summary);
 				totalNumCards += numCards;
 				totalNumCharacters++;
-				numCardsInDeck += numCards;
 				if (deckSize > 0 && (rank % deckSize == 0))
 				{
 					int numWordCards = writeDeck(summaries);
 					totalNumWords += numWordCards;
 					totalNumCards += numWordCards;
-					numCardsInDeck = 0;
 					summaries.clear();
 				}
 			}
@@ -576,7 +573,6 @@ public class DictionaryApp
 		
 		CharacterSummary summary = new CharacterSummary();
 		summary.allEntries = characterList;
-		summary.words = wordLists;
 		summary.strokeOrderData = strokeOrderData;
 		EntryValue summaryEntry = new EntryValue();
 		EntryValue firstEntry = characterList.get(0);
@@ -640,7 +636,6 @@ public class DictionaryApp
 		EntryValue entry;
 		String samples;
 		List<EntryValue> allEntries;
-		List<List<EntryValue>> words;
 		String strokeOrderData;
 	}
 

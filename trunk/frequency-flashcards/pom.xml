@@ -11,6 +11,7 @@
 		<module>stroke-img</module>
 		<module>dictionary</module>
 		<module>frequency</module>
+		<module>sentence-rank</module>
 	</modules>
 	<build>
 		<plugins>
