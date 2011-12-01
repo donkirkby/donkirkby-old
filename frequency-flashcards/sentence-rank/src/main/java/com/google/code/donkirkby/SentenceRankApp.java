@@ -1,6 +1,9 @@
 package com.google.code.donkirkby;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -38,27 +41,30 @@ public class SentenceRankApp {
 			rankFinder.load();
 			CharacterClassifier classifier = new CharacterClassifier();
 
+			ArrayList<Sentence> sentences = new ArrayList<Sentence>();
 			Resource sentenceResource =
 					new ClassPathResource("/sentences.csv");
 			CsvReader csvReader = new CsvReader(
 					sentenceResource.getInputStream(), 
 					Charset.forName("utf8"));
+			
 			try
 			{
-				int i = 0;
 				csvReader.setDelimiter('\t');
-				while (csvReader.readRecord() && i < 100)
+				while (csvReader.readRecord() && sentences.size() < 100)
 				{
 					String language = csvReader.get(1);
 					if (language.equals("cmn"))
 					{
-						String sentence = csvReader.get(2);
-						String id = csvReader.get(0);
-						int maxRank = rankFinder.maxRank(sentence, classifier);
+						String text = csvReader.get(2);
+						int maxRank = rankFinder.maxRank(text, classifier);
 						if (maxRank < MAX_RANK)
 						{
-							System.out.println(sentence + " " + maxRank + " " + id);
-							i++;
+							Sentence sentence = new Sentence();
+							sentence.setText(text);
+							sentence.setId(csvReader.get(0));
+							sentence.setRank(maxRank);
+							sentences.add(sentence);
 						}
 					}
 				}
@@ -66,6 +72,10 @@ public class SentenceRankApp {
 			finally
 			{
 				csvReader.close();
+			}
+			Collections.sort(sentences);
+			for (Sentence sentence: sentences) {
+				System.out.println(sentence.getText() + " " + sentence.getRank() + " " + sentence.getId());
 			}
 			
 			log.info("Success");
