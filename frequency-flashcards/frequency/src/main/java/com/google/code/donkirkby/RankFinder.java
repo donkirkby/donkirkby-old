@@ -112,4 +112,24 @@ public class RankFinder {
 		return wordRanks.containsKey(word);
 	}
 
+	public int maxRank(String text, CharacterClassifier classifier) {
+		int maxRank = 0;
+		for(char c: text.toCharArray())
+		{
+			if (classifier.isChinese(c))
+			{
+				int rank = getCharacterRank(String.valueOf(c));
+	    		if (rank > maxRank)
+	    		{
+	    			maxRank = rank;
+	    		}
+			}
+			else if (classifier.isJapanese(c))
+			{
+				maxRank = Integer.MAX_VALUE;
+			}
+		}
+		return maxRank;
+	}
+
 }

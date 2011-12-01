@@ -20,25 +20,24 @@ public class SentenceRankApp {
 		log.info("Starting.");
 
 		try {
+			int MAX_RANK = 1000;
 			Resource characterResource = 
 				new ClassPathResource("/character_frequency_utf8.txt");
 			DefaultRankReader reader = new DefaultRankReader();
 			reader.setHeaderLineCount(8);
 			reader.setResource(characterResource);
-			reader.open();
-			try
-			{
-				
-				for (int frequency = 1; frequency <= 10; frequency++)
-				{
-					String character = reader.nextItem();
-					String filenameRoot = String.format("output/%1$04d", frequency);
-					
-				}
-			}finally
-			{
-				reader.close();
-			}
+			Resource wordResource =
+					new ClassPathResource("/phrase_frequency_utf8.txt");
+			DefaultRankReader wordReader = new DefaultRankReader();
+			wordReader.setResource(wordResource);
+			wordReader.setHeaderLineCount(1);
+			RankFinder rankFinder = new RankFinder();
+			rankFinder.setCharacterReader(reader);
+			rankFinder.setWordReader(wordReader);
+			rankFinder.setMaxCharacters(MAX_RANK);
+			rankFinder.load();
+			CharacterClassifier classifier = new CharacterClassifier();
+
 			Resource sentenceResource =
 					new ClassPathResource("/sentences.csv");
 			CsvReader csvReader = new CsvReader(
@@ -54,8 +53,13 @@ public class SentenceRankApp {
 					if (language.equals("cmn"))
 					{
 						String sentence = csvReader.get(2);
-						System.out.println(sentence);
-						i++;
+						String id = csvReader.get(0);
+						int maxRank = rankFinder.maxRank(sentence, classifier);
+						if (maxRank < MAX_RANK)
+						{
+							System.out.println(sentence + " " + maxRank + " " + id);
+							i++;
+						}
 					}
 				}
 			}

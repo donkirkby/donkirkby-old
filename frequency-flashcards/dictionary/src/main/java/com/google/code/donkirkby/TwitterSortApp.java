@@ -140,7 +140,7 @@ public class TwitterSortApp {
 					if (tweetCount > tweetsToSkip)
 					{
 			    		String text = textBuilder.toString();
-						int rank = maxRank(text);
+						int rank = rankFinder.maxRank(text, characterClassifier);
 						if (0 < rank && rank < MAXIMUM_LEARNED_RANK)
 						{
 							System.out.println(
@@ -201,26 +201,6 @@ public class TwitterSortApp {
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
-	}
-
-	private int maxRank(String text) {
-    	int maxRank = 0;
-    	for(char c: text.toCharArray())
-    	{
-    		if (characterClassifier.isChinese(c))
-    		{
-	    		int rank = rankFinder.getCharacterRank(String.valueOf(c));
-	    		if (rank > maxRank)
-	    		{
-	    			maxRank = rank;
-	    		}
-    		}
-    		else if (characterClassifier.isJapanese(c))
-    		{
-    			maxRank = Integer.MAX_VALUE;
-    		}
-    	}
-		return maxRank;
 	}
 
 	public String getSearchUrl() {
