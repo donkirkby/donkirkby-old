@@ -22,8 +22,11 @@
 <body>
 <p>These sentences are from <a href="http://tatoeba.org">Tatoeba.org</a>.</p>
 <!-- $START-TEMPLATE$ -->
-<p class="chinese">$CHINESE$</p>
-<p>English: <span class="english">$ENGLISH$</span>$NO-ENGLISH$ $LINK$</p>
+<p class="chinese"><a id="$ANCHOR-ID$">$INDEX$.</a> $CHINESE$</p>
+<p>English: <span class="english">$ENGLISH$</span> $NO-ENGLISH$ 
+	<a href="#$ANCHOR-ID$">Link here</a> or
+	<a href="http://tatoeba.org/eng/sentences/show/$SENTENCE-ID$">to Tatoeba.
+	</a></p>
 <!-- $END-TEMPLATE$ -->
 </body>
 </html>
