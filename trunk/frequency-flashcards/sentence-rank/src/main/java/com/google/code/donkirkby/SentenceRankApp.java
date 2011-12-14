@@ -29,7 +29,7 @@ public class SentenceRankApp {
 
 	private ArrayList<Sentence> chineseSentences;
 	private HashMap<Integer, Sentence> sentenceMap;
-	private HashMap<Integer, HashSet<Integer>> links;
+	private HashMap<Integer, ArrayList<Integer>> links;
 	private static int MAX_RANK = 500;
 
 	public static void main(String[] args) {
@@ -71,12 +71,9 @@ public class SentenceRankApp {
 					i++;
 					String anchorId = 
 							sentence.getId() + "rank" + sentence.getRank();
-					String translation =
-							sentence.getTranslation() != null
-							? sentence.getTranslation().getText()
-							: "";
+					String translation = findDirectTranslation(sentence.getId());
 					String noTranslation;
-					if (translation.length() != 0)
+					if (translation != null)
 					{
 						noTranslation = "";
 					}
@@ -113,20 +110,47 @@ public class SentenceRankApp {
 		}
 	}
 
-
-	private String findIndirectTranslation(int sentenceId) {
-		HashSet<Integer> translationIds = links.get(sentenceId);
-		if (translationIds != null)
+	/* Returns a direct translation, or null if none found. */
+	private String findDirectTranslation(int sentenceId)
+	{
+		ArrayList<Integer> translations = links.get(sentenceId);
+		if (translations == null)
 		{
-			for (Integer translationId : translationIds)
+			return null;
+		}
+		for (Integer translationId : translations) {
+			Sentence translation = sentenceMap.get(translationId);
+			if (translation != null)
 			{
-				if (translationId != sentenceId)
+				return translation.getText();
+			}
+		}
+		return null;
+	}
+
+	/* Returns indirect translations, but only searches one hop away.
+	 * Returns empty string if none found.
+	 */
+	private String findIndirectTranslation(int sentenceId) {
+		ArrayList<Integer> directTranslations = links.get(sentenceId);
+		if (directTranslations == null)
+		{
+			return "";
+		}
+		for (Integer directTranslationId : directTranslations) {
+			ArrayList<Integer> indirectTranslations = 
+					links.get(directTranslationId);
+			if (indirectTranslations == null)
+			{
+				continue;
+			}
+			for (Integer indirectTranslationId : indirectTranslations) {
+				Sentence indirectTranslation = 
+						sentenceMap.get(indirectTranslationId);
+				if (indirectTranslation != null 
+						&& indirectTranslationId != sentenceId)
 				{
-					Sentence translation = sentenceMap.get(translationId);
-					if (translation != null)
-					{
-						return translation.getText();
-					}
+					return indirectTranslation.getText();
 				}
 			}
 		}
@@ -242,7 +266,7 @@ public class SentenceRankApp {
 	{
 		try
 		{
-			links = new HashMap<Integer, HashSet<Integer>>();
+			links = new HashMap<Integer, ArrayList<Integer>>();
 			Resource sentenceResource =
 					new ClassPathResource("/links.csv");
 			CsvReader csvReader = new CsvReader(
@@ -256,38 +280,20 @@ public class SentenceRankApp {
 				{
 					int id1 = Integer.parseInt(csvReader.get(0));
 					int id2 = Integer.parseInt(csvReader.get(1));
-					Sentence sentence1 = sentenceMap.get(id1);
-					Sentence sentence2 = sentenceMap.get(id2);
-					if (sentence1 != null && sentence2 != null)
+					ArrayList<Integer> set1 = links.get(id1);
+					ArrayList<Integer> set2 = links.get(id2);
+					if (set1 == null)
 					{
-						sentence1.setTranslation(sentence2);
-						sentence2.setTranslation(sentence1);
-					}
-					HashSet<Integer> set1 = links.get(id1);
-					HashSet<Integer> set2 = links.get(id2);
-					if (set1 != null && set2 != null)
-					{
-						set1.addAll(set2);
-						links.put(id2, set1);
-					}
-					else if (set1 != null)
-					{
-						links.put(id2, set1);
-						set1.add(id2);
-					}
-					else if (set2 != null)
-					{
-						links.put(id1, set2);
-						set2.add(id1);
-					}
-					else
-					{
-						set1 = new HashSet<Integer>();
-						set1.add(id1);
-						set1.add(id2);
+						set1 = new ArrayList<Integer>();
 						links.put(id1, set1);
-						links.put(id2, set1);
 					}
+					if (set2 == null)
+					{
+						set2 = new ArrayList<Integer>();
+						links.put(id2, set2);
+					}
+					set1.add(id2);
+					set2.add(id1);
 				}
 			}
 			finally
