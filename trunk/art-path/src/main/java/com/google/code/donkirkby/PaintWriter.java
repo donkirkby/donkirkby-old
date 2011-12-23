@@ -35,7 +35,7 @@ public class PaintWriter {
 
 		// Create an instance of the SVG Generator.
 		svgGenerator = new SVGGraphics2D(document);
-		svgGenerator.setSVGCanvasSize(new Dimension(300, 300));
+		svgGenerator.setSVGCanvasSize(new Dimension(400, 400));
 
 		return svgGenerator;
 	}
