@@ -2,14 +2,34 @@ package com.google.code.donkirkby;
 
 
 public class Cell {
-	private double x1, y1, x2, y2;
+	private double left, top, right, bottom;
 	
-	public Cell(double x1, double y1, double x2, double y2) 
+	public Cell(double left, double top, double right, double bottom) 
 	{
-		this.x1 = x1;
-		this.y1 = y1;
-		this.x2 = x2;
-		this.y2 = y2;
+		this.left = left;
+		this.top = top;
+		this.right = right;
+		this.bottom = bottom;
+	}
+	
+	public double getLeft()
+	{
+		return left;
+	}
+	
+	public double getTop()
+	{
+		return top;
+	}
+	
+	public double getRight()
+	{
+		return right;
+	}
+	
+	public double getBottom()
+	{
+		return bottom;
 	}
 	
 	@Override
@@ -23,9 +43,31 @@ public class Cell {
 		}
 		Cell other = (Cell)obj;
 		return 
-			this.x1 == other.x1 &&
-			this.y1 == other.y1 &&
-			this.x2 == other.x2 &&
-			this.y2 == other.y2;
+			this.left == other.left &&
+			this.top == other.top &&
+			this.right == other.right &&
+			this.bottom == other.bottom;
+	}
+	
+	@Override
+	public String toString()
+	{
+		return String.format(
+				"Cell(%1$.0f, %2$.0f, %3$.0f, %4$.0f)", 
+				left, 
+				top, 
+				right, 
+				bottom);
+		
+	}
+
+	public Cell[] split() {
+		return new Cell[] 
+		{
+				new Cell((left + right)/2, top, right, (top + bottom)/2),
+				new Cell(left, top, (left + right)/2, (top + bottom)/2),
+				new Cell(left, (top + bottom)/2, (left + right)/2, bottom),
+				new Cell((left + right)/2, (top + bottom)/2, right, bottom)
+		};
 	}
 }
