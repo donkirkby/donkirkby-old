@@ -9,7 +9,7 @@
     </layout> 
   </appender> 
   <appender name="file" class="org.apache.log4j.RollingFileAppender"> 
-    <param name="file" value="stroke-img.log"/> 
+    <param name="file" value="art-path.log"/> 
     <param name="encoding" value="UTF-8"/> 
     <layout class="org.apache.log4j.PatternLayout"> 
       <param name="ConversionPattern" value="%-5p %c{2} - %m%n"/> 

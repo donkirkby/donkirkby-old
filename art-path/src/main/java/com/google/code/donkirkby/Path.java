@@ -70,7 +70,7 @@ public class Path {
 		Cell [] cells = this.cell.split();
 		int [] directions;
 		int [] cellIndexes;
-		int adjustedIn, adjustedOut, offset, sign;
+		int adjustedIn, adjustedOut, offset, sign;//offset moves inDirection to 0 or 1
 		switch (inDirection)
 		{
 		case East:
@@ -97,7 +97,7 @@ public class Path {
 			sign = 1;
 		}
 		else
-		{
+		{// flip sign and adjust offset so that inDirection goes to 0 or 1 and outDirection goes to 0 to 4
 			sign = -1;
 			offset = 8 - offset;
 		}
@@ -146,15 +146,17 @@ public class Path {
 			throw createUnexpectedDirectionsException();
 		}
 		
+		//sign*inDir + offset = plannedInDir
+		//inDir = (plannedInDir - offset)*sign
 		Path [] paths = new Path[4];
 		for (int i = 0; i < paths.length; i++) {
 			int index = paths.length - 1 - i;
-			int cellIndex = ((sign*(cellIndexes[index]*2+1) + offset + 7) % 8) / 2;
+			int cellIndex = (((cellIndexes[index]*2+1-offset)*sign + 7) % 8) / 2;
 			Cell childCell = cells[cellIndex];
 			paths[index] = new Path(
 					childCell, 
-					(sign*directions[index] + offset + 8) % 8, 
-					(sign*directions[index+1] + offset + 8) % 8);
+					((directions[index] - offset)*sign + 8) % 8, 
+					((directions[index+1] - offset)*sign + 8) % 8);
 			append(paths[index]);
 		}
 		remove();
@@ -275,5 +277,33 @@ public class Path {
 		next.previous = previous;
 		previous.next = next;
 		previous = next = this;
+	}
+
+	public double getLength() {
+		double edgeLength = cell.getRight() - cell.getLeft();
+		double length =
+				inDirection % 2 == 0
+				? edgeLength / 2
+				: edgeLength / 2 * Math.sqrt(2);
+		length +=
+				outDirection % 2 == 0
+				? edgeLength / 2
+				: edgeLength / 2 * Math.sqrt(2);
+		return length;
+	}
+
+	public double getTotalLength() {
+		double totalLength = 0;
+		Path path = this;
+		do
+		{
+			totalLength += path.getLength();
+			path = path.getNext();
+		}while (path != this);
+		return totalLength;
+	}
+
+	public Cell getCell() {
+		return cell;
 	}
 }
