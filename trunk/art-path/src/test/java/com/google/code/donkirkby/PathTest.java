@@ -77,6 +77,24 @@ public class PathTest {
 	}
 
 	@Test
+	public void splitNorthSouthWest() throws Exception {
+		// SETUP
+		Path path = new Path(new Cell(10, 10, 12, 12), Path.North, Path.SouthWest);
+		Path[] expectedChildren = new Path[] {
+			new Path(new Cell(11, 11, 12, 12), Path.NorthEast, Path.North),
+			new Path(new Cell(11, 10, 12, 11), Path.North, Path.West),
+			new Path(new Cell(10, 10, 11, 11), Path.West, Path.South),
+			new Path(new Cell(10, 11, 11, 12), Path.South, Path.SouthWest),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
 	public void splitWestEast() throws Exception {
 		// SETUP
 		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.East);
@@ -230,6 +248,49 @@ public class PathTest {
 					coordinates[i],
 					0.001);
 		}
+	}
+
+	@Test
+	public void getLength() throws Exception {
+		// SETUP
+		Path path1 = new Path(new Cell(10, 0, 14, 4), Path.West, Path.North);
+		double expectedLength1 = 4;
+		Path path2 = new Path(new Cell(10, 0, 12, 2), Path.West, Path.North);
+		double expectedLength2 = 2;
+		Path path3 = new Path(new Cell(10, 0, 12, 2), Path.West, Path.NorthWest);
+		double expectedLength3 = 1 + Math.sqrt(2);
+		path1.append(path2);
+		path2.append(path3);
+		double expectedTotalLength = 
+				expectedLength1 + expectedLength2 + expectedLength3;
+		
+		// EXEC
+		double length1 = path1.getLength();
+		double length2 = path2.getLength();
+		double length3 = path3.getLength();
+		double totalLength = path1.getTotalLength();
+		
+		// VERIFY
+		Assert.assertEquals(
+				"length1",
+				expectedLength1,
+				length1, 
+				0.0001);
+		Assert.assertEquals(
+				"length2",
+				expectedLength2,
+				length2, 
+				0.0001);
+		Assert.assertEquals(
+				"length3",
+				expectedLength3,
+				length3, 
+				0.0001);
+		Assert.assertEquals(
+				"total length",
+				expectedTotalLength,
+				totalLength, 
+				0.0001);
 	}
 
 	@Test

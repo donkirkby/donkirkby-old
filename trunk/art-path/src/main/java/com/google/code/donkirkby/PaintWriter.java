@@ -23,7 +23,7 @@ import org.w3c.dom.Document;
 public class PaintWriter {
 	private SVGGraphics2D svgGenerator;
 	
-	public Graphics2D createGraphicsContext()
+	public Graphics2D createGraphicsContext(int width, int height)
 	{
 		// Get a DOMImplementation.
 		DOMImplementation domImpl = GenericDOMImplementation
@@ -35,7 +35,7 @@ public class PaintWriter {
 
 		// Create an instance of the SVG Generator.
 		svgGenerator = new SVGGraphics2D(document);
-		svgGenerator.setSVGCanvasSize(new Dimension(400, 400));
+		svgGenerator.setSVGCanvasSize(new Dimension(width, height));
 
 		return svgGenerator;
 	}
@@ -60,7 +60,7 @@ public class PaintWriter {
 		Transcoder transcoder = new PNGTranscoder();
         Map<TranscodingHints.Key, Float> hints = 
         	new HashMap<TranscodingHints.Key, Float>();
-        hints.put(ImageTranscoder.KEY_MAX_HEIGHT, new Float(200));
+        hints.put(ImageTranscoder.KEY_MAX_HEIGHT, new Float(750));
         hints.put(ImageTranscoder.KEY_MAX_WIDTH, new Float(750));
         transcoder.setTranscodingHints(hints);
 		
