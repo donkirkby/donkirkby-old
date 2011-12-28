@@ -95,6 +95,60 @@ public class PathTest {
 	}
 
 	@Test
+	public void splitNorthSouthEast() throws Exception {
+		// SETUP
+		Path path = new Path(new Cell(10, 10, 12, 12), Path.North, Path.SouthEast);
+		Path[] expectedChildren = new Path[] {
+			new Path(new Cell(10, 11, 11, 12), Path.NorthWest, Path.North),
+			new Path(new Cell(10, 10, 11, 11), Path.North, Path.East),
+			new Path(new Cell(11, 10, 12, 11), Path.East, Path.South),
+			new Path(new Cell(11, 11, 12, 12), Path.South, Path.SouthEast),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitNorthEastSouth() throws Exception {
+		// SETUP
+		Path path = new Path(new Cell(10, 10, 12, 12), Path.NorthEast, Path.South);
+		Path[] expectedChildren = new Path[] {
+			new Path(new Cell(10, 11, 11, 12), Path.NorthEast, Path.North),
+			new Path(new Cell(10, 10, 11, 11), Path.North, Path.East),
+			new Path(new Cell(11, 10, 12, 11), Path.East, Path.South),
+			new Path(new Cell(11, 11, 12, 12), Path.South, Path.SouthWest),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitSouthSouthWest() throws Exception {
+		// SETUP
+		Path path = new Path(new Cell(10, 10, 12, 12), Path.South, Path.SouthWest);
+		Path[] expectedChildren = new Path[] {
+			new Path(new Cell(11, 10, 12, 11), Path.SouthEast, Path.South),
+			new Path(new Cell(11, 11, 12, 12), Path.South, Path.NorthWest),
+			new Path(new Cell(10, 10, 11, 11), Path.NorthWest, Path.South),
+			new Path(new Cell(10, 11, 11, 12), Path.South, Path.SouthWest),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
 	public void splitWestEast() throws Exception {
 		// SETUP
 		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.East);

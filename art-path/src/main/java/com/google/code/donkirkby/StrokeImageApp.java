@@ -27,8 +27,9 @@ public class StrokeImageApp {
 		try {
 			PaintWriter writer = new PaintWriter();
 			Image image = loadImage();
-			float minWidth = (float) 12.7;
+			float minWidth = (float) 1.25; // 148, 145, 112, 91, 76, 67
 			float pathWidth;
+			float reportedWidth = Float.MAX_VALUE;
 			double totalIntensity = 
 					image.getCell(0, 0, image.getWidth(), image.getHeight());
 			double totalArea = image.getWidth() * image.getHeight();
@@ -42,7 +43,11 @@ public class StrokeImageApp {
 						start.getTotalLength());
 				if (pathWidth > minWidth)
 				{
-					log.debug("width " + pathWidth + " length " + start.getTotalLength());
+					if (pathWidth < reportedWidth * 0.9)
+					{
+						reportedWidth = pathWidth;
+						log.debug("width " + pathWidth + " length " + start.getTotalLength());
+					}
 					Path worstPath = start;
 					double maxDiff = 0;
 					Path path = start;
@@ -77,7 +82,7 @@ public class StrokeImageApp {
 				}
 			} while (pathWidth > minWidth);
 			
-			Path2D path2d = createPath2D(start);
+			Path2D path2d = createPath2D(start, log);
 			Graphics2D g2d = writer.createGraphicsContext(image.getWidth(), image.getHeight());
 			g2d.setStroke(new BasicStroke((float) 0.1));
 			g2d.draw(path2d);
@@ -97,7 +102,7 @@ public class StrokeImageApp {
 		return pathWidth;
 	}
 
-	private static Path2D createPath2D(Path startPath) {
+	private static Path2D createPath2D(Path startPath, Log log) {
 		Path2D path2d = new Double();
 		Path path = startPath;
 		do
@@ -107,6 +112,8 @@ public class StrokeImageApp {
 			{
 				path2d.moveTo(coordinates[0], coordinates[1]);
 			}
+//			log.debug(coordinates[2] + ", " + coordinates[3]);
+//			log.debug(coordinates[4] + ", " + coordinates[5]);
 			path2d.lineTo(coordinates[2], coordinates[3]);
 			path2d.lineTo(coordinates[4], coordinates[5]);
 			path = path.getNext();

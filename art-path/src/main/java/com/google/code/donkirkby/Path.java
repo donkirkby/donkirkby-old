@@ -70,39 +70,40 @@ public class Path {
 		Cell [] cells = this.cell.split();
 		int [] directions;
 		int [] cellIndexes;
-		int adjustedIn, adjustedOut, offset, sign;//offset moves inDirection to 0 or 1
+		int adjustedIn, adjustedOut, offset1, sign, offset2;//offset moves inDirection to 0 or 1
 		switch (inDirection)
 		{
 		case East:
 		case NorthEast:
-			offset = 0;
+			offset1 = 0;
 			break;
 		case South:
 		case SouthEast:
-			offset = 2;
+			offset1 = 2;
 			break;
 		case West:
 		case SouthWest:
-			offset = 4;
+			offset1 = 4;
 			break;
 		case North:
 		case NorthWest:
-			offset = 6;
+			offset1 = 6;
 			break;
 		default:
 			throw createUnexpectedDirectionsException();
 		}
-		if ((outDirection + offset) % 8 <= 4)
+		if ((outDirection + offset1) % 8 <= 4)
 		{
 			sign = 1;
+			offset2 = 0;
 		}
 		else
 		{// flip sign and adjust offset so that inDirection goes to 0 or 1 and outDirection goes to 0 to 4
 			sign = -1;
-			offset = 8 - offset;
+			offset2 = (2 * (inDirection + offset1)) % 8;
 		}
-		adjustedIn = (sign*inDirection + offset + 8) % 8;
-		adjustedOut = (sign*outDirection + offset + 8) % 8;
+		adjustedIn = (sign*(inDirection + offset1) + offset2 + 16) % 8;
+		adjustedOut = (sign*(outDirection + offset1) + offset2 + 16) % 8;
 		switch (adjustedIn * 8 + adjustedOut)
 		{
 		case 0:
@@ -110,7 +111,7 @@ public class Path {
 			cellIndexes = new int[] {1, 0, 2, 3};
 			break;
 		case 1:
-			directions = new int[] {SouthEast, East, NorthWest, East, SouthEast};
+			directions = new int[] {SouthEast, East, NorthWest, East, NorthEast};
 			cellIndexes = new int[] {2, 3, 1, 0};
 			break;
 		case 2:
@@ -146,17 +147,19 @@ public class Path {
 			throw createUnexpectedDirectionsException();
 		}
 		
-		//sign*inDir + offset = plannedInDir
-		//inDir = (plannedInDir - offset)*sign
+		//(sign*inDir + offset1) + offset2 = plannedInDir
+		//inDir = (plannedInDir - offset2)*sign - offset1
 		Path [] paths = new Path[4];
 		for (int i = 0; i < paths.length; i++) {
 			int index = paths.length - 1 - i;
-			int cellIndex = (((cellIndexes[index]*2+1-offset)*sign + 7) % 8) / 2;
+			int cellIndex = 
+					(((cellIndexes[index]*2+1-offset2)*sign - 
+							offset1 + 15) % 8) / 2;
 			Cell childCell = cells[cellIndex];
 			paths[index] = new Path(
 					childCell, 
-					((directions[index] - offset)*sign + 8) % 8, 
-					((directions[index+1] - offset)*sign + 8) % 8);
+					((directions[index] - offset2)*sign - offset1 + 16) % 8, 
+					((directions[index+1] - offset2)*sign - offset1 + 16) % 8);
 			append(paths[index]);
 		}
 		remove();
