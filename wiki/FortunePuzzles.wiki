@@ -32,5 +32,3 @@ To play the game, follow these steps:
 If you play the game regularly, you can print out the _README.txt file and cross off the puzzles you have completed.
 
 These puzzles were automatically generated from the files used by the Unix fortune command. There may be some that are incorrect, confusing, offensive, or just dumb. Contact me at [http://profiles.google.com/donkirkby Google+],  [http://www.google.com/recaptcha/mailhide/d?k=01PxMhmzBXZ6RTE_q0gU-dEA==&c=x_pL0sQHAaTbWaBA2rGEX6F6mWc2ru6wZ0i4DcdrVz8= via e-mail], or log an issue here if you find a problem.
-
-donkirkby at gmail dot com
