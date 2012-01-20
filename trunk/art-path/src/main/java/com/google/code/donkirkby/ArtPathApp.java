@@ -17,8 +17,8 @@ import org.springframework.core.io.Resource;
 /**
  * 
  */
-public class StrokeImageApp {
-	private static Log log = LogFactory.getLog(StrokeImageApp.class);
+public class ArtPathApp {
+	private static Log log = LogFactory.getLog(ArtPathApp.class);
 	
 
 	public static void main(String[] args) {
@@ -27,9 +27,9 @@ public class StrokeImageApp {
 		try {
 			PaintWriter writer = new PaintWriter();
 			Image image = loadImage();
-			float minWidth = (float) 1.25; // 148, 145, 112, 91, 76, 67
-			float pathWidth;
-			float reportedWidth = Float.MAX_VALUE;
+			double minWidth = (double) 112; // 148, 145, 112, 91, 76, 67
+			double pathWidth;
+			double reportedWidth = java.lang.Double.MAX_VALUE;
 			double totalIntensity = 
 					image.getCell(0, 0, image.getWidth(), image.getHeight());
 			double totalArea = image.getWidth() * image.getHeight();
@@ -37,10 +37,8 @@ public class StrokeImageApp {
 			
 			do
 			{
-				pathWidth = calculatePathWidth(
-						totalIntensity, 
-						totalArea,
-						start.getTotalLength());
+				pathWidth = start.calculateWidthOfFullPath(totalIntensity,
+						totalArea);
 				if (pathWidth > minWidth)
 				{
 					if (pathWidth < reportedWidth * 0.9)
@@ -53,19 +51,8 @@ public class StrokeImageApp {
 					Path path = start;
 					do
 					{
-						Cell cell = path.getCell();
-						double cellIntensity = image.getCell(
-								(int)cell.getLeft(),
-								(int)cell.getTop(),
-								(int)cell.getRight(),
-								(int)cell.getBottom());
-						double cellArea = 
-								(cell.getRight() - cell.getLeft()) *
-								(cell.getBottom() - cell.getTop());
-						double optimalPathWidth = calculatePathWidth(
-								cellIntensity,
-								cellArea,
-								path.getLength());
+						double optimalPathWidth = path.calculateOptimalWidth(
+								image);
 						double diff = optimalPathWidth - pathWidth;
 						if (diff > maxDiff)
 						{
@@ -92,14 +79,6 @@ public class StrokeImageApp {
 			log.error("Failure", e);
 			System.exit(-1);
 		}
-	}
-
-	private static float calculatePathWidth(double intensity, double area,
-			double pathLength) {
-		float pathWidth;
-		pathWidth = 
-				(float) ((1 - intensity) * area / pathLength);
-		return pathWidth;
 	}
 
 	private static Path2D createPath2D(Path startPath, Log log) {
@@ -148,10 +127,10 @@ public class StrokeImageApp {
 	}
 
 	private static Path createStartPath(double width, double height) {
-		Path path1 = new Path(new Cell(0, 0, width/2, height/2), Path.North, Path.East);
-		Path path2 = new Path(new Cell(width/2, 0, width, height/2), Path.East, Path.South);
-		Path path3 = new Path(new Cell(width/2, height/2, width, height), Path.South, Path.West);
-		Path path4 = new Path(new Cell(0, width/2, width/2, height), Path.West, Path.North);
+		Path path1 = new SquarePath(new Cell(0, 0, width/2, height/2), SquarePath.North, SquarePath.East);
+		Path path2 = new SquarePath(new Cell(width/2, 0, width, height/2), SquarePath.East, SquarePath.South);
+		Path path3 = new SquarePath(new Cell(width/2, height/2, width, height), SquarePath.South, SquarePath.West);
+		Path path4 = new SquarePath(new Cell(0, width/2, width/2, height), SquarePath.West, SquarePath.North);
 		path1.append(path2);
 		path2.append(path3);
 		path3.append(path4);
