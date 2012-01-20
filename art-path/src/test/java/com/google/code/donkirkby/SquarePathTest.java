@@ -3,16 +3,16 @@ package com.google.code.donkirkby;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class PathTest {
+public class SquarePathTest {
 	@Test
 	public void splitEastEast() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.East, Path.East);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.East, SquarePath.East);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(0, 0, 2, 2), Path.NorthEast, Path.East),
-			new Path(new Cell(2, 0, 4, 2), Path.East, Path.SouthWest),
-			new Path(new Cell(0, 2, 2, 4), Path.SouthWest, Path.East),
-			new Path(new Cell(2, 2, 4, 4), Path.East, Path.NorthEast),
+			new SquarePath(new Cell(0, 0, 2, 2), SquarePath.NorthEast, SquarePath.East),
+			new SquarePath(new Cell(2, 0, 4, 2), SquarePath.East, SquarePath.SouthWest),
+			new SquarePath(new Cell(0, 2, 2, 4), SquarePath.SouthWest, SquarePath.East),
+			new SquarePath(new Cell(2, 2, 4, 4), SquarePath.East, SquarePath.NorthEast),
 		};
 		
 		// EXEC
@@ -25,12 +25,12 @@ public class PathTest {
 	@Test
 	public void splitEastNorth() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.East, Path.North);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.East, SquarePath.North);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(0, 2, 2, 4), Path.SouthEast, Path.East),
-			new Path(new Cell(2, 2, 4, 4), Path.East, Path.North),
-			new Path(new Cell(2, 0, 4, 2), Path.North, Path.West),
-			new Path(new Cell(0, 0, 2, 2), Path.West, Path.NorthEast),
+			new SquarePath(new Cell(0, 2, 2, 4), SquarePath.SouthEast, SquarePath.East),
+			new SquarePath(new Cell(2, 2, 4, 4), SquarePath.East, SquarePath.North),
+			new SquarePath(new Cell(2, 0, 4, 2), SquarePath.North, SquarePath.West),
+			new SquarePath(new Cell(0, 0, 2, 2), SquarePath.West, SquarePath.NorthEast),
 		};
 		
 		// EXEC
@@ -43,12 +43,12 @@ public class PathTest {
 	@Test
 	public void splitNorthEast() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.North, Path.East);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.North, SquarePath.East);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(0, 2, 2, 4), Path.NorthWest, Path.North),
-			new Path(new Cell(0, 0, 2, 2), Path.North, Path.East),
-			new Path(new Cell(2, 0, 4, 2), Path.East, Path.South),
-			new Path(new Cell(2, 2, 4, 4), Path.South, Path.NorthEast),
+			new SquarePath(new Cell(0, 2, 2, 4), SquarePath.NorthWest, SquarePath.North),
+			new SquarePath(new Cell(0, 0, 2, 2), SquarePath.North, SquarePath.East),
+			new SquarePath(new Cell(2, 0, 4, 2), SquarePath.East, SquarePath.South),
+			new SquarePath(new Cell(2, 2, 4, 4), SquarePath.South, SquarePath.NorthEast),
 		};
 		
 		// EXEC
@@ -61,12 +61,12 @@ public class PathTest {
 	@Test
 	public void splitWestNorth() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(2, 2, 4, 4), Path.SouthWest, Path.West),
-			new Path(new Cell(0, 2, 2, 4), Path.West, Path.North),
-			new Path(new Cell(0, 0, 2, 2), Path.North, Path.East),
-			new Path(new Cell(2, 0, 4, 2), Path.East, Path.NorthWest),
+			new SquarePath(new Cell(2, 2, 4, 4), SquarePath.SouthWest, SquarePath.West),
+			new SquarePath(new Cell(0, 2, 2, 4), SquarePath.West, SquarePath.North),
+			new SquarePath(new Cell(0, 0, 2, 2), SquarePath.North, SquarePath.East),
+			new SquarePath(new Cell(2, 0, 4, 2), SquarePath.East, SquarePath.NorthWest),
 		};
 		
 		// EXEC
@@ -79,12 +79,12 @@ public class PathTest {
 	@Test
 	public void splitNorthSouthWest() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(10, 10, 12, 12), Path.North, Path.SouthWest);
+		Path path = new SquarePath(new Cell(10, 10, 12, 12), SquarePath.North, SquarePath.SouthWest);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(11, 11, 12, 12), Path.NorthEast, Path.North),
-			new Path(new Cell(11, 10, 12, 11), Path.North, Path.West),
-			new Path(new Cell(10, 10, 11, 11), Path.West, Path.South),
-			new Path(new Cell(10, 11, 11, 12), Path.South, Path.SouthWest),
+			new SquarePath(new Cell(11, 11, 12, 12), SquarePath.NorthEast, SquarePath.North),
+			new SquarePath(new Cell(11, 10, 12, 11), SquarePath.North, SquarePath.West),
+			new SquarePath(new Cell(10, 10, 11, 11), SquarePath.West, SquarePath.South),
+			new SquarePath(new Cell(10, 11, 11, 12), SquarePath.South, SquarePath.SouthWest),
 		};
 		
 		// EXEC
@@ -97,12 +97,12 @@ public class PathTest {
 	@Test
 	public void splitNorthSouthEast() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(10, 10, 12, 12), Path.North, Path.SouthEast);
+		Path path = new SquarePath(new Cell(10, 10, 12, 12), SquarePath.North, SquarePath.SouthEast);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(10, 11, 11, 12), Path.NorthWest, Path.North),
-			new Path(new Cell(10, 10, 11, 11), Path.North, Path.East),
-			new Path(new Cell(11, 10, 12, 11), Path.East, Path.South),
-			new Path(new Cell(11, 11, 12, 12), Path.South, Path.SouthEast),
+			new SquarePath(new Cell(10, 11, 11, 12), SquarePath.NorthWest, SquarePath.North),
+			new SquarePath(new Cell(10, 10, 11, 11), SquarePath.North, SquarePath.East),
+			new SquarePath(new Cell(11, 10, 12, 11), SquarePath.East, SquarePath.South),
+			new SquarePath(new Cell(11, 11, 12, 12), SquarePath.South, SquarePath.SouthEast),
 		};
 		
 		// EXEC
@@ -115,12 +115,12 @@ public class PathTest {
 	@Test
 	public void splitNorthEastSouth() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(10, 10, 12, 12), Path.NorthEast, Path.South);
+		Path path = new SquarePath(new Cell(10, 10, 12, 12), SquarePath.NorthEast, SquarePath.South);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(10, 11, 11, 12), Path.NorthEast, Path.North),
-			new Path(new Cell(10, 10, 11, 11), Path.North, Path.East),
-			new Path(new Cell(11, 10, 12, 11), Path.East, Path.South),
-			new Path(new Cell(11, 11, 12, 12), Path.South, Path.SouthWest),
+			new SquarePath(new Cell(10, 11, 11, 12), SquarePath.NorthEast, SquarePath.North),
+			new SquarePath(new Cell(10, 10, 11, 11), SquarePath.North, SquarePath.East),
+			new SquarePath(new Cell(11, 10, 12, 11), SquarePath.East, SquarePath.South),
+			new SquarePath(new Cell(11, 11, 12, 12), SquarePath.South, SquarePath.SouthWest),
 		};
 		
 		// EXEC
@@ -133,12 +133,12 @@ public class PathTest {
 	@Test
 	public void splitSouthSouthWest() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(10, 10, 12, 12), Path.South, Path.SouthWest);
+		Path path = new SquarePath(new Cell(10, 10, 12, 12), SquarePath.South, SquarePath.SouthWest);
 		Path[] expectedChildren = new Path[] {
-			new Path(new Cell(11, 10, 12, 11), Path.SouthEast, Path.South),
-			new Path(new Cell(11, 11, 12, 12), Path.South, Path.NorthWest),
-			new Path(new Cell(10, 10, 11, 11), Path.NorthWest, Path.South),
-			new Path(new Cell(10, 11, 11, 12), Path.South, Path.SouthWest),
+			new SquarePath(new Cell(11, 10, 12, 11), SquarePath.SouthEast, SquarePath.South),
+			new SquarePath(new Cell(11, 11, 12, 12), SquarePath.South, SquarePath.NorthWest),
+			new SquarePath(new Cell(10, 10, 11, 11), SquarePath.NorthWest, SquarePath.South),
+			new SquarePath(new Cell(10, 11, 11, 12), SquarePath.South, SquarePath.SouthWest),
 		};
 		
 		// EXEC
@@ -151,7 +151,7 @@ public class PathTest {
 	@Test
 	public void splitWestEast() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.East);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.East);
 		
 		// EXEC
 		String msg = null;
@@ -172,7 +172,7 @@ public class PathTest {
 	@Test
 	public void startingChain() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
 		
 		// EXEC
 		Path next = path.getNext();
@@ -186,9 +186,9 @@ public class PathTest {
 	@Test
 	public void append() throws Exception {
 		// SETUP
-		Path path1 = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
-		Path path2 = new Path(new Cell(0, 4, 4, 8), Path.West, Path.North);
-		Path path3 = new Path(new Cell(4, 4, 8, 8), Path.West, Path.North);
+		Path path1 = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
+		Path path2 = new SquarePath(new Cell(0, 4, 4, 8), SquarePath.West, SquarePath.North);
+		Path path3 = new SquarePath(new Cell(4, 4, 8, 8), SquarePath.West, SquarePath.North);
 		
 		// EXEC
 		path1.append(path2);
@@ -208,9 +208,9 @@ public class PathTest {
 	@Test
 	public void remove() throws Exception {
 		// SETUP
-		Path path1 = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
-		Path path2 = new Path(new Cell(0, 4, 4, 8), Path.West, Path.North);
-		Path path3 = new Path(new Cell(4, 4, 8, 8), Path.West, Path.North);
+		Path path1 = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
+		Path path2 = new SquarePath(new Cell(0, 4, 4, 8), SquarePath.West, SquarePath.North);
+		Path path3 = new SquarePath(new Cell(4, 4, 8, 8), SquarePath.West, SquarePath.North);
 		
 		// EXEC
 		path1.append(path2);
@@ -231,9 +231,9 @@ public class PathTest {
 	@Test
 	public void alreadyAppended() throws Exception {
 		// SETUP
-		Path path1 = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
-		Path path2 = new Path(new Cell(0, 4, 4, 8), Path.West, Path.North);
-		Path path3 = new Path(new Cell(4, 4, 8, 8), Path.West, Path.North);
+		Path path1 = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
+		Path path2 = new SquarePath(new Cell(0, 4, 4, 8), SquarePath.West, SquarePath.North);
+		Path path3 = new SquarePath(new Cell(4, 4, 8, 8), SquarePath.West, SquarePath.North);
 		String msg = null;
 		
 		// EXEC
@@ -258,10 +258,10 @@ public class PathTest {
 	@Test
 	public void splitChain() throws Exception {
 		// SETUP
-		Path path1 = new Path(new Cell(0, 0, 4, 4), Path.West, Path.South);
-		Path path2 = new Path(new Cell(0, 4, 4, 8), Path.South, Path.East);
-		Path path3 = new Path(new Cell(4, 4, 8, 8), Path.East, Path.North);
-		Path path4 = new Path(new Cell(4, 0, 8, 4), Path.North, Path.West);
+		Path path1 = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.South);
+		Path path2 = new SquarePath(new Cell(0, 4, 4, 8), SquarePath.South, SquarePath.East);
+		Path path3 = new SquarePath(new Cell(4, 4, 8, 8), SquarePath.East, SquarePath.North);
+		Path path4 = new SquarePath(new Cell(4, 0, 8, 4), SquarePath.North, SquarePath.West);
 		
 		// EXEC
 		path1.append(path2);
@@ -283,7 +283,7 @@ public class PathTest {
 	@Test
 	public void getCoordinates() throws Exception {
 		// SETUP
-		Path path = new Path(new Cell(0, 0, 4, 4), Path.West, Path.North);
+		Path path = new SquarePath(new Cell(0, 0, 4, 4), SquarePath.West, SquarePath.North);
 		double [] expectedCoordinates = new double[] {4, 2, 2, 2, 2, 0};
 		
 		// EXEC
@@ -307,11 +307,11 @@ public class PathTest {
 	@Test
 	public void getLength() throws Exception {
 		// SETUP
-		Path path1 = new Path(new Cell(10, 0, 14, 4), Path.West, Path.North);
+		Path path1 = new SquarePath(new Cell(10, 0, 14, 4), SquarePath.West, SquarePath.North);
 		double expectedLength1 = 4;
-		Path path2 = new Path(new Cell(10, 0, 12, 2), Path.West, Path.North);
+		Path path2 = new SquarePath(new Cell(10, 0, 12, 2), SquarePath.West, SquarePath.North);
 		double expectedLength2 = 2;
-		Path path3 = new Path(new Cell(10, 0, 12, 2), Path.West, Path.NorthWest);
+		Path path3 = new SquarePath(new Cell(10, 0, 12, 2), SquarePath.West, SquarePath.NorthWest);
 		double expectedLength3 = 1 + Math.sqrt(2);
 		path1.append(path2);
 		path2.append(path3);
@@ -353,10 +353,10 @@ public class PathTest {
 		Cell cell1 = new Cell(0, 0, 2, 2);
 		Cell cell2 = new Cell(0, 0, 2, 2);
 		Cell cell3 = new Cell(0, 0, 3, 3);
-		Path path1 = new Path(cell1, Path.North, Path.West);
-		Path path2 = new Path(cell2, Path.North, Path.West);
-		Path path2b = new Path(cell2, Path.North, Path.East);
-		Path path3 = new Path(cell3, Path.North, Path.West);
+		Path path1 = new SquarePath(cell1, SquarePath.North, SquarePath.West);
+		Path path2 = new SquarePath(cell2, SquarePath.North, SquarePath.West);
+		Path path2b = new SquarePath(cell2, SquarePath.North, SquarePath.East);
+		Path path3 = new SquarePath(cell3, SquarePath.North, SquarePath.West);
 		
 		// EXEC
 		boolean isEqualToSame = path1.equals(path2);
@@ -382,7 +382,7 @@ public class PathTest {
 	public void string() throws Exception {
 		// SETUP
 		Cell cell = new Cell(0, 0, 2, 2);
-		Path path1 = new Path(cell, Path.North, Path.West);
+		Path path1 = new SquarePath(cell, SquarePath.North, SquarePath.West);
 		
 		// EXEC
 		String string = path1.toString();
