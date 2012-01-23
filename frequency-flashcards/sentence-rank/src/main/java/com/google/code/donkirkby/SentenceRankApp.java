@@ -12,7 +12,6 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -70,7 +69,7 @@ public class SentenceRankApp {
 				for (Sentence sentence: chineseSentences) {
 					i++;
 					String anchorId = 
-							sentence.getId() + "rank" + sentence.getRank();
+							sentence.getId() + "rank" + sentence.getMaxRank();
 					String translation = findDirectTranslation(sentence.getId());
 					String noTranslation;
 					if (translation != null)
@@ -224,19 +223,21 @@ public class SentenceRankApp {
 			try
 			{
 				csvReader.setDelimiter('\t');
+				csvReader.setUseTextQualifier(false);
 				while (csvReader.readRecord())
 				{
 					String language = csvReader.get(1);
 					if (language.equals("cmn") && chineseSentences.size() < 1000000)
 					{
 						String text = csvReader.get(2);
-						int maxRank = rankFinder.maxRank(text, classifier);
+						int[] ranks = rankFinder.getRanks(text, classifier);
+						Sentence sentence = new Sentence();
+						sentence.setRanks(ranks);
+						int maxRank = sentence.getMaxRank();
 						if (0 < maxRank && maxRank < MAX_RANK)
 						{
-							Sentence sentence = new Sentence();
 							sentence.setText(text);
 							sentence.setId(Integer.parseInt(csvReader.get(0)));
-							sentence.setRank(maxRank);
 							chineseSentences.add(sentence);
 							sentenceMap.put(sentence.getId(), sentence);
 						}
