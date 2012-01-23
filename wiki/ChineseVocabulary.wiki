@@ -9,7 +9,7 @@ This project was only possible because other people put in tons of work and made
 
 = The flashcards =
 
-The flashcard files are for importing into the [http://mnemosyne-proj.sourceforge.net/ Mnemosyne project's] flashcard software. Here's a screen shot of the card for 不:
+The flashcard files are for importing into the [http://www.mnemosyne-proj.org/ Mnemosyne project's] flashcard software. Here's a screen shot of the card for 不:
 
 [http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/screenshot.PNG]
 
@@ -25,7 +25,7 @@ Some characters have more than one pronunciation, so you'll get a definition, pi
 
 = Installation =
 To use the flashcards on your computer, follow these steps:
- # Download and install [http://mnemosyne-proj.sourceforge.net/ Mnemosyne].
+ # Download and install [http://www.mnemosyne-proj.org/help/installation.php Mnemosyne].
  # Start the Mnemosyne program by choosing it from the Start menu. It should come up empty with no flash cards loaded.
  # Download the Chinese vocabulary library from the [http://code.google.com/p/donkirkby/downloads/ downloads page].
  # Unzip the library to a folder where you can find it later as you need to import the next card file whenever you've memorized most of your current cards.
