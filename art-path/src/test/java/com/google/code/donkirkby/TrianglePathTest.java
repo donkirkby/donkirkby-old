@@ -137,7 +137,7 @@ public class TrianglePathTest {
 						new Point(0, 0),
 						new Point(100, 0),
 						new Point(12.5, 37.5),
-						new Point(50, 0),
+						new Point(50, 50),
 						random)
 		};
 		
@@ -148,34 +148,34 @@ public class TrianglePathTest {
 		Assert.assertArrayEquals("paths", expectedPaths, paths);
 	}
 	
-	// What happens if the path is going the other direction?
+	// Always splits along the longest side
 	@Test
-	public void splitReversePath()
+	public void splitEntrySide()
 	{
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(0.5);
 		TrianglePath path = new TrianglePath(
-				new Point(0, 0),
 				new Point(0, 100),
 				new Point(100, 0),
+				new Point(0, 0),
+				new Point(50, 50),
 				new Point(0, 50),
-				new Point(50, 0),
 				random);
 		Path[] expectedPaths = new Path[] {
 				new TrianglePath(
+						new Point(25, 75),
+						new Point(100, 0),
 						new Point(0, 0),
-						new Point(0, 100),
 						new Point(50, 50),
-						new Point(0, 50),
-						new Point(25, 25),
+						new Point(12.5, 37.5),
 						random),
 				new TrianglePath(
 						new Point(0, 0),
-						new Point(50, 50),
-						new Point(100, 0),
-						new Point(25, 25),
-						new Point(50, 0),
+						new Point(25, 75),
+						new Point(0, 100),
+						new Point(12.5, 37.5),
+						new Point(0, 50),
 						random)
 		};
 		
@@ -234,5 +234,66 @@ public class TrianglePathTest {
 				"equality", 
 				path1, 
 				path2);
+	}
+	
+	// Always splits along the longest side
+	@Test
+	public void splitChain()
+	{
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		TrianglePath bottom = new TrianglePath(
+				new Point(50, 50),
+				new Point(0, 0),
+				new Point(100, 0),
+				new Point(25, 25),
+				new Point(75, 25),
+				random);
+		TrianglePath right = new TrianglePath(
+				new Point(50, 50),
+				new Point(100, 0),
+				new Point(100, 100),
+				new Point(75, 25),
+				new Point(75, 75),
+				random);
+		TrianglePath top = new TrianglePath(
+				new Point(50, 50),
+				new Point(100, 100),
+				new Point(0, 100),
+				new Point(75, 75),
+				new Point(25, 75),
+				random);
+		TrianglePath left = new TrianglePath(
+				new Point(50, 50),
+				new Point(0, 100),
+				new Point(0, 0),
+				new Point(25, 75),
+				new Point(25, 25),
+				random);
+		bottom.append(right).append(top).append(left);
+		
+		// EXEC
+		Path[] paths = bottom.split();
+		Path bottomLeft = paths[0];
+		Path bottomRight = paths[1];
+		
+		// VERIFY
+		Assert.assertSame(
+				"bottomLeft.previous", 
+				left, 
+				bottomLeft.getPrevious());
+		Assert.assertSame(
+				"bottomLeft.next", 
+				bottomRight, 
+				bottomLeft.getNext());
+		Assert.assertSame(
+				"left.next", 
+				bottomLeft, 
+				left.getNext());
+		Assert.assertSame(
+				"right.previous", 
+				bottomRight, 
+				right.getPrevious());
 	}
 }

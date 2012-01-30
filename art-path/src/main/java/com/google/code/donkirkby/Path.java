@@ -19,7 +19,7 @@ public abstract class Path {
 	protected Path previous;
 
 	public Path() {
-		super();
+		this.next = this.previous = this;
 	}
 
 	public Path getNext() {
@@ -30,7 +30,7 @@ public abstract class Path {
 		return previous;
 	}
 
-	public void append(Path other) {
+	public Path append(Path other) {
 		if (other.next != other)
 		{
 			throw new IllegalStateException(
@@ -40,6 +40,7 @@ public abstract class Path {
 		this.next.previous = other;
 		this.next = other;
 		other.previous = this;
+		return other;
 	}
 
 	public void remove() {

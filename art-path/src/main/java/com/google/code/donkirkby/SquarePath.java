@@ -34,7 +34,6 @@ public class SquarePath extends Path {
 		this.cell = cell;
 		this.inDirection = inDirection;
 		this.outDirection = outDirection;
-		this.next = this.previous = this;
 	}
 	
 	@Override
