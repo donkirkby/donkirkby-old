@@ -67,43 +67,88 @@ public class TrianglePath extends Path {
 		double entryDistanceSquared = fulcrum.distanceSquaredTo(entryVertex);
 		double exitDistanceSquared = fulcrum.distanceSquaredTo(exitVertex);
 		double oppositeDistanceSquared = entryVertex.distanceSquaredTo(exitVertex);
-		Point peak, base1, base2;
-		if (entryDistanceSquared > exitDistanceSquared)
+		if (oppositeDistanceSquared > exitDistanceSquared && 
+				oppositeDistanceSquared > entryDistanceSquared)
 		{
-			if (entryDistanceSquared > oppositeDistanceSquared)
-			{
-				peak = exitVertex;
-				base1 = fulcrum;
-				base2 = entryVertex;
-			}
-			else
-			{
-				peak = fulcrum;
-				base1 = entryVertex;
-				base2 = exitVertex;
-			}
+			Point splitBase = entryVertex.moveToward(
+					exitVertex, 
+					0.25 + 0.5*random.nextDouble());
+			Point splitPath = fulcrum.moveToward(
+					splitBase, 
+					0.25 + 0.5*random.nextDouble());
+			TrianglePath entryPath = new TrianglePath(
+					fulcrum, 
+					entryVertex, 
+					splitBase, 
+					entry, 
+					splitPath, 
+					random);
+			TrianglePath exitPath = new TrianglePath(
+					fulcrum, 
+					splitBase, 
+					exitVertex, 
+					splitPath, 
+					exit, 
+					random);
+			replaceWithChildren(entryPath, exitPath);
+			
+			return new Path[] { entryPath, exitPath };
 		}
-		else
+		if (exitDistanceSquared > entryDistanceSquared &&
+				exitDistanceSquared > oppositeDistanceSquared)
 		{
-			if (exitDistanceSquared > oppositeDistanceSquared)
-			{
-				peak = entryVertex;
-				base1 = exitVertex;
-				base2 = fulcrum;
-			}
-			else
-			{
-				peak = fulcrum;
-				base1 = entryVertex;
-				base2 = exitVertex;
-			}
+			Point splitExit = fulcrum.moveToward(
+					exit, 
+					0.25 + 0.5*random.nextDouble());
+			Point splitPath = entryVertex.moveToward(
+					splitExit, 
+					0.25 + 0.5*random.nextDouble());
+			TrianglePath entryPath = new TrianglePath(
+					entryVertex, 
+					fulcrum, 
+					splitExit, 
+					entry, 
+					splitPath, 
+					random);
+			TrianglePath exitPath = new TrianglePath(
+					splitExit, 
+					entryVertex, 
+					exitVertex, 
+					splitPath, 
+					exit, 
+					random);
+			replaceWithChildren(entryPath, exitPath);
+			return new Path[] { entryPath, exitPath };
 		}
-		Point splitBase = base1.moveToward(base2, 0.25 + 0.5*random.nextDouble());
-		Point splitPath = peak.moveToward(splitBase, 0.25 + 0.5*random.nextDouble());
-		return new Path[] { 
-				new TrianglePath(peak, base1, splitBase, entry, splitPath, random),
-				new TrianglePath(peak, splitBase, base2, splitPath, exit, random)
-		};
+		Point splitEntry = fulcrum.moveToward(
+				entry, 
+				0.25 + 0.5*random.nextDouble());
+		Point splitPath = exitVertex.moveToward(
+				splitEntry, 
+				0.25 + 0.5*random.nextDouble());
+		TrianglePath entryPath = new TrianglePath(
+				splitEntry, 
+				entryVertex, 
+				exitVertex, 
+				entry, 
+				splitPath, 
+				random);
+		TrianglePath exitPath = new TrianglePath(
+				exitVertex, 
+				splitEntry, 
+				fulcrum, 
+				splitPath, 
+				exit, 
+				random);
+		replaceWithChildren(entryPath, exitPath);
+		return new Path[] { entryPath, exitPath };
+	}
+
+	private void replaceWithChildren(TrianglePath entryPath,
+			TrianglePath exitPath) {
+		getPrevious().append(entryPath);
+		entryPath.append(exitPath);
+		remove(); // remove this path from the chain.
 	}
 
 	@Override

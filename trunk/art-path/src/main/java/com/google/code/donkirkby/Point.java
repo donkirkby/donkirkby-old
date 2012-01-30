@@ -28,8 +28,8 @@ public class Point {
 		}
 		Point other = (Point)obj;
 		return 
-			this.x == other.x &&
-			this.y == other.y;
+			Math.abs(this.x - other.x) < 0.001 &&
+			Math.abs(this.y - other.y) < 0.001;
 	}
 	
 	@Override
