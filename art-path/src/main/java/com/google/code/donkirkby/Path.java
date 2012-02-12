@@ -4,11 +4,7 @@ public abstract class Path {
 
 	protected Path next;
 
-	public abstract double calculateWidthOfFullPath(double totalIntensity, double totalArea);
-
 	public abstract double calculateOptimalWidth(Image image);
-
-	public abstract double getTotalLength();
 
 	public abstract double getLength();
 
@@ -47,6 +43,25 @@ public abstract class Path {
 		next.previous = previous;
 		previous.next = next;
 		previous = next = this;
+	}
+
+	public double calculateWidthOfFullPath(double totalIntensity, double totalArea) {
+		return calculateWidth(totalIntensity, totalArea, getTotalLength());
+	}
+
+	protected double calculateWidth(double intensity, double area, double length) {
+		return (1 - intensity) * area / length;
+	}
+
+	public double getTotalLength() {
+		double totalLength = 0;
+		Path path = this;
+		do
+		{
+			totalLength += path.getLength();
+			path = path.getNext();
+		}while (path != this);
+		return totalLength;
 	}
 
 }

@@ -1,39 +1,9 @@
 package com.google.code.donkirkby;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 import org.junit.Assert;
 import org.junit.Test;
 
 public class TrianglePathTest {
-	@SuppressWarnings("serial")
-	private class DummyRandom extends Random {
-		private ArrayList<Double> nextDoubles = new ArrayList<Double>();
-		private Double defaultDouble = null;
-		
-		@Override
-		public double nextDouble() {
-			if (nextDoubles.size() > 0)
-			{
-				return nextDoubles.remove(0);
-			}
-			if (defaultDouble != null)
-			{
-				return defaultDouble;
-			}
-			throw new IllegalStateException("No double values available.");
-		}
-		
-//		public void addDouble(double d){
-//			nextDoubles.add(d);
-//		}
-		
-		public void setDefaultDouble(Double d){
-			defaultDouble = d;
-		}
-	}
-	
 	@Test
 	public void splitOppositeInHalf()
 	{
@@ -205,7 +175,7 @@ public class TrianglePathTest {
 		// VERIFY
 		Assert.assertEquals(
 				"string", 
-				"TrianglePath((0,0), (0,100), (100,0), (0,50)->(50,0)", 
+				"TrianglePath((0,0), (0,100), (100,0), (0,50)->(50,0))", 
 				string);
 	}
 	

@@ -27,13 +27,14 @@ public class ArtPathApp {
 		try {
 			PaintWriter writer = new PaintWriter();
 			Image image = loadImage();
-			double minWidth = (double) 112; // 148, 145, 112, 91, 76, 67
+			double minWidth = (double) 10; // 148, 145, 112, 91, 76, 67
 			double pathWidth;
 			double reportedWidth = java.lang.Double.MAX_VALUE;
 			double totalIntensity = 
-					image.getCell(0, 0, image.getWidth(), image.getHeight());
+					image.getSquareIntensity(0, 0, image.getWidth(), image.getHeight());
 			double totalArea = image.getWidth() * image.getHeight();
-			Path start = createStartPath(image.getWidth(), image.getHeight());
+			Path start;
+			start = SquarePath.createStartPath(image.getWidth(), image.getHeight());
 			
 			do
 			{
@@ -91,10 +92,10 @@ public class ArtPathApp {
 			{
 				path2d.moveTo(coordinates[0], coordinates[1]);
 			}
-//			log.debug(coordinates[2] + ", " + coordinates[3]);
-//			log.debug(coordinates[4] + ", " + coordinates[5]);
-			path2d.lineTo(coordinates[2], coordinates[3]);
-			path2d.lineTo(coordinates[4], coordinates[5]);
+			for (int i = 2; i < coordinates.length; i += 2)
+			{
+				path2d.lineTo(coordinates[i], coordinates[i+1]);
+			}
 			path = path.getNext();
 		} while (path != startPath);
 		path2d.closePath();
@@ -124,16 +125,5 @@ public class ArtPathApp {
 		{
 			throw new RuntimeException(ex);
 		}
-	}
-
-	private static Path createStartPath(double width, double height) {
-		Path path1 = new SquarePath(new Cell(0, 0, width/2, height/2), SquarePath.North, SquarePath.East);
-		Path path2 = new SquarePath(new Cell(width/2, 0, width, height/2), SquarePath.East, SquarePath.South);
-		Path path3 = new SquarePath(new Cell(width/2, height/2, width, height), SquarePath.South, SquarePath.West);
-		Path path4 = new SquarePath(new Cell(0, width/2, width/2, height), SquarePath.West, SquarePath.North);
-		path1.append(path2);
-		path2.append(path3);
-		path3.append(path4);
-		return path1;
 	}
 }

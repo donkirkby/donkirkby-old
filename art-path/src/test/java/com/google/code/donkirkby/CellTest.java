@@ -21,7 +21,23 @@ public class CellTest {
 		// VERIFY
 		Assert.assertArrayEquals(expectedChildren, children);
 	}
-
+	
+	@Test
+	public void splitX() throws Exception {
+		// SETUP
+		Cell cell = new Cell(0, 0, 2, 2);
+		Cell[] expectedChildren = new Cell[] {
+				new Cell(0, 0, 1, 2),
+				new Cell(1, 0, 2, 2)				
+		};
+		
+		// EXEC
+		Cell[] children = cell.splitX(1);
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+	
 	@Test
 	public void equals() throws Exception {
 		// SETUP

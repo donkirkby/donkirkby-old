@@ -32,34 +32,27 @@ public class TrianglePath extends Path {
 	}
 
 	@Override
-	public double calculateWidthOfFullPath(double totalIntensity,
-			double totalArea) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public double calculateOptimalWidth(Image image) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public double getTotalLength() {
-		// TODO Auto-generated method stub
-		return 0;
+		double[] measurement = image.measureTriangle(
+				fulcrum.getX(),
+				fulcrum.getY(),
+				entryVertex.getX(),
+				entryVertex.getY(),
+				exitVertex.getX(),
+				exitVertex.getY());
+		double cellIntensity = measurement[0];
+		double cellArea = measurement[1];
+		return calculateWidth(cellIntensity, cellArea, getLength());
 	}
 
 	@Override
 	public double getLength() {
-		// TODO Auto-generated method stub
-		return 0;
+		return entry.distanceTo(exit);
 	}
 
 	@Override
 	public double[] getCoordinates() {
-		// TODO Auto-generated method stub
-		return null;
+		return new double[] { entry.getX(), entry.getY(), exit.getX(), exit.getY() };
 	}
 
 	@Override
@@ -154,7 +147,7 @@ public class TrianglePath extends Path {
 	@Override
 	public String toString() {
 		return String.format(
-				"TrianglePath(%s, %s, %s, %s->%s",
+				"TrianglePath(%s, %s, %s, %s->%s)",
 				fulcrum,
 				entryVertex,
 				exitVertex,
@@ -178,5 +171,41 @@ public class TrianglePath extends Path {
 			this.exitVertex.equals(other.exitVertex) &&
 			this.entry.equals(other.entry) &&
 			this.exit.equals(other.exit);
+	}
+
+	public static Path createStartPath(double width, double height) {
+		Random random = new Random(0);
+		double midX = width/2;
+		double midY = height/2;
+		TrianglePath bottom = new TrianglePath(
+				new Point(midX, midY),
+				new Point(0, 0),
+				new Point(width, 0),
+				new Point(width/4, height/4),
+				new Point(width*3/4, height/4),
+				random);
+		TrianglePath right = new TrianglePath(
+				new Point(midX, midY),
+				new Point(width, 0),
+				new Point(width, height),
+				new Point(width*3/4, height/4),
+				new Point(width*3/4, height*3/4),
+				random);
+		TrianglePath top = new TrianglePath(
+				new Point(midX, midY),
+				new Point(width, height),
+				new Point(0, height),
+				new Point(width*3/4, width*3/4),
+				new Point(width/4, height*3/4),
+				random);
+		TrianglePath left = new TrianglePath(
+				new Point(midX, midY),
+				new Point(0, height),
+				new Point(0, 0),
+				new Point(width/4, width*3/4),
+				new Point(width/4, width/4),
+				random);
+		bottom.append(right).append(top).append(left);
+		return bottom;
 	}
 }
