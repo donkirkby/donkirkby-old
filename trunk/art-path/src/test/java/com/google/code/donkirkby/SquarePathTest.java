@@ -390,7 +390,7 @@ public class SquarePathTest {
 		// VERIFY
 		Assert.assertEquals(
 				"String matches", 
-				"Path(Cell(0, 0, 2, 2), N, W)", 
+				"SquarePath(Cell(0, 0, 2, 2), N, W)", 
 				string);
 	}
 }

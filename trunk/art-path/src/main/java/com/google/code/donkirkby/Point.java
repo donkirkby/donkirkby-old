@@ -40,6 +40,10 @@ public class Point {
 	public Point moveToward(Point end, double fraction) {
 		return new Point(x + (end.x - x)*fraction, y + (end.y - y)*fraction);
 	}
+	
+	public double distanceTo(Point end) {
+		return Math.sqrt(distanceSquaredTo(end));
+	}
 
 	public double distanceSquaredTo(Point end) {
 		return (end.x - x)*(end.x - x) + (end.y - y)*(end.y - y);

@@ -70,4 +70,12 @@ public class Cell {
 				new Cell((left + right)/2, (top + bottom)/2, right, bottom)
 		};
 	}
+
+	public Cell[] splitX(double x) {
+		return new Cell[] 
+		{
+				new Cell(left, top, x, bottom),
+				new Cell(x, top, right, bottom)
+		};
+	}
 }

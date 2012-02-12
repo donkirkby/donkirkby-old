@@ -56,7 +56,7 @@ public class SquarePath extends Path {
 	public String toString()
 	{
 		return String.format(
-				"Path(%1$s, %2$s, %3$s)", 
+				"SquarePath(%1$s, %2$s, %3$s)", 
 				cell, 
 				DirectionNames[inDirection], 
 				DirectionNames[outDirection]);
@@ -64,7 +64,7 @@ public class SquarePath extends Path {
 	}
 
 	@Override
-	public SquarePath[] split() {
+	public Path[] split() {
 		Cell [] cells = this.cell.split();
 		int [] directions;
 		int [] cellIndexes;
@@ -147,7 +147,7 @@ public class SquarePath extends Path {
 		
 		//(sign*inDir + offset1) + offset2 = plannedInDir
 		//inDir = (plannedInDir - offset2)*sign - offset1
-		SquarePath [] paths = new SquarePath[4];
+		Path [] paths = new Path[4];
 		for (int i = 0; i < paths.length; i++) {
 			int index = paths.length - 1 - i;
 			int cellIndex = 
@@ -269,25 +269,13 @@ public class SquarePath extends Path {
 		return length;
 	}
 
-	@Override
-	public double getTotalLength() {
-		double totalLength = 0;
-		Path path = this;
-		do
-		{
-			totalLength += path.getLength();
-			path = path.getNext();
-		}while (path != this);
-		return totalLength;
-	}
-
 	public Cell getCell() {
 		return cell;
 	}
 
 	@Override
 	public double calculateOptimalWidth(Image image) {
-		double cellIntensity = image.getCell(
+		double cellIntensity = image.getSquareIntensity(
 			(int)cell.getLeft(),
 			(int)cell.getTop(),
 			(int)cell.getRight(),
@@ -298,12 +286,14 @@ public class SquarePath extends Path {
 		return calculateWidth(cellIntensity, cellArea, getLength());
 	}
 
-	private double calculateWidth(double intensity, double area, double length) {
-		return (1 - intensity) * area / length;
-	}
-
-	@Override
-	public double calculateWidthOfFullPath(double totalIntensity, double totalArea) {
-		return calculateWidth(totalIntensity, totalArea, getTotalLength());
+	public static Path createStartPath(double width, double height) {
+		Path path1 = new SquarePath(new Cell(0, 0, width/2, height/2), SquarePath.North, SquarePath.East);
+		Path path2 = new SquarePath(new Cell(width/2, 0, width, height/2), SquarePath.East, SquarePath.South);
+		Path path3 = new SquarePath(new Cell(width/2, height/2, width, height), SquarePath.South, SquarePath.West);
+		Path path4 = new SquarePath(new Cell(0, width/2, width/2, height), SquarePath.West, SquarePath.North);
+		path1.append(path2);
+		path2.append(path3);
+		path3.append(path4);
+		return path1;
 	}
 }
