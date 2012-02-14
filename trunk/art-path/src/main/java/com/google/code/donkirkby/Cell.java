@@ -78,4 +78,12 @@ public class Cell {
 				new Cell(x, top, right, bottom)
 		};
 	}
+
+	public Cell[] splitY(double y) {
+		return new Cell[] 
+		{
+				new Cell(left, top, right, y),
+				new Cell(left, y, right, bottom)
+		};
+	}
 }
