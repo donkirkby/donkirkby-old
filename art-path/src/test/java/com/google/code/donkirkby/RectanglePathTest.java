@@ -125,6 +125,36 @@ public class RectanglePathTest {
 	}
 
 	@Test
+	public void splitY() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(0, 2), 
+				new Point(4, 8),
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 0, 8, 5),
+						new Point(0, 2),
+						new Point(4, 5),
+						random),
+				new RectanglePath(
+						new Cell(0, 5, 8, 8),
+						new Point(4, 5),
+						new Point(4, 8),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
 	public void equals() throws Exception {
 		// SETUP
 		Cell cell1 = new Cell(0, 0, 2, 2);

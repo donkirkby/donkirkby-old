@@ -5,6 +5,7 @@ import java.util.Random;
 
 public class RectanglePath extends Path {
 	
+	private final int RIGHT = 0, TOP = 1, LEFT = 2, BOTTOM = 4;
 	private Cell cell;
 	private Point entry, exit;
 	private Random random;
@@ -52,23 +53,65 @@ public class RectanglePath extends Path {
 
 	@Override
 	public Path[] split() {
-		Point pathBreak = entry.moveToward(exit, getRandomSplit());
-		Point crossing = new Point(
-				pathBreak.getX(),
-				cell.getTop() + 
-				(cell.getBottom() - cell.getTop()) * getRandomSplit());
-		Cell[] cells = cell.splitX(pathBreak.getX());
-		Cell entryCell, exitCell;
-		if (entry.getX() == cell.getLeft() || exit.getX() == cell.getRight())
+		int entrySide = getSide(entry);
+		int exitSide = getSide(exit);
+		boolean isReversed; // bottom before top or right before left
+		boolean isHorizontalSplit; // split boundary is horizontal
+		boolean isHorizontalReversed; // isReversed when we split horizontally
+		boolean isVerticalReversed; // isReversed when we split vertically
+		// We assume that we will split the entry side, then compare distance
+		// to corner and reverse if needed.
+		isHorizontalSplit = entrySide == LEFT || entrySide == RIGHT;
+		isHorizontalReversed = entrySide == BOTTOM || exitSide == TOP;
+		isVerticalReversed = entrySide == RIGHT || exitSide == LEFT;
+		Point corner;
+		switch (entrySide + exitSide)
 		{
-			entryCell = cells[0];
-			exitCell = cells[1];
+		case RIGHT + TOP:
+			corner = new Point(cell.getRight(), cell.getBottom());
+			break;
+		case RIGHT + BOTTOM:
+			corner = new Point(cell.getRight(), cell.getBottom());
+			break;
+		case LEFT + BOTTOM:
+			corner = new Point(cell.getLeft(), cell.getBottom());
+			break;
+		case LEFT + TOP:
+			corner = new Point(cell.getLeft(), cell.getTop());
+			break;
+		default:
+			throw new IllegalStateException("Unexpected entry/exit combination: " + entrySide + exitSide);
+		}
+		double entryDistance = entry.distanceSquaredTo(corner);
+		double exitDistance = exit.distanceSquaredTo(corner);
+		if (entryDistance < exitDistance)
+		{
+			isHorizontalSplit = ! isHorizontalSplit;
+		}
+		isReversed = 
+				isHorizontalSplit ? isHorizontalReversed : isVerticalReversed;
+		Point pathBreak = entry.moveToward(exit, getRandomSplit());
+		Point crossing;
+		if (isHorizontalSplit)
+		{
+			crossing = new Point(
+					cell.getLeft() + 
+					(cell.getRight() - cell.getLeft()) * getRandomSplit(),
+					pathBreak.getY());
 		}
 		else
 		{
-			entryCell = cells[1];
-			exitCell = cells[0];
+			crossing = new Point(
+					pathBreak.getX(),
+					cell.getTop() + 
+					(cell.getBottom() - cell.getTop()) * getRandomSplit());
 		}
+		Cell[] cells = 
+				isHorizontalSplit
+				? cell.splitY(pathBreak.getY())
+				: cell.splitX(pathBreak.getX());
+		Cell entryCell = isReversed ? cells[1] : cells[0];
+		Cell exitCell = isReversed ? cells[0] : cells[1];
 		return new Path[] {
 				new RectanglePath(
 						entryCell,
@@ -81,6 +124,17 @@ public class RectanglePath extends Path {
 						exit, 
 						random),
 		};
+	}
+	
+	private int getSide(Point point) {
+		return
+				point.getX() == cell.getRight()
+				? RIGHT
+				: point.getY() == cell.getTop()
+				? TOP
+				: point.getX() == cell.getLeft()
+				? LEFT
+				: BOTTOM;
 	}
 
 	private double getRandomSplit() {
