@@ -1,11 +1,13 @@
 package com.google.code.donkirkby;
 
+import java.util.Random;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 public class RectanglePathTest {
 	@Test
-	public void splitEastSouthMid() throws Exception {
+	public void splitLeftBottomMid() throws Exception {
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(0.5);
@@ -35,7 +37,7 @@ public class RectanglePathTest {
 	}
 
 	@Test
-	public void splitEastSouthMax() throws Exception {
+	public void splitLeftBottomMax() throws Exception {
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(1.0);
@@ -65,7 +67,7 @@ public class RectanglePathTest {
 	}
 
 	@Test
-	public void splitWestSouth() throws Exception {
+	public void splitRightBottom() throws Exception {
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(0.5);
@@ -95,7 +97,7 @@ public class RectanglePathTest {
 	}
 
 	@Test
-	public void splitNorthEast() throws Exception {
+	public void splitBottomRight() throws Exception {
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(0.5);
@@ -125,7 +127,7 @@ public class RectanglePathTest {
 	}
 
 	@Test
-	public void splitY() throws Exception {
+	public void splitHorizontal() throws Exception {
 		// SETUP
 		DummyRandom random = new DummyRandom();
 		random.setDefaultDouble(0.5);
@@ -152,6 +154,250 @@ public class RectanglePathTest {
 		
 		// VERIFY
 		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	/*
+	 * Starting path does not go around a corner, and the gap is to small
+	 * to split.
+	 */
+	@Test
+	public void splitSmallGapCrossingVertical() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(0, 4), 
+				new Point(8, 5),
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 0, 4, 8),
+						new Point(0, 4),
+						new Point(4, 4),
+						random),
+				new RectanglePath(
+						new Cell(4, 0, 8, 8),
+						new Point(4, 4),
+						new Point(8, 5),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitSmallGapCrossingHorizontal() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(4, 0), 
+				new Point(5, 8),
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 0, 8, 4),
+						new Point(4, 0),
+						new Point(4, 4),
+						random),
+				new RectanglePath(
+						new Cell(0, 4, 8, 8),
+						new Point(4, 4),
+						new Point(5, 8),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitSmallGapCrossingHorizontalReversed() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(5, 8),
+				new Point(4, 0), 
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 4, 8, 8),
+						new Point(5, 8),
+						new Point(4, 4),
+						random),
+				new RectanglePath(
+						new Cell(0, 0, 8, 4),
+						new Point(4, 4),
+						new Point(4, 0),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitBigGapCrossingHorizontal() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 2, 8), 
+				new Point(0, 2), 
+				new Point(2, 6),
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 0, 2, 4),
+						new Point(0, 2),
+						new Point(1, 4),
+						random),
+				new RectanglePath(
+						new Cell(0, 4, 2, 8),
+						new Point(1, 4),
+						new Point(2, 6),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitBigGapCrossingHorizontalNotReversed() throws Exception {
+		// SETUP
+		DummyRandom random = new DummyRandom();
+		random.setDefaultDouble(0.5);
+		Path path = new RectanglePath(
+				new Cell(0, 0, 2, 8), 
+				new Point(2, 2), 
+				new Point(0, 6),
+				random);
+		Path[] expectedChildren = new Path[] {
+				new RectanglePath(
+						new Cell(0, 0, 2, 4),
+						new Point(2, 2),
+						new Point(1, 4),
+						random),
+				new RectanglePath(
+						new Cell(0, 4, 2, 8),
+						new Point(1, 4),
+						new Point(0, 6),
+						random),
+		};
+		
+		// EXEC
+		Path[] children = path.split();
+		
+		// VERIFY
+		Assert.assertArrayEquals(expectedChildren, children);
+	}
+
+	@Test
+	public void splitChainCorner() throws Exception {
+		// SETUP
+		Random random = new Random();
+		Path path1 = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(4, 8), 
+				new Point(8, 4), 
+				random);
+		Path path2 = new RectanglePath(
+				new Cell(8, 0, 16, 8),
+				new Point(8, 4), 
+				new Point(12, 8), 
+				random);
+		Path path3 = new RectanglePath(
+				new Cell(8, 8, 16, 16),
+				new Point(12, 8), 
+				new Point(8, 12), 
+				random);
+		Path path4 = new RectanglePath(
+				new Cell(0, 8, 8, 16),
+				new Point(8, 12), 
+				new Point(4, 8), 
+				random);
+		
+		// EXEC
+		path1.append(path2);
+		path2.append(path3);
+		path3.append(path4);
+		Path[] children = path1.split(); //1a, 1b
+		Path after1b = children[1].getNext();
+		Path before1a = children[0].getPrevious();
+		Path after4 = path4.getNext();
+		Path before2 = path2.getPrevious();
+		
+		// VERIFY
+		Assert.assertEquals("after1d", path2, after1b);
+		Assert.assertEquals("before1a", path4, before1a);
+		Assert.assertEquals("after4", children[0], after4);
+		Assert.assertEquals("before2", children[1], before2);
+	}
+
+	@Test
+	public void splitChainCrossing() throws Exception {
+		// SETUP
+		Random random = new Random();
+		Path path1 = new RectanglePath(
+				new Cell(0, 0, 8, 8), 
+				new Point(2, 8), 
+				new Point(8, 4), 
+				random);
+		Path path2 = new RectanglePath(
+				new Cell(8, 0, 16, 8),
+				new Point(8, 4), 
+				new Point(14, 8), 
+				random);
+		Path path3 = new RectanglePath(
+				new Cell(9, 8, 16, 16),
+				new Point(14, 8), 
+				new Point(9, 14), 
+				random);
+		Path path4 = new RectanglePath(
+				new Cell(7, 8, 9, 16),
+				new Point(9, 14), 
+				new Point(7, 10), 
+				random);
+		Path path5 = new RectanglePath(
+				new Cell(0, 8, 7, 16),
+				new Point(7, 10), 
+				new Point(2, 8), 
+				random);
+		
+		// EXEC
+		path1.append(path2);
+		path2.append(path3);
+		path3.append(path4);
+		path4.append(path5);
+		Path[] children = path4.split(); //4a, 4b
+		Path after4b = children[1].getNext();
+		Path before4a = children[0].getPrevious();
+		Path after3 = path3.getNext();
+		Path before5 = path5.getPrevious();
+		
+		// VERIFY
+		Assert.assertEquals("after4d", path5, after4b);
+		Assert.assertEquals("before4a", path3, before4a);
+		Assert.assertEquals("after3", children[0], after3);
+		Assert.assertEquals("before5", children[1], before5);
 	}
 
 	@Test

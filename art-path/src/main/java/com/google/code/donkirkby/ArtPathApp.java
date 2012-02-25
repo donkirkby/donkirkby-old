@@ -27,14 +27,15 @@ public class ArtPathApp {
 		try {
 			PaintWriter writer = new PaintWriter();
 			Image image = loadImage();
-			double minWidth = (double) 10; // 148, 145, 112, 91, 76, 67
+			double minWidth = (double) 2; // 206.5,206,192,179,159,145,142,141,116,108,102.8,102,94.8, 94.58, 94.56
 			double pathWidth;
 			double reportedWidth = java.lang.Double.MAX_VALUE;
 			double totalIntensity = 
 					image.getSquareIntensity(0, 0, image.getWidth(), image.getHeight());
 			double totalArea = image.getWidth() * image.getHeight();
-			Path start;
-			start = SquarePath.createStartPath(image.getWidth(), image.getHeight());
+			Path start = RectanglePath.createStartPath(
+					image.getWidth(), 
+					image.getHeight());
 			
 			do
 			{
@@ -96,6 +97,18 @@ public class ArtPathApp {
 			{
 				path2d.lineTo(coordinates[i], coordinates[i+1]);
 			}
+			
+//			RectanglePath path2 = (RectanglePath) path;
+//			Cell cell = path2.getCell();
+//			path2d.moveTo(cell.getLeft(), cell.getTop());
+//			path2d.lineTo(cell.getLeft(), cell.getBottom());
+//			path2d.lineTo(cell.getRight(), cell.getBottom());
+//			path2d.lineTo(cell.getRight(), cell.getTop());
+//			path2d.lineTo(cell.getLeft(), cell.getTop());
+//			path2d.moveTo(
+//					coordinates[coordinates.length-2], 
+//					coordinates[coordinates.length-1]);
+			
 			path = path.getNext();
 		} while (path != startPath);
 		path2d.closePath();
