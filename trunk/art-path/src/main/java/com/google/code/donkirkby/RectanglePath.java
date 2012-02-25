@@ -24,6 +24,10 @@ public class RectanglePath extends Path {
 		this.random = random;
 	}
 	
+	public Cell getCell() {
+		return cell;
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
@@ -48,13 +52,54 @@ public class RectanglePath extends Path {
 				cell, 
 				entry, 
 				exit);
-		
 	}
 
 	@Override
 	public Path[] split() {
 		int entrySide = getSide(entry);
 		int exitSide = getSide(exit);
+		switch(entrySide + exitSide)
+		{
+		case RIGHT + TOP:
+		case RIGHT + BOTTOM:
+		case LEFT + TOP:
+		case LEFT + BOTTOM:
+			return splitCorner(entrySide, exitSide);
+		case LEFT + RIGHT:
+		case TOP + BOTTOM:
+			return splitCrossing(entrySide, exitSide);
+		default:
+			throw new IllegalStateException("Unexpected entry/exit combination: " + entrySide + exitSide);
+		}
+	}
+
+	private Path[] splitCrossing(int entrySide, int exitSide) {
+		boolean isHorizontalSplit = entrySide == LEFT || entrySide == RIGHT;
+		double gap =
+				isHorizontalSplit
+				? Math.abs(entry.getY() - exit.getY())
+				: Math.abs(entry.getX() - exit.getX());
+		double otherDimension =
+				isHorizontalSplit
+				? (cell.getRight() - cell.getLeft())
+				: (cell.getBottom() - cell.getTop());
+		boolean isReversed;
+		if (gap < otherDimension)
+		{
+			isHorizontalSplit = ! isHorizontalSplit;
+			isReversed = entrySide == BOTTOM || entrySide == RIGHT;
+		}
+		else
+		{
+			isReversed = 
+					isHorizontalSplit
+					? entry.getY() > exit.getY()
+					: entry.getX() > exit.getX();
+		}
+		return createChildren(isHorizontalSplit, isReversed);
+	}
+
+	private Path[] splitCorner(int entrySide, int exitSide) {
 		boolean isReversed; // bottom before top or right before left
 		boolean isHorizontalSplit; // split boundary is horizontal
 		boolean isHorizontalReversed; // isReversed when we split horizontally
@@ -68,7 +113,7 @@ public class RectanglePath extends Path {
 		switch (entrySide + exitSide)
 		{
 		case RIGHT + TOP:
-			corner = new Point(cell.getRight(), cell.getBottom());
+			corner = new Point(cell.getRight(), cell.getTop());
 			break;
 		case RIGHT + BOTTOM:
 			corner = new Point(cell.getRight(), cell.getBottom());
@@ -90,6 +135,10 @@ public class RectanglePath extends Path {
 		}
 		isReversed = 
 				isHorizontalSplit ? isHorizontalReversed : isVerticalReversed;
+		return createChildren(isHorizontalSplit, isReversed);
+	}
+
+	private Path[] createChildren(boolean isHorizontalSplit, boolean isReversed) {
 		Point pathBreak = entry.moveToward(exit, getRandomSplit());
 		Point crossing;
 		if (isHorizontalSplit)
@@ -112,18 +161,20 @@ public class RectanglePath extends Path {
 				: cell.splitX(pathBreak.getX());
 		Cell entryCell = isReversed ? cells[1] : cells[0];
 		Cell exitCell = isReversed ? cells[0] : cells[1];
-		return new Path[] {
-				new RectanglePath(
-						entryCell,
-						entry, 
-						crossing, 
-						random),
-				new RectanglePath(
-						exitCell,
-						crossing,
-						exit, 
-						random),
-		};
+		RectanglePath child1 = new RectanglePath(
+				entryCell,
+				entry, 
+				crossing, 
+				random);
+		RectanglePath child2 = new RectanglePath(
+				exitCell,
+				crossing,
+				exit, 
+				random);
+		getPrevious().append(child1);
+		child1.append(child2);
+		this.remove();
+		return new Path[] { child1, child2 };
 	}
 	
 	private int getSide(Point point) {
@@ -143,18 +194,13 @@ public class RectanglePath extends Path {
 
 	@Override
 	public double[] getCoordinates() {
-		// TODO: implement
-		return null;
+		return new double[] 
+				{ entry.getX(), entry.getY(), exit.getX(), exit.getY() };
 	}
 
 	@Override
 	public double getLength() {
-		// TODO: implement
-		return 0;
-	}
-
-	public Cell getCell() {
-		return cell;
+		return entry.distanceTo(exit);
 	}
 
 	@Override
@@ -171,7 +217,30 @@ public class RectanglePath extends Path {
 	}
 
 	public static Path createStartPath(double width, double height) {
-		// TODO: implement
-		return null;
+		Random random = new Random(0);
+		Path path1 = new RectanglePath(
+				new Cell(0, 0, width*.5, height*.5), 
+				new Point(width*.25, height*.5), 
+				new Point(width*.5, height*.25), 
+				random);
+		Path path2 = new RectanglePath(
+				new Cell(width*.5, 0, width, height*.5),
+				new Point(width*.5, height*.25), 
+				new Point(width*.75, height*.5), 
+				random);
+		Path path3 = new RectanglePath(
+				new Cell(width*.5, height*.5, width, height),
+				new Point(width*.75, height*.5), 
+				new Point(width*.5, height*.75), 
+				random);
+		Path path4 = new RectanglePath(
+				new Cell(0, height*.5, width*.5, height),
+				new Point(width*.5, height*.75), 
+				new Point(width*.25, height*.5), 
+				random);
+		path1.append(path2);
+		path2.append(path3);
+		path3.append(path4);
+		return path1;
 	}
 }

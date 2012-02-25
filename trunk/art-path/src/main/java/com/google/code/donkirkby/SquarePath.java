@@ -269,10 +269,6 @@ public class SquarePath extends Path {
 		return length;
 	}
 
-	public Cell getCell() {
-		return cell;
-	}
-
 	@Override
 	public double calculateOptimalWidth(Image image) {
 		double cellIntensity = image.getSquareIntensity(
