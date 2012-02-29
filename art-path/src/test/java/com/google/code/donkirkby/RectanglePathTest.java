@@ -467,4 +467,19 @@ public class RectanglePathTest {
 				"RectanglePath(Cell(0, 0, 4, 4), (0,2)->(3,4))", 
 				string);
 	}
+	
+	@Test 
+	public void createStartPath() throws Exception {
+		// EXEC
+		Path path1 = RectanglePath.createStartPath(500, 200);
+		Path path2 = path1.getNext();
+		Path path3 = path2.getNext();
+		Path path4 = path3.getNext();
+		Path afterPath4 = path4.getNext();
+		
+		// VERIFY
+		Assert.assertNotSame("path2", path1, path2);
+		Assert.assertNotSame("path3", path1, path3);
+		Assert.assertSame("after path4", path1, afterPath4);
+	}
 }

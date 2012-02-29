@@ -16,7 +16,10 @@ public class RectanglePath extends Path {
 	 * @param outDirection The direction of travel while exiting this section.
 	 */
 	public RectanglePath(
-			Cell cell, Point entry, Point exit, Random random) 
+			Cell cell, 
+			Point entry, 
+			Point exit, 
+			Random random) 
 	{
 		this.cell = cell;
 		this.entry = entry;

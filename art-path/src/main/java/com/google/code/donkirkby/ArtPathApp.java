@@ -27,13 +27,13 @@ public class ArtPathApp {
 		try {
 			PaintWriter writer = new PaintWriter();
 			Image image = loadImage();
-			double minWidth = (double) 2; // 206.5,206,192,179,159,145,142,141,116,108,102.8,102,94.8, 94.58, 94.56
+			double minWidth = (double) 1; // 206.5,206,192,179,159,145,142,141,116,108,102.8,102,94.8, 94.58, 94.56
 			double pathWidth;
 			double reportedWidth = java.lang.Double.MAX_VALUE;
 			double totalIntensity = 
 					image.getSquareIntensity(0, 0, image.getWidth(), image.getHeight());
 			double totalArea = image.getWidth() * image.getHeight();
-			Path start = RectanglePath.createStartPath(
+			Path start = CentredRectanglePath.createStartPath(
 					image.getWidth(), 
 					image.getHeight());
 			
@@ -98,7 +98,7 @@ public class ArtPathApp {
 				path2d.lineTo(coordinates[i], coordinates[i+1]);
 			}
 			
-//			RectanglePath path2 = (RectanglePath) path;
+//			CentredRectanglePath path2 = (CentredRectanglePath) path;
 //			Cell cell = path2.getCell();
 //			path2d.moveTo(cell.getLeft(), cell.getTop());
 //			path2d.lineTo(cell.getLeft(), cell.getBottom());
@@ -120,7 +120,7 @@ public class ArtPathApp {
 		{
 			Image image = new Image();
 			Resource templateResource = 
-				new ClassPathResource("/balcony.pgm");
+				new ClassPathResource("/balcony-cropped-levels2.pgm");
 			InputStream inputStream = templateResource.getInputStream();
 			BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(inputStream, "utf8"));
