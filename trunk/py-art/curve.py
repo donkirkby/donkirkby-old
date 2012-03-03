@@ -2,6 +2,7 @@ class Curve(object):
     def __init__(self, display, image):
         self.__display = display
         self.__image = image
+        self.scale = (1, 1)
         
     def draw_cell(self, entryPoint, exitPoint, sign):
         if entryPoint == exitPoint:
@@ -15,25 +16,17 @@ class Curve(object):
         x3 = xout + dy*sign
         y3 = yout - dx*sign
         
-#        print entryPoint, (x2, y2), (x3, y3), exitPoint, (dx, dy, sign)
-#        self.__display.add_point(entryPoint)
-#        self.__display.add_point((x2, y2))
-#        self.__display.add_point((x3, y3))
-#        self.__display.add_point(exitPoint)
-#        return
-        
         size = max(abs(dx), abs(dy)) + 1
         xmin = min(xin, x2, x3, xout)
         xmax = xmin+size
         ymin = min(yin, y2, y3, yout)
         ymax = ymin+size
         
+        xscale, yscale = self.scale
         total = 0
         for x in range(xmin, xmax):
             for y in range(ymin, ymax):
-#                px = self.__image.getpixel((2*x,2*y))
-#                print x, y, px
-                total += self.__image.getpixel((2*x,2*y))
+                total += self.__image.getpixel((xscale*x,yscale*y))
         area = size*size
         intensity = total/area/255.0
         if (1 - intensity) < (1.0 / size):
