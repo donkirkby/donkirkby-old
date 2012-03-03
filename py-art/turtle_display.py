@@ -8,17 +8,22 @@ class TurtleDisplay:
     def add_point(self, point):
         x, y = self.translate(point)
         if self.__start_point:
-            turtle.speed(0) #@UndefinedVariable
             turtle.goto(x, y) #@UndefinedVariable
         else:
+            turtle.speed(0) #@UndefinedVariable
             self.__start_point = point
             turtle.penup() #@UndefinedVariable
             turtle.goto(x, y) #@UndefinedVariable
             turtle.pendown() #@UndefinedVariable
 
-    def close(self):
+    def close_curve(self):
         x, y = self.translate(self.__start_point)
         turtle.goto(x, y) #@UndefinedVariable
+        self.__start_point = None
+        
+    def close(self):
+        print "Press enter to continue."
+        raw_input()
     
     def translate(self, point):
         x, y = point
