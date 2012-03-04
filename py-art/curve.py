@@ -2,11 +2,13 @@ class Curve(object):
     def __init__(self, display, image):
         self.__display = display
         self.__image = image
+        self.__levels = {}
         self.scale = (1, 1)
         
     def draw_cell(self, entryPoint, exitPoint, sign):
         if entryPoint == exitPoint:
             return
+        
         xin, yin = entryPoint
         xout, yout = exitPoint
         dx = xout-xin
@@ -29,7 +31,8 @@ class Curve(object):
                 total += self.__image.getpixel((xscale*x,yscale*y))
         area = size*size
         intensity = total/area/255.0
-        if (1 - intensity) < (1.0 / size):
+        min_intensity = self.__levels.get(size, 1.0)
+        if intensity >= min_intensity:
             self.__display.add_point(exitPoint)
         else:
             half_size = size / 2
@@ -52,4 +55,18 @@ class Curve(object):
             self.draw_cell(entry3, exit3, sign)
             self.__display.add_point(entry4)
             self.draw_cell(entry4, exit4, -sign)
-        
+
+    def calculate_levels(self, levelCount, left, top, width, height):
+        xscale, yscale = self.scale
+        pixels = []
+        for x in range(left, left+width):
+            for y in range(top, top+height):
+                pixels.append(self.__image.getpixel((xscale*x, yscale*y)))
+        pixels.sort()
+        pixelCount = len(pixels)
+        self.__levels = {}
+        size = 1
+        for i in range(levelCount):
+            pixelIndex = pixelCount*i/levelCount
+            self.__levels[size] = pixels[pixelIndex]/255.0
+            size *= 2
