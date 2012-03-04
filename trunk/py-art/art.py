@@ -33,20 +33,21 @@ def display_square(size, display, curve):
     display.add_point((size/2 - 1, 0))
     display.close_curve()
 
+filename = 'input/bwR.jpg'
 filename = '/home/don/Dropbox/Art/balcony.jpg'
 filename = 'input/balcony-cropped-levels.jpg'
-filename = 'input/bwR.jpg'
 image = Image.open(filename)
 
 size = 512
-display = SvgDisplay('output/bwF.svg', size + 2, size + 2)
+display = SvgDisplay('output/balcony.svg', 2*size + 2, size + 2)
 display.offset = (1,1)
 curve = Curve(display, image)
 curve.scale = (1, 1)
+curve.calculate_levels(6, 0, 0, 2*size, size)
 
 print "Starting."
 
-display_square(size, display, curve)
+display_rectangle(size, display, curve)
 
 display.close()
 print "Success."
