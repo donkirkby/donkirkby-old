@@ -1,5 +1,6 @@
 import Image
 from svg_display import SvgDisplay
+from gcode_display import GCodeDisplay
 from curve import Curve
 
 
@@ -80,20 +81,20 @@ filename = 'input/bwR.jpg'
 filename = '/home/don/Dropbox/Art/balcony.jpg'
 filename = 'input/balcony-cropped-levels.jpg'
 filename = 'input/balcony-cropped-3x2.jpg'
-filename = 'input/Kirkby-trimmed.jpg'
 filename = 'input/lena-cropped.jpg'
+filename = '/home/don/Dropbox/Art/Kirkby-trimmed.jpg'
 image = Image.open(filename)
 
 size = 256
-display = SvgDisplay('output/lena.svg', 3*size + 22, 2*size + 22)
+#display = SvgDisplay('output/Kirkby.svg', 3*size + 22, 2*size + 22)
+display = GCodeDisplay()
 display.offset = (11,11)
+display.scale = (0.3, -0.3)
+display.feed_rate = 1200
 curve = Curve(display, image)
 curve.scale = (1, 1)
 curve.calculate_levels(4, 0, 0, 3*size, 2*size)
 
-print "Starting."
-
 display_3x2_with_border(size, display, curve)
 
 display.close()
-print "Success."
