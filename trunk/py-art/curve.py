@@ -4,6 +4,7 @@ class Curve(object):
         self.__image = image
         self.__levels = {}
         self.scale = (1, 1)
+        self.is_inverted = False
         
     def draw_cell(self, entryPoint, exitPoint, sign):
         if entryPoint == exitPoint:
@@ -31,6 +32,9 @@ class Curve(object):
                 total += self.__image.getpixel((xscale*x,yscale*y))
         area = size*size
         intensity = total/area/255.0
+        if self.is_inverted:
+            intensity = 1.0 - intensity
+        
         min_intensity = self.__levels.get(size, 1.0)
         if intensity >= min_intensity:
             self.__display.add_point(exitPoint)
@@ -61,12 +65,15 @@ class Curve(object):
         pixels = []
         for x in range(left, left+width):
             for y in range(top, top+height):
-                pixels.append(self.__image.getpixel((xscale*x, yscale*y)))
+                intensity = self.__image.getpixel((xscale * x, yscale * y))
+                if self.is_inverted:
+                    intensity = 255 - intensity
+                pixels.append(intensity)
         pixels.sort()
         pixelCount = len(pixels)
         self.__levels = {}
         size = 1
         for i in range(levelCount):
             pixelIndex = pixelCount*i/levelCount
-            self.__levels[size] = pixels[pixelIndex]/255.0
+            self.__levels[size] = pixels[pixelIndex] / 255.0
             size *= 2

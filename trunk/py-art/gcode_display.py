@@ -6,6 +6,7 @@ class GCodeDisplay:
     def __init__(self):    
         self.scale = (1, 1)
         self.offset = (0, 0)
+        self.preamble = "g21 g64 p0.01"
         self.feed_rate = 50
         self.plunge_feed_rate = 50
         self.spindle_speed = 4500
@@ -13,17 +14,13 @@ class GCodeDisplay:
         self.ztop = 100.0
         self.depth = 0.1
 
-    def add_length(self, x, y):
-        pass
-
     def add_point(self, point):
         x, y = self.translate(point)
             
         if self.__started:
             print "g1 x%f y%f" % (x, y)
         else:
-            print "g21" # use mm units
-            print "g64 p0.01"
+            print self.preamble
             print "f%f" % self.plunge_feed_rate
             print "m3 s%d" % self.spindle_speed
             print "g4 p4" # pause 4 seconds
