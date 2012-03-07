@@ -1,7 +1,8 @@
 from svg_display import SvgDisplay
 from gcode_display import GCodeDisplay
 from curve import Curve
-from Tkinter import *
+from Tkinter import Frame, Label, StringVar, IntVar, DoubleVar, Entry, \
+    E, W, Checkbutton, Button
 import Image
 import os
 import ConfigParser
@@ -25,6 +26,10 @@ class Application(Frame):
         self.__config.set(self.DEFAULT_SECTION, 'output', '~/output.svg')
         self.__config.set(self.DEFAULT_SECTION, 'preamble', 'G17 G21 G90 G64 P0.1 S4500 M3 M8')
         self.__config.set(self.DEFAULT_SECTION, 'size', '256')
+        self.__config.set(self.DEFAULT_SECTION, 'width', '152.4') #material can be 1/8" thick
+        self.__config.set(self.DEFAULT_SECTION, 'height', '101.6')
+        self.__config.set(self.DEFAULT_SECTION, 'margin', '10.0')
+        self.__config.set(self.DEFAULT_SECTION, 'thickness', '6.35')
         self.__config.set(self.DEFAULT_SECTION, 'tool_diameter', '3.175')
         self.__config.read(os.path.expanduser('~/.py-art.cfg'))
         
@@ -63,11 +68,39 @@ class Application(Frame):
             Entry(self.EntryFrame, textvariable=self.PreambleVar ,width=50).grid(row=i, column=1)
 
             i += 1
+            Label(self.EntryFrame, text='Width').grid(row=i, column=0, sticky=E)
+
+            self.WidthVar = DoubleVar()
+            self.WidthVar.set(self.__config.get(self.DEFAULT_SECTION, 'width'))
+            Entry(self.EntryFrame, textvariable=self.WidthVar ,width=50).grid(row=i, column=1)
+
+            i += 1
+            Label(self.EntryFrame, text='Height').grid(row=i, column=0, sticky=E)
+
+            self.HeightVar = DoubleVar()
+            self.HeightVar.set(self.__config.get(self.DEFAULT_SECTION, 'height'))
+            Entry(self.EntryFrame, textvariable=self.HeightVar ,width=50).grid(row=i, column=1)
+
+            i += 1
+            Label(self.EntryFrame, text='Margin').grid(row=i, column=0, sticky=E)
+
+            self.MarginVar = DoubleVar()
+            self.MarginVar.set(self.__config.get(self.DEFAULT_SECTION, 'margin'))
+            Entry(self.EntryFrame, textvariable=self.MarginVar ,width=50).grid(row=i, column=1)
+
+            i += 1
             Label(self.EntryFrame, text='Tool diameter').grid(row=i, column=0, sticky=E)
 
             self.ToolDiameterVar = DoubleVar()
             self.ToolDiameterVar.set(self.__config.get(self.DEFAULT_SECTION, 'tool_diameter'))
             Entry(self.EntryFrame, textvariable=self.ToolDiameterVar ,width=50).grid(row=i, column=1)
+
+            i += 1
+            Label(self.EntryFrame, text='Thickness').grid(row=i, column=0, sticky=E)
+
+            self.ThicknessVar = DoubleVar()
+            self.ThicknessVar.set(self.__config.get(self.DEFAULT_SECTION, 'thickness'))
+            Entry(self.EntryFrame, textvariable=self.ThicknessVar ,width=50).grid(row=i, column=1)
 
             i += 1
             Button(self.EntryFrame, text='Trace boundary in AXIS and Quit',command=self.WriteBoundaryTraceToAxis).grid(row=i, column=1, sticky=E)
@@ -95,8 +128,12 @@ class Application(Frame):
             self.__config.set(self.DEFAULT_SECTION, 'inverted', self.InvertedVar.get())
             self.__config.set(self.DEFAULT_SECTION, 'size', self.SizeVar.get())
             if IN_AXIS:
+                self.__config.set(self.DEFAULT_SECTION, 'height', self.ToolDiameterVar.get())
+                self.__config.set(self.DEFAULT_SECTION, 'margin', self.ToolDiameterVar.get())
                 self.__config.set(self.DEFAULT_SECTION, 'preamble', self.PreambleVar.get())
                 self.__config.set(self.DEFAULT_SECTION, 'tool_diameter', self.ToolDiameterVar.get())
+                self.__config.set(self.DEFAULT_SECTION, 'thickness', self.ThicknessVar.get())
+                self.__config.set(self.DEFAULT_SECTION, 'width', self.ToolDiameterVar.get())
             else:
                 self.__config.set(self.DEFAULT_SECTION, 'output', self.OutputVar.get())
                 
@@ -121,28 +158,37 @@ class Application(Frame):
         
         self.DisplayAndQuit(display, size)
         
+
+    def WriteBoundaryMoves(self, display, cut_depth):
+        width = self.WidthVar.get()
+        height = self.HeightVar.get()
+        tool_radius = self.ToolDiameterVar.get() / 2
+        corner_radius = 1.0
+        display.add_point((-tool_radius, -corner_radius))
+        print "g1 y%f z%f" % (-height + corner_radius, -cut_depth)
+        print "g3 x%f y%f i%f" % (
+            corner_radius, 
+            -height - tool_radius, 
+            tool_radius + corner_radius)
+        print "g1 x%f" % (width - corner_radius)
+        print "g3 x%f y%f j%f" % (
+            width + tool_radius, 
+            -height + corner_radius, 
+            tool_radius + corner_radius)
+        print "g1 y%f" % (-corner_radius)
+        print "g3 x%f y%f i%f" % (
+            width - corner_radius, 
+            tool_radius, 
+            -tool_radius - corner_radius)
+        print "g1 x%f" % (corner_radius)
+        print "g3 x%f y%f j%f" % (
+            -tool_radius, 
+            -corner_radius, 
+            -tool_radius - corner_radius)
+
     def WriteBoundaryTraceToAxis(self):
-        size = int(self.SizeVar.get())
-        tool_diameter = self.ToolDiameterVar.get()
         display = self.CreateGCodeDisplay()
-        xscale, yscale = display.scale
-        xscale = abs(xscale)
-        yscale = abs(yscale)
-        xoff, yoff = display.offset
-        margin = 10.0 # mm
-        
-        leftmargin = (-margin - tool_diameter*0.5)/xscale
-        rightmargin = 3 * size + (margin + tool_diameter*0.5)/xscale
-        topmargin = (-margin - tool_diameter*0.5)/yscale
-        bottommargin = 2 * size + (margin + tool_diameter*0.5)/yscale
-        display.add_point((leftmargin, 0))
-        display.add_point((leftmargin, 2 * size))
-        display.add_point((0, bottommargin))
-        display.add_point((3*size, bottommargin))
-        display.add_point((rightmargin, 2*size))
-        display.add_point((rightmargin, 0))
-        display.add_point((3*size, topmargin))
-        display.add_point((0, topmargin))
+        self.WriteBoundaryMoves(display, cut_depth=0)
         display.close_curve()
         display.close()
 
@@ -150,30 +196,42 @@ class Application(Frame):
         self.quit()
         
     def WriteBoundaryCutToAxis(self):
-        size = int(self.SizeVar.get())
         display = self.CreateGCodeDisplay()
+        tool_radius = self.ToolDiameterVar.get() / 2
+        thickness = self.ThicknessVar.get()
+        zstart = 0.05
+        zstep = -tool_radius / 2
+        zstop = -thickness - 0.5
+        display.depth = -zstart
         
-        display.add_point((0, 0))
-        display.add_point((size, 0))
-        display.add_point((size, size))
+        for cut_depth in range(zstart, zstop, zstep):
+            self.WriteBoundaryMoves(display, cut_depth)
+        
         display.close_curve()
         display.close()
 
         self.WriteConfig()
         self.quit()
-        
 
     def CreateGCodeDisplay(self):
         display = GCodeDisplay()
         display.preamble = self.PreambleVar.get()
-        display.scale = 0.3, -0.3
-        display.offset = (-100, 100)
         display.feed_rate = 1200
         return display
 
     def WriteEngravingToAxis(self):
-        size = int(self.SizeVar.get())
         display = self.CreateGCodeDisplay()
+        width = self.WidthVar.get()
+        height = self.HeightVar.get()
+        margin = self.MarginVar.get()
+        size = self.SizeVar.get()
+        xscale = (width - 2*margin) / (3*size)
+        yscale = (height - 2*margin) / (2*size)
+        scale = min(xscale, yscale)
+        xoff = width/2 + 1.5*size*scale
+        yoff = -height/2 + size*scale
+        display.scale = (-scale, -scale)
+        display.offset = (xoff, yoff)
         
         self.DisplayAndQuit(display, size)
 
