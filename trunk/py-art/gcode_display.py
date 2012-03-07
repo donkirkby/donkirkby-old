@@ -1,5 +1,3 @@
-import cairo
-
 class GCodeDisplay:
     __started = False
 
