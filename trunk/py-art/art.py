@@ -1,4 +1,5 @@
-from svg_display import SvgDisplay
+#from svg_display import SvgDisplay
+from turtle_display import TurtleDisplay
 from gcode_display import GCodeDisplay
 from curve import Curve
 from Tkinter import Frame, Label, StringVar, IntVar, DoubleVar, Entry, \
@@ -153,7 +154,8 @@ class Application(Frame):
 
     def WriteToSvg(self):
         size = int(self.SizeVar.get())
-        display = SvgDisplay(os.path.expanduser(self.OutputVar.get()), 3*size + 22, 2*size + 22)
+#        display = SvgDisplay(os.path.expanduser(self.OutputVar.get()), 3*size + 22, 2*size + 22)
+        display = TurtleDisplay()
         display.offset = (11,11)
         
         self.DisplayAndQuit(display, size)
