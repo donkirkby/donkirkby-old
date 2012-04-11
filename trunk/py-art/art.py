@@ -1,5 +1,5 @@
-#from svg_display import SvgDisplay
-from turtle_display import TurtleDisplay
+from svg_display import SvgDisplay
+#from turtle_display import TurtleDisplay
 from gcode_display import GCodeDisplay
 from curve import Curve
 from Tkinter import Frame, Label, StringVar, IntVar, DoubleVar, Entry, \
@@ -27,8 +27,11 @@ class Application(Frame):
         self.__config.set(self.DEFAULT_SECTION, 'output', '~/output.svg')
         self.__config.set(self.DEFAULT_SECTION, 'preamble', 'G17 G21 G90 G64 P0.1 S4500 M3 M8')
         self.__config.set(self.DEFAULT_SECTION, 'size', '256')
-        self.__config.set(self.DEFAULT_SECTION, 'width', '152.4') #material can be 1/8" thick
+        self.__config.set(self.DEFAULT_SECTION, 'scale', '1')
+        self.__config.set(self.DEFAULT_SECTION, 'width', '152.4')
         self.__config.set(self.DEFAULT_SECTION, 'height', '101.6')
+        self.__config.set(self.DEFAULT_SECTION, 'columns', '3')
+        self.__config.set(self.DEFAULT_SECTION, 'rows', '2')
         self.__config.set(self.DEFAULT_SECTION, 'margin', '10.0')
         self.__config.set(self.DEFAULT_SECTION, 'thickness', '6.35')
         self.__config.set(self.DEFAULT_SECTION, 'tool_diameter', '3.175')
@@ -53,6 +56,27 @@ class Application(Frame):
         self.SizeVar = IntVar()
         self.SizeVar.set(self.__config.get(self.DEFAULT_SECTION, 'size'))
         Entry(self.EntryFrame, textvariable=self.SizeVar ,width=50).grid(row=i, column=1)
+
+        i += 1
+        Label(self.EntryFrame, text='Scale').grid(row=i, column=0, sticky=E)
+
+        self.ScaleVar = IntVar()
+        self.ScaleVar.set(self.__config.get(self.DEFAULT_SECTION, 'scale'))
+        Entry(self.EntryFrame, textvariable=self.ScaleVar ,width=50).grid(row=i, column=1)
+
+        i += 1
+        Label(self.EntryFrame, text='Rows').grid(row=i, column=0, sticky=E)
+
+        self.RowsVar = IntVar()
+        self.RowsVar.set(self.__config.get(self.DEFAULT_SECTION, 'rows'))
+        Entry(self.EntryFrame, textvariable=self.RowsVar ,width=50).grid(row=i, column=1)
+
+        i += 1
+        Label(self.EntryFrame, text='Columns').grid(row=i, column=0, sticky=E)
+
+        self.ColumnsVar = IntVar()
+        self.ColumnsVar.set(self.__config.get(self.DEFAULT_SECTION, 'columns'))
+        Entry(self.EntryFrame, textvariable=self.ColumnsVar ,width=50).grid(row=i, column=1)
 
         i += 1
         Label(self.EntryFrame, text='Image effects').grid(row=i, column=0, sticky=E)
@@ -128,6 +152,9 @@ class Application(Frame):
             self.__config.set(self.DEFAULT_SECTION, 'input', self.InputVar.get())
             self.__config.set(self.DEFAULT_SECTION, 'inverted', self.InvertedVar.get())
             self.__config.set(self.DEFAULT_SECTION, 'size', self.SizeVar.get())
+            self.__config.set(self.DEFAULT_SECTION, 'scale', self.ScaleVar.get())
+            self.__config.set(self.DEFAULT_SECTION, 'rows', self.RowsVar.get())
+            self.__config.set(self.DEFAULT_SECTION, 'columns', self.ColumnsVar.get())
             if IN_AXIS:
                 self.__config.set(self.DEFAULT_SECTION, 'height', self.ToolDiameterVar.get())
                 self.__config.set(self.DEFAULT_SECTION, 'margin', self.ToolDiameterVar.get())
@@ -143,19 +170,24 @@ class Application(Frame):
 
     def DisplayAndQuit(self, display, size):
         image = Image.open(os.path.expanduser(self.InputVar.get()))
+        rows = self.RowsVar.get()
+        columns = self.ColumnsVar.get()
         curve = Curve(display, image)
-        curve.scale = 1, 1
+        curve.scale = (self.ScaleVar.get(), self.ScaleVar.get())
         curve.is_inverted = self.InvertedVar.get()
-        curve.calculate_levels(5, 0, 0, 3 * size, 2 * size)
-        self.display_3x2_with_border(size, display, curve)
+        curve.calculate_levels(5, 0, 0, columns * size, rows * size)
+        self.display_nxm_with_border(rows, columns, size, display, curve)
         display.close()
         self.WriteConfig()
         self.quit()
 
     def WriteToSvg(self):
         size = int(self.SizeVar.get())
-#        display = SvgDisplay(os.path.expanduser(self.OutputVar.get()), 3*size + 22, 2*size + 22)
-        display = TurtleDisplay()
+        display = SvgDisplay(
+            os.path.expanduser(self.OutputVar.get()), 
+            self.ColumnsVar.get()*size + 22, 
+            self.RowsVar.get()*size + 22)
+#        display = TurtleDisplay()
         display.offset = (11,11)
         
         self.DisplayAndQuit(display, size)
@@ -308,6 +340,63 @@ class Application(Frame):
         curve.draw_cell((2*size - 1, size), (size, size), 1)
         display.add_point((size - 1, size))
         curve.draw_cell((size - 1, size), (0, size), 1)
+        display.close_curve()
+    
+    def display_nxm_with_border(self, n, m, size, display, curve):
+        """ Draw the curve using n rows and m columns.
+        
+        n - the number of rows must be even.
+        m - the number of columns.
+        size - the size of each row and column.
+        display - the place to draw the curve.
+        curve - the curve to draw.
+        """
+        display.add_point((-1, n/2*size))
+        display.add_point((-1, n*size))
+        display.add_point((m*size, n*size))
+        display.add_point((m*size, -1))
+        display.add_point((-1, -1))
+        display.add_point((-1, n/2*size - 1))
+        
+        for i in range(n/2 - 1):
+            display.add_point((0, (n/2 - i)*size - 1))
+            curve.draw_cell((0, (n/2 - i)*size - 1), (0, (n/2 - i - 1)*size), -1)
+
+        for i in range(m):            
+            display.add_point((i*size, size - 1))
+            curve.draw_cell((i*size, size - 1), ((i+1)*size - 1, size - 1), 1)
+
+        for i in range(n/2 - 1):
+            for j in range(m-2):
+                display.add_point(((m-j)*size - 1, (2*i+1)*size))
+                curve.draw_cell(
+                    ((m-j)*size - 1, (2*i+1)*size), 
+                    ((m-j-1)*size, (2*i+1)*size), 
+                    1)
+            for j in range(2):
+                display.add_point((2*size - 1, (2*i+j+1)*size))
+                curve.draw_cell(
+                    (2*size - 1, (2*i+j+1)*size), 
+                    (2*size - 1, (2*i+j+2)*size - 1), 
+                    -1)
+            for j in range(m-2):
+                display.add_point(((2+j)*size, (2*i+3)*size))
+                curve.draw_cell(
+                    ((2+j)*size, (2*i+3)*size - 1), 
+                    ((3+j)*size-1, (2*i+3)*size - 1), 
+                    1)
+
+        for i in range(m):            
+            display.add_point(((m-i)*size-1, (n-1)*size))
+            curve.draw_cell(
+                ((m-i)*size-1, (n-1)*size), 
+                ((m-i-1)*size, (n-1)*size), 
+                1)
+
+        for i in range(n/2 - 1):
+            display.add_point((0, (n - i - 1)*size - 1))
+            curve.draw_cell((0, (n - i - 1)*size - 1), (0, (n - i - 2)*size), -1)
+
         display.close_curve()
 
 app = Application()
