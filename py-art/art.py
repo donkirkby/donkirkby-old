@@ -299,49 +299,6 @@ class Application(Frame):
         display.add_point((size/2 - 1, 0))
         display.close_curve()
     
-    def display_3x2(self, size, display, curve):
-        display.add_point((-1, -1))
-        display.add_point((-1, 2*size))
-        display.add_point((3*size, 2*size))
-        display.add_point((3*size, -1))
-        display.close_curve()
-        
-        curve.draw_cell((0, size - 1), (size - 1, size - 1), 1)
-        display.add_point((size, size-1))
-        curve.draw_cell((size, size-1), (2*size - 1, size - 1), 1)
-        display.add_point((2*size, size - 1))
-        curve.draw_cell((2*size, size - 1), (3*size - 1, size - 1), 1)
-        display.add_point((3*size - 1, size))
-        curve.draw_cell((3*size - 1, size), (2*size, size), 1)
-        display.add_point((2*size - 1, size))
-        curve.draw_cell((2*size - 1, size), (size, size), 1)
-        display.add_point((size - 1, size))
-        curve.draw_cell((size - 1, size), (0, size), 1)
-        display.add_point((0, size - 1))
-        display.close_curve()
-    
-    def display_3x2_with_border(self, size, display, curve):
-        display.add_point((-1, size))
-        display.add_point((-1, 2*size))
-        display.add_point((3*size, 2*size))
-        display.add_point((3*size, -1))
-        display.add_point((-1, -1))
-        display.add_point((-1, size - 1))
-        
-        display.add_point((0, size - 1))
-        curve.draw_cell((0, size - 1), (size - 1, size - 1), 1)
-        display.add_point((size, size-1))
-        curve.draw_cell((size, size-1), (2*size - 1, size - 1), 1)
-        display.add_point((2*size, size - 1))
-        curve.draw_cell((2*size, size - 1), (3*size - 1, size - 1), 1)
-        display.add_point((3*size - 1, size))
-        curve.draw_cell((3*size - 1, size), (2*size, size), 1)
-        display.add_point((2*size - 1, size))
-        curve.draw_cell((2*size - 1, size), (size, size), 1)
-        display.add_point((size - 1, size))
-        curve.draw_cell((size - 1, size), (0, size), 1)
-        display.close_curve()
-    
     def display_nxm_with_border(self, n, m, size, display, curve):
         """ Draw the curve using n rows and m columns.
         
@@ -358,6 +315,9 @@ class Application(Frame):
         display.add_point((-1, -1))
         display.add_point((-1, n/2*size - 1))
         
+        self.display_nxm(n, m, size, display, curve)
+
+    def display_nxm(self, n, m, size, display, curve):
         for i in range(n/2 - 1):
             display.add_point((0, (n/2 - i)*size - 1))
             curve.draw_cell((0, (n/2 - i)*size - 1), (0, (n/2 - i - 1)*size), -1)
