@@ -36,6 +36,18 @@ public class RankFinder {
 		return rank != null ? rank : maxCharacters + 1;
 	}
 
+	public int[] getRanks(String text, CharacterClassifier classifier) {
+		int[] ranks = new int[text.length()];
+		for (int i = 0; i < text.length(); i++) {
+			char c = text.charAt(i);
+			ranks[i] = 
+					classifier.isChinese(c)
+					? getCharacterRank(text.substring(i, i+1))
+					: 0;
+		}
+		return ranks;
+	}
+
 	public void load() {
 		if (characterRanks.size() > 0 || wordRanks.size() > 0)
 		{
