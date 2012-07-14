@@ -79,6 +79,7 @@ public class App
 				Integer puzzleCount = 
 					getPuzzleCount(puzzleCounts, triples);
 				
+				shuffle(triples, random);
 				String rootFileName = String.format(
 						"output/%02d-%04d", 
 						triples.size(),
@@ -90,9 +91,42 @@ public class App
 						category,
 						cardFileName, 
 						random);
+				String textFileName = rootFileName + "small.csv";
+				printTextFile(
+						triples, 
+						puzzle.getBlanks(), 
+						category, 
+						textFileName);
 				String solutionFileName = rootFileName + "solution.txt";
-				printPlainFile(message, solutionFileName);
+				printSolutionFile(message, solutionFileName);
 			}
+		}
+	}
+	
+	private void printTextFile(
+			List<String> triples,
+			String blanks,
+			String category,
+			String fileName)
+	throws FileNotFoundException
+	{
+		PrintWriter printer = new PrintWriter(fileName);
+		try
+		{
+			printer.println("From the " + category + " category");
+			printer.print(blanks);
+			for (int i = 0; i < triples.size(); i++)
+			{
+				if (i % 5 == 0)
+				{
+					printer.println();
+				}
+				printer.print("\t" + triples.get(i));
+			}
+		}
+		finally
+		{
+			printer.close();
 		}
 	}
 
@@ -104,14 +138,6 @@ public class App
 			Random random)
 			throws FileNotFoundException, DocumentException
 	{
-		// shuffle the cards
-		for (int i = 0; i < triples.size() * 8; i++)
-		{
-			int swapIndex = random.nextInt(triples.size());
-			String swap = triples.get(swapIndex);
-			triples.set(swapIndex, triples.get(0));
-			triples.set(0, swap);
-		}
 		Document document = new Document(PageSize.LETTER);
 		Font font = new Font(Font.COURIER, 200);
 		PdfWriter writer = 
@@ -142,8 +168,20 @@ public class App
 			document.close();
 		}
 	}
+
+	private void shuffle(List<String> triples, Random random)
+	{
+		// shuffle the cards
+		for (int i = 0; i < triples.size() * 8; i++)
+		{
+			int swapIndex = random.nextInt(triples.size());
+			String swap = triples.get(swapIndex);
+			triples.set(swapIndex, triples.get(0));
+			triples.set(0, swap);
+		}
+	}
 	
-	private void printPlainFile(String content, String fileName)
+	private void printSolutionFile(String content, String fileName)
 	throws FileNotFoundException
 	{
 		PrintWriter printer = new PrintWriter(fileName);
