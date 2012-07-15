@@ -7,9 +7,22 @@ public class Sentence implements Comparable<Sentence>
 	private String text;
 	private int[] ranks;
 	private int id;
+	private boolean isSpoken;
+	private boolean isChinese;
 	
 	public String getText() {
-		return text;
+		if ( ! (isSpoken && isChinese)) {
+			return text;
+		}
+		String result = String.format(
+			"<a class='audioButton audioAvailable' " +
+			"href='http://static.tatoeba.org/audio/sentences/cmn/%1$d.mp3' " +
+			"title='Play audio' " +
+			"onclick='return false'>Speak</a> " +
+			"<span class='fade'>%2$s</span>",
+			id,
+			text);
+		return result;
 	}
 	public void setText(String text) {
 		this.text = text;
@@ -57,5 +70,17 @@ public class Sentence implements Comparable<Sentence>
 			}
 		}
 		return 0;
+	}
+	public boolean isSpoken() {
+		return isSpoken;
+	}
+	public void setSpoken(boolean isSpoken) {
+		this.isSpoken = isSpoken;
+	}
+	public boolean isChinese() {
+		return isChinese;
+	}
+	public void setChinese(boolean isChinese) {
+		this.isChinese = isChinese;
 	}
 }

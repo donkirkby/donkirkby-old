@@ -92,4 +92,71 @@ public class SentenceTest
     			1,
     			Integer.signum(diff));
     }
+	
+	@Test
+    public void spoken()
+    {
+    	// SETUP
+    	Sentence sentence = new Sentence();
+    	String inputText = "Go home.";
+    	String expectedText = 
+    			"<a class='audioButton audioAvailable' " +
+    			"href='http://static.tatoeba.org/audio/sentences/cmn/42.mp3' " +
+    			"title='Play audio' " +
+    			"onclick='return false'>Speak</a> " +
+    			"<span class='fade'>Go home.</span>";
+    	
+    	// EXEC
+    	sentence.setId(42);
+    	sentence.setText(inputText);
+    	sentence.setChinese(true);
+    	sentence.setSpoken(true);
+    	String actualText = sentence.getText();
+    	
+    	// VERIFY
+    	Assert.assertEquals(
+    			"text",
+    			expectedText,
+    			actualText);
+    }
+	
+	@Test
+    public void unspoken()
+    {
+    	// SETUP
+    	Sentence sentence = new Sentence();
+    	String expectedText = "Go home.";
+    	
+    	// EXEC
+    	sentence.setId(42);
+    	sentence.setText(expectedText);
+    	sentence.setChinese(true);
+    	String actualText = sentence.getText();
+    	
+    	// VERIFY
+    	Assert.assertEquals(
+    			"text",
+    			expectedText,
+    			actualText);
+    }
+	
+	@Test
+    public void spokenEnglish()
+    {
+    	// SETUP
+    	Sentence sentence = new Sentence();
+    	String expectedText = "Go home.";
+    	
+    	// EXEC
+    	sentence.setId(42);
+    	sentence.setText(expectedText);
+    	sentence.setSpoken(true);
+    	String actualText = sentence.getText();
+    	
+    	// VERIFY
+    	Assert.assertEquals(
+    			"text",
+    			expectedText,
+    			actualText);
+    }
 }
