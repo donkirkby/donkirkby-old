@@ -2,31 +2,58 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <style type="text/css">
-.chinese
+.large
 {
-	font-size:3em;
+	font-size: 3em;
 }
-.english
+.fade
 {
     background-color: #ddd;
-    color: #fffdf4;
-    color: rgba(255,253,244, 0.84);
+    color: rgba(200,200,230, 0.2);
 }
-.english:hover
+.fade:hover
 {
     color: #444;
 }
 
 </style>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js">
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.audioAvailable').click(function() {
+       var audioURL = $(this).attr('href');
+       
+       $('#audioPlayer').html(
+            '<object data="'+ audioURL +'" type="audio/mpeg" data="'+ audioURL +'" width="0" height="0">'+
+                '<param name="src" value="'+ audioURL +'" />' +
+                '<object '+
+                    'type="application/x-shockwave-flash" '+
+                    'data="http://static.tatoeba.org/dewplayer-mini.swf?autostart=1&amp;mp3='+audioURL +'" '+
+                    'width="0" '+
+                    'height="0" '+
+                '>'+
+                    '<param name="movie" value="http://static.tatoeba.org/dewplayer-mini.swf?autostart=1&amp;mp3='+audioURL +'" />'+
+                '</object>'+
+            '</object>'
+       );
+    });
+});
+</script>
 </head>
 <body>
-<p>These sentences are from <a href="http://tatoeba.org">Tatoeba.org</a>.</p>
+<p>These sentences are from <a href="http://tatoeba.org">Tatoeba.org</a>.
+<span id="audioPlayer"></span></p>
+<ol>
 <!-- $START-TEMPLATE$ -->
-<p class="chinese"><a id="$ANCHOR-ID$">$INDEX$.</a> $CHINESE$</p>
-<p>English: <span class="english">$ENGLISH$</span> $NO-ENGLISH$ 
+<li>
+<p class="large"><a id="$ANCHOR-ID$">$CHINESE$</a></p>
+<p>English: <span class="fade">$ENGLISH$</span> $NO-ENGLISH$ 
 	<a href="#$ANCHOR-ID$">Link here</a> or
 	<a href="http://tatoeba.org/eng/sentences/show/$SENTENCE-ID$">to Tatoeba.
 	</a></p>
+</li>
 <!-- $END-TEMPLATE$ -->
+</ol>
 </body>
 </html>

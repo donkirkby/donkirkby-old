@@ -51,12 +51,15 @@ public class SentenceRankApp {
 		{
 			loadSentences(MAX_RANK);
 			loadLinks();
+			loadAudio();
 	
 			String template = loadTemplate();
-			int templateStart = template.indexOf("$START-TEMPLATE$");
-			int templateEnd = template.indexOf("$END-TEMPLATE$");
+			String startTag = "$START-TEMPLATE$";
+			int templateStart = template.indexOf(startTag) + startTag.length();
+			String endTag = "$END-TEMPLATE$";
+			int templateEnd = template.indexOf(endTag);
 			String header = template.substring(0, templateStart);
-			String footer = template.substring(templateEnd);
+			String footer = template.substring(templateEnd + endTag.length());
 			template = template.substring(templateStart, templateEnd);
 			
 			OutputStreamWriter writer = new OutputStreamWriter(
@@ -173,7 +176,10 @@ public class SentenceRankApp {
 				do
 				{
 					line = reader.readLine();
-					printer.println(line);
+					if (line != null)
+					{
+						printer.println(line);
+					}
 				}while (line != null);
 			}
 			finally
@@ -238,6 +244,7 @@ public class SentenceRankApp {
 						{
 							sentence.setText(text);
 							sentence.setId(Integer.parseInt(csvReader.get(0)));
+							sentence.setChinese(true);
 							chineseSentences.add(sentence);
 							sentenceMap.put(sentence.getId(), sentence);
 						}
@@ -268,10 +275,10 @@ public class SentenceRankApp {
 		try
 		{
 			links = new HashMap<Integer, ArrayList<Integer>>();
-			Resource sentenceResource =
+			Resource linksResource =
 					new ClassPathResource("/links.csv");
 			CsvReader csvReader = new CsvReader(
-					sentenceResource.getInputStream(), 
+					linksResource.getInputStream(), 
 					Charset.forName("utf8"));
 			
 			try
@@ -295,6 +302,42 @@ public class SentenceRankApp {
 					}
 					set1.add(id2);
 					set2.add(id1);
+				}
+			}
+			finally
+			{
+				csvReader.close();
+			}
+		}
+		catch (IOException ex)
+		{
+			throw new RuntimeException(ex);
+		}
+	}
+
+	private void loadAudio()
+	{
+		try
+		{
+			Resource tagsResource =
+					new ClassPathResource("/tags.csv");
+			CsvReader csvReader = new CsvReader(
+					tagsResource.getInputStream(), 
+					Charset.forName("utf8"));
+			
+			try
+			{
+				csvReader.setDelimiter('\t');
+				while (csvReader.readRecord())
+				{
+					int id = Integer.parseInt(csvReader.get(0));
+					String tag = csvReader.get(1);
+					if (tag.equals("has audio")) {
+						Sentence sentence = sentenceMap.get(id);
+						if (sentence != null) {
+							sentence.setSpoken(true);
+						}
+					}
 				}
 			}
 			finally
