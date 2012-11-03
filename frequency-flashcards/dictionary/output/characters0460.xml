@@ -72,13 +72,13 @@
 </item>
 <item id='_11'>
 <cat>Most common Chinese characters  441- 460 - English</cat>
-<Q>Write the character:&lt;br&gt;1: English; brave; surname&lt;br&gt;2: Britain</Q>
-<A>&lt;img src="stroke-images/0453.png"&gt;&lt;br&gt;1: Yīng 2: yīng&lt;br&gt;英国 (英國) Yīngguó England; Britain; English 英国 (英國) Yīngguó England; Britain; English</A>
+<Q>Write the character:&lt;br&gt;English; brave; surname; Britain</Q>
+<A>&lt;img src="stroke-images/0453.png"&gt;&lt;br&gt;yīng&lt;br&gt;英国 (英國) Yīngguó England; Britain; English</A>
 </item>
 <item id='_12'>
 <cat>Most common Chinese characters  441- 460 - English</cat>
 <Q>Write the character:&lt;br&gt;band; belt; girdle; ribbon; tire; area; zone; region; to wear; to carry; to lead; to bring; to look after; to raise</Q>
-<A>&lt;img src="stroke-images/0455.png"&gt;&lt;br&gt;traditional: 帶&lt;br&gt;dài&lt;br&gt;一带 (一帶) yīdài region; district</A>
+<A>带 (strokes unavailable)&lt;br&gt;traditional: 帶&lt;br&gt;dài&lt;br&gt;一带 (一帶) yīdài region; district</A>
 </item>
 <item id='_13'>
 <cat>Most common Chinese characters  441- 460 - English</cat>
@@ -104,6 +104,11 @@
 <cat>Most common Chinese characters  441- 460 - English</cat>
 <Q>Write the character:&lt;br&gt;to drop; to fall</Q>
 <A>&lt;img src="stroke-images/0460.png"&gt;&lt;br&gt;diào&lt;br&gt;去掉 qùdiào to delete; to remove</A>
+</item>
+<item id='_17b'>
+<cat>Most common Chinese characters  441- 460 - English</cat>
+<Q>Write the character:&lt;br&gt;authenticated; solid; firm; real; true</Q>
+<A>确 (strokes unavailable)&lt;br&gt;traditional: 確&lt;br&gt;què&lt;br&gt;正确 (正確) zhèngquè correct; proper</A>
 </item>
 <item id='_18'>
 <cat>Most common Chinese characters  441- 460 - Hanzi</cat>
@@ -163,7 +168,7 @@
 <item id='_29'>
 <cat>Most common Chinese characters  441- 460 - Hanzi</cat>
 <Q>英</Q>
-<A>1: Yīng 2: yīng&lt;br&gt;1: English; brave; surname Ying&lt;br&gt;2: Britain&lt;br&gt;英国 (英國) Yīngguó England; Britain; English 英国 (英國) Yīngguó England; Britain; English</A>
+<A>yīng&lt;br&gt;English; brave; surname Ying; Britain&lt;br&gt;英国 (英國) Yīngguó England; Britain; English</A>
 </item>
 <item id='_30'>
 <cat>Most common Chinese characters  441- 460 - Hanzi</cat>
@@ -195,6 +200,11 @@
 <Q>掉</Q>
 <A>diào&lt;br&gt;to drop; to fall&lt;br&gt;去掉 qùdiào to delete; to remove</A>
 </item>
+<item id='_35b'>
+<cat>Most common Chinese characters  441- 460 - Hanzi</cat>
+<Q>确</Q>
+<A>traditional: 確&lt;br&gt;què&lt;br&gt;authenticated; solid; firm; real; true&lt;br&gt;正确 (正確) zhèngquè correct; proper</A>
+</item>
 <item id='_36'>
 <cat>Most common Chinese characters  441- 460 - Traditional</cat>
 <Q>幫</Q>
@@ -224,6 +234,11 @@
 <cat>Most common Chinese characters  441- 460 - Traditional</cat>
 <Q>帶</Q>
 <A>simplified: 带&lt;br&gt;dài&lt;br&gt;band; belt; girdle; ribbon; tire; area; zone; region; to wear; to carry; to lead; to bring; to look after; to raise&lt;br&gt;一带 (一帶) yīdài region; district</A>
+</item>
+<item id='_41b'>
+<cat>Most common Chinese characters  441- 460 - Traditional</cat>
+<Q>確</Q>
+<A>simplified: 确&lt;br&gt;què&lt;br&gt;authenticated; solid; firm; real; true&lt;br&gt;正确 (正確) zhèngquè correct; proper</A>
 </item>
 <item id='_42'>
 <cat>Most common Chinese characters  441- 460 - Pinyin</cat>
@@ -280,20 +295,15 @@
 <Q>Write the character: huà&lt;br&gt;(huàmiàn de huà)</Q>
 <A>&lt;img src="stroke-images/0452.png"&gt;&lt;br&gt;traditional: 畫&lt;br&gt;draw; picture; painting&lt;br&gt;画面 (畫面) huàmiàn (picture) frame</A>
 </item>
-<item id='_53'>
-<cat>Most common Chinese characters  441- 460 - Pinyin</cat>
-<Q>Write the character: Yīng&lt;br&gt;(Yīngguó de Yīng)</Q>
-<A>&lt;img src="stroke-images/0453.png"&gt;&lt;br&gt;English; brave; surname Ying&lt;br&gt;英国 (英國) Yīngguó England; Britain; English</A>
-</item>
 <item id='_54'>
 <cat>Most common Chinese characters  441- 460 - Pinyin</cat>
 <Q>Write the character: yīng&lt;br&gt;(Yīngguó de yīng)</Q>
-<A>&lt;img src="stroke-images/0453.png"&gt;&lt;br&gt;Britain&lt;br&gt;英国 (英國) Yīngguó England; Britain; English</A>
+<A>&lt;img src="stroke-images/0453.png"&gt;&lt;br&gt;English; brave; surname Ying; Britain&lt;br&gt;英国 (英國) Yīngguó England; Britain; English</A>
 </item>
 <item id='_55'>
 <cat>Most common Chinese characters  441- 460 - Pinyin</cat>
 <Q>Write the character: dài&lt;br&gt;(yīdài de dài)</Q>
-<A>&lt;img src="stroke-images/0455.png"&gt;&lt;br&gt;traditional: 帶&lt;br&gt;band; belt; girdle; ribbon; tire; area; zone; region; to wear; to carry; to lead; to bring; to look after; to raise&lt;br&gt;一带 (一帶) yīdài region; district</A>
+<A>带 (strokes unavailable)&lt;br&gt;traditional: 帶&lt;br&gt;band; belt; girdle; ribbon; tire; area; zone; region; to wear; to carry; to lead; to bring; to look after; to raise&lt;br&gt;一带 (一帶) yīdài region; district</A>
 </item>
 <item id='_56'>
 <cat>Most common Chinese characters  441- 460 - Pinyin</cat>
@@ -335,6 +345,11 @@
 <Q>Write the character: diào&lt;br&gt;(qùdiào de diào)</Q>
 <A>&lt;img src="stroke-images/0460.png"&gt;&lt;br&gt;to drop; to fall&lt;br&gt;去掉 qùdiào to delete; to remove</A>
 </item>
+<item id='_63b'>
+<cat>Most common Chinese characters  441- 460 - Pinyin</cat>
+<Q>Write the character: què&lt;br&gt;(zhèngquè de què)</Q>
+<A>确 (strokes unavailable)&lt;br&gt;traditional: 確&lt;br&gt;authenticated; solid; firm; real; true&lt;br&gt;正确 (正確) zhèngquè correct; proper</A>
+</item>
 <item id='_64'>
 <cat>Most common Chinese characters  441- 460 - Words</cat>
 <Q>时候</Q>
@@ -368,7 +383,7 @@
 <item id='_70'>
 <cat>Most common Chinese characters  441- 460 - Words</cat>
 <Q>英国</Q>
-<A>traditional: 英國&lt;br&gt;Yīngguó England; Britain; English&lt;br&gt;yīngguó England</A>
+<A>traditional: 英國&lt;br&gt;Yīngguó England; Britain; English</A>
 </item>
 <item id='_71'>
 <cat>Most common Chinese characters  441- 460 - Words</cat>
