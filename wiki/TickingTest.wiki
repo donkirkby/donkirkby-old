@@ -1,0 +1,5 @@
+#summary A unit testing library for multi-threaded code in .NET
+
+This library ports the [https://code.google.com/p/multithreadedtc/ multithreadedtc library] from Java to .NET. You can download the TickingTest source code from [https://code.google.com/p/donkirkby/source/browse/#svn%2Ftrunk%2FTickingTest the repository], and you will find an example multi-threaded class with some test cases.
+
+The library lets you declare a method for each thread that you want to run, and then coordinate the timing of the thread execution with checkpoints called ticks.
