@@ -155,11 +155,15 @@ namespace SampleTest
             [TestThread]
             public void RequesterThread()
             {
+                // Don't time out while we're waiting for the background
+                // thread to start. The background thread will unfreeze it.
+                IsTickerFrozen = true;
+
                 // fire a background thread for the responder.
                 Action responder = ResponderThread;
-                responder.BeginInvoke(null, null);
+                var result = responder.BeginInvoke(null, null);
 
-                WaitForTick(2);
+                WaitForTick(1);
                 int response1 = waiter.Request(27);
                 int response2 = waiter.Request(28);
                 Assert.AreEqual(
@@ -170,26 +174,37 @@ namespace SampleTest
                     55,
                     response2,
                     "response 2");
+                AssertTick(1);
+
+                // Have to call EndInvoke to receive any exceptions that the
+                // background thread threw.
+                responder.EndInvoke(result);
                 AssertTick(2);
             }
 
             // Not a test thread!
             private void ResponderThread()
             {
-                // IMPORTANT! The first thing you have to do is call 
-                // WaitForTick(). Tick zero is acceptable. If you don't do 
-                // this, the framework doesn't know about this thread and
-                // won't wait for it to block before advancing the tick.
-                WaitForTick(1);
+                // IMPORTANT! The first thing you have to do is unfreeze the 
+                // ticker. This also lets the framework know about this thread so
+                // it will wait for it to block before advancing the tick.
+                IsTickerFrozen = false;
 
-                waiter.ReceiveResponse(54);
-                waiter.ReceiveResponse(55);
-                AssertTick(1);
+                try
+                {
+                    waiter.ReceiveResponse(54);
+                    waiter.ReceiveResponse(55);
+                    AssertTick(0);
 
-                // IMPORTANT! The last thing you have to do is call
-                // WaitForTick() with a int.MaxValue. This keeps
-                // your thread alive until the end of the test run.
-                WaitForTick(int.MaxValue);
+                    WaitForTick(2);
+                }
+                finally
+                {
+                    // IMPORTANT! The last thing you have to do is call
+                    // ReleaseTicker(). This lets the framework know that it 
+                    // doesn't have to wait for this thread.
+                    ReleaseTicker();
+                }
             }
         }
 

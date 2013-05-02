@@ -14,8 +14,16 @@ namespace SampleTest
             ILog log = LogManager.GetLogger(typeof(Program));
             log.Info("Starting test.");
 
-            var test = new WaiterTest();
-            test.SeparateThread();
+            try
+            {
+                var test = new WaiterTest();
+                test.SeparateThread();
+                log.Info("Success.");
+            }
+            catch (Exception ex)
+            {
+                log.Error("Failed.", ex);
+            }
         }
     }
 }

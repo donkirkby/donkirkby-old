@@ -46,6 +46,12 @@ namespace TickingTest
             }
         }
 
+        /// <summary>
+        /// Gets or sets a flag that stops the framework from advancing the 
+        /// tick. You must call this or <see cref="WaitForTick"/> to register
+        /// a new thread with the framework when you start your own threads.
+        /// </summary>
+        /// <seealso cref="ReleaseTicker"/>
         public bool IsTickerFrozen 
         {
             get
@@ -59,6 +65,11 @@ namespace TickingTest
             {
                 lock (this)
                 {
+                    log.DebugFormat("Setting ticker frozen to {0}", value);
+                    if (!threadTickRequests.ContainsKey(Thread.CurrentThread))
+                    {
+                        AddCurrentThread();
+                    }
                     isTickerFrozen = value;
                 }
             }
@@ -72,6 +83,23 @@ namespace TickingTest
                     expectedTick,
                     currentTick,
                     "current tick");
+            }
+        }
+
+        /// <summary>
+        /// You must call this at the end of a thread that your test started
+        /// itself, like a thread-pool thread. So the framework knows not to 
+        /// wait for it.
+        /// </summary>
+        /// <seealso cref="IsTickerFrozen"/>
+        public void ReleaseTicker()
+        {
+            lock (this)
+            {
+                log.DebugFormat(
+                    "{0} releasing ticker",
+                    Thread.CurrentThread.Name);
+                threadTickRequests[Thread.CurrentThread] = Int32.MaxValue;
             }
         }
 
@@ -104,7 +132,9 @@ namespace TickingTest
                             ThreadState.Unstarted | 
                             ThreadState.WaitSleepJoin |
                             ThreadState.Suspended;
-                        isRunning = (thread.ThreadState & nonRunningStates) == 0;
+                        isRunning = 
+                            (thread.ThreadState & nonRunningStates) == 0 &&
+                            threadTickRequests[thread] < int.MaxValue;
                         if (isRunning)
                         {
                             break;
