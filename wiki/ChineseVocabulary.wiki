@@ -25,7 +25,7 @@ Some characters have more than one pronunciation, so you'll get a definition, pi
 
 = Installation =
 To use the flashcards on your computer, follow these steps:
- # Download and install [http://www.mnemosyne-proj.org/help/installation.php Mnemosyne].
+ # Download and install [http://mnemosyne-proj.org/download-mnemosyne.php Mnemosyne].
  # Start the Mnemosyne program by choosing it from the Start menu. It should come up empty with no flash cards loaded.
  # Download the Chinese vocabulary library from the [http://code.google.com/p/donkirkby/downloads/ downloads page].
  # Unzip the library to a folder where you can find it later as you need to import the next card file whenever you've memorized most of your current cards.
