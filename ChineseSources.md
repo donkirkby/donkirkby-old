@@ -1,3 +1,8 @@
+---
+title: Chinese Sources
+subtitle: A list of data sources for the ChineseVocabulary project.
+---
+
 When I created all my Chinese vocabulary flashcards, I just combined data from a bunch of places. The only significant work I did was converting the stroke order animations to static graphics. Following are descriptions of all the projects I used:
 
 ## Character and word frequency ##
@@ -16,4 +21,4 @@ I'm less fond of this font:
 
 ![http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0013.png](http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0013.png)
 
-Some characters have errors, so [create an issue](http://code.google.com/p/donkirkby/issues/list) if you find any problems. However, there seem to be inconsistencies between different stroke order authorities, so don't panic if the stroke order disagrees with what you've been taught. If you really think that the stroke order is wrong on a character, please include a link to a source that I can verify.
+Some characters have errors, so [create an issue](https://github.com/donkirkby/donkirkby/issues) if you find any problems. However, there seem to be inconsistencies between different stroke order authorities, so don't panic if the stroke order disagrees with what you've been taught. If you really think that the stroke order is wrong on a character, please include a link to a source that I can verify.

@@ -1,1 +1,0 @@
-I've got a few projects that I'd like to keep track of, so I'm going to try out Google Code. If you find something useful here, I'd love to hear how you used it. Please contact me at [Google+](http://profiles.google.com/donkirkby) or  [via e-mail](http://www.google.com/recaptcha/mailhide/d?k=01PxMhmzBXZ6RTE_q0gU-dEA==&c=x_pL0sQHAaTbWaBA2rGEX6F6mWc2ru6wZ0i4DcdrVz8=).
