@@ -1,5 +1,6 @@
 ---
 title: Word puzzles that stick to your forehead
+layout: default
 ---
 
 # Introduction #
