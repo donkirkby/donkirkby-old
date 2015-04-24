@@ -1,6 +1,6 @@
 ---
-title: Word puzzles that stick to your forehead
-layout: default
+title: Fortune Puzzles
+subtitle: Word puzzles that stick to your forehead
 ---
 
 # Introduction #
