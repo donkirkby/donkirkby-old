@@ -33,7 +33,7 @@ To use the flashcards on your computer, follow these steps:
   1. Start the Mnemosyne program by choosing it from the Start menu. It should come up empty with no flash cards loaded.
   1. Download the Chinese vocabulary library from the [releases page](https://github.com/donkirkby/donkirkby/releases).
   1. Unzip the library to a folder where you can find it later as you need to import the next card file whenever you've memorized most of your current cards.
-  1. Move the stroke-images folder to your .mnemosyne folder. Under Microsoft Windows, it will usually be at C:\Documents and Settings\_yourname_\.mnemosyne. I think Windows Vista users will find it at C:\Users\_yourname_\.mnemosyne, but I haven't tried it. Linux users should find it at ~/.mnemosyne. For more details and an FAQ list, see the [Mnemosyne site](http://www.mnemosyne-proj.org/) and their [documentation](http://www.mnemosyne-proj.org/help/index.php).
+  1. Move the stroke-images folder to your .mnemosyne folder. Under Microsoft Windows, it will usually be at C:\Documents and Settings\ _yourname_ \.mnemosyne. I think Windows Vista users will find it at C:\Users\ _yourname_ \.mnemosyne, but I haven't tried it. Linux users should find it at ~/.mnemosyne. For more details and an FAQ list, see the [Mnemosyne site](http://www.mnemosyne-proj.org/) and their [documentation](http://www.mnemosyne-proj.org/help/index.php).
   1. Import the first card file (rank0020.xml) into Mnemosyne.
 
 # Usage #

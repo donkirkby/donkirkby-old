@@ -3,11 +3,11 @@ title: Chinese Tweets
 subtitle: Twitter updates in Chinese for reading practice
 ---
 
-This project has been replaced by my [reading practice from tatoeba.org](http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/sentence-rank/output/sentences.html). I recommend that one instead.
+This project has been replaced by my [reading practice from tatoeba.org](http://donkirkby.github.com/donkirkby/sentences.html). I recommend that one instead.
 
 This project was my first attempt to find some Chinese text that I could sort through looking for sentences that use only characters I know. That way I could practice my reading without getting too frustrated by having to look up a ton of vocabulary. I realized that Twitter contains small chunks of text, so I got Google to find all the tweets in Chinese. Then I wrote a program to fetch the search results from Google, get the tweets from Twitter, and then find the ones that use only the 500 most common characters.
 
-There are two main classes in the source code: [TwitterFetchApp](http://code.google.com/p/donkirkby/source/browse/trunk/frequency-flashcards/dictionary/src/main/java/com/google/code/donkirkby/TwitterFetchApp.java) fetches the next batch of 150 Chinese tweets, and [TwitterSortApp](http://code.google.com/p/donkirkby/source/browse/trunk/frequency-flashcards/dictionary/src/main/java/com/google/code/donkirkby/TwitterSortApp.java) sifts through all the fetched tweets looking for ones I should be able to read.
+There are two main classes in the source code: [TwitterFetchApp](https://github.com/donkirkby/donkirkby/blob/master/frequency-flashcards/dictionary/src/main/java/com/google/code/donkirkby/TwitterFetchApp.java) fetches the next batch of 150 Chinese tweets, and [TwitterSortApp](https://github.com/donkirkby/donkirkby/blob/master/frequency-flashcards/dictionary/src/main/java/com/google/code/donkirkby/TwitterSortApp.java) sifts through all the fetched tweets looking for ones I should be able to read.
 
 Here are some of my favourite tweets that I found:
 
