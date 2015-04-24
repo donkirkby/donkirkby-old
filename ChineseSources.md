@@ -15,10 +15,10 @@ This was part of the [ZDT project](http://zdt.sourceforge.net/). The database sc
 ## Stroke order ##
 This also came from the [ZDT project](http://zdt.sourceforge.net/). The data file and a bunch of source code is in the strokeanimation subproject and seems to have originally come from [Euroasia software](http://www.euroasiasoftware.com/ht/index.html). I used the static image style designed by the [wiki commons stroke order project](http://commons.wikimedia.org/wiki/Commons:CJK_stroke_order:Tutorials). I included the stroke order data file and some ZDT source code in my subversion repository. The data is very useful, but there's a mix of fonts used. I really like this font:
 
-![http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0002.png](http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0002.png)
+![the verb "to be"](https://raw.githubusercontent.com/donkirkby/donkirkby/master/frequency-flashcards/dictionary/output/stroke-images/0002.png)
 
 I'm less fond of this font:
 
-![http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0013.png](http://donkirkby.googlecode.com/svn/trunk/frequency-flashcards/dictionary/output/stroke-images/0013.png)
+![Not!](https://raw.githubusercontent.com/donkirkby/donkirkby/master/frequency-flashcards/dictionary/output/stroke-images/0013.png)
 
 Some characters have errors, so [create an issue](https://github.com/donkirkby/donkirkby/issues) if you find any problems. However, there seem to be inconsistencies between different stroke order authorities, so don't panic if the stroke order disagrees with what you've been taught. If you really think that the stroke order is wrong on a character, please include a link to a source that I can verify.

@@ -13,9 +13,10 @@ This project was only possible because other people put in tons of work and made
 
 The flashcard files are for importing into the [Mnemosyne project's](http://www.mnemosyne-proj.org/) flashcard software. Here's a screen shot of the card for 不:
 
-![screen shot](https://github.com/donkirkby/donkirkby/blob/master/frequency-flashcards/dictionary/screenshot.PNG)
+![screen shot](https://donkirkby.github.com/donkirkby/images/chvocab_screenshot.PNG)
 
 There are several types of flashcards:
+
   * English -> stroke order, pinyin, and sample words
   * Simplified character -> pinyin, English, and sample words
   * Pinyin -> stroke order, English, and sample words
@@ -27,6 +28,7 @@ Some characters have more than one pronunciation, so you'll get a definition, pi
 
 # Installation #
 To use the flashcards on your computer, follow these steps:
+
   1. Download and install [Mnemosyne](http://mnemosyne-proj.org/download-mnemosyne.php).
   1. Start the Mnemosyne program by choosing it from the Start menu. It should come up empty with no flash cards loaded.
   1. Download the Chinese vocabulary library from the [releases page](https://github.com/donkirkby/donkirkby/releases).
