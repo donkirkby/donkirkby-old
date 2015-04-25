@@ -3,8 +3,10 @@ as HTML, saved the spreadsheet as HTML, and manually merged them together.
 Once the merged HTML is committed to the repository, you can use an online
 converter to create the PDF.
 
+The output files have now moved to the gh-pages branch for hosting.
+
 Google Doc: https://docs.google.com/document/d/1cUwCEfuFURvGpRbeycFsmjodsyBiFrJlBdwSMO38HkM/edit?usp=sharing
 Spreadsheet: https://docs.google.com/spreadsheet/ccc?key=0AqcB5JZB0YGCdDR4SzRLZXNEdTR0NzlhMHc2WUJ1Z2c&usp=sharing
-Merged HTML: https://donkirkby.googlecode.com/svn/trunk/TimeTow/TheTimeTravellersTowTruck.html
+Merged HTML served from gh-pages branch: http://donkirkby.github.io/donkirkby/TheTimeTravellersTowTruck.html
 Converter: http://www.htmlpdf.com/  (Paste in the address for merged HTML.)
 
