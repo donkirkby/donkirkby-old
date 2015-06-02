@@ -14,10 +14,10 @@ These are some old projects that used to be hosted on Google Code.
 
 You can find a list of more recent projects at [my GitHub page][github].
 
-[chvocab]: http://donkirkby.github.com/donkirkby/ChineseVocabulary
-[tick]: http://donkirkby.github.com/donkirkby/TickingTest
-[tweet]: http://donkirkby.github.com/donkirkby/ChineseTweets
-[fpuzz]: http://donkirkby.github.com/donkirkby/FortunePuzzles
-[timetow]: http://donkirkby.github.com/donkirkby/TimeTravellersTowTruck
-[sources]: http://donkirkby.github.com/donkirkby/ChineseSources
+[chvocab]: ChineseVocabulary
+[tick]: TickingTest
+[tweet]: ChineseTweets
+[fpuzz]: FortunePuzzles
+[timetow]: TimeTravellersTowTruck
+[sources]: ChineseSources
 [github]: http://donkirkby.github.com
