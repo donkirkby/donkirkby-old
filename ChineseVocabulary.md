@@ -7,7 +7,9 @@ subtitle: A project to generate Chinese vocabulary flashcards to use with Mnemos
 
 This is a project to generate computer flashcards for reading and writing all the Chinese vocabulary I'll need for the foreseeable future. There are currently 32614 cards with 4166 characters and 18385 words. They are divided into separate files, each with about 100 cards in it. You can download the flashcards for the first 700 characters from the downloads tab. I'll publish the remaining characters after I'm happy with the current set.
 
-This project was only possible because other people put in tons of work and made it freely available. For a list of sources, see the ChineseSources page.
+This project was only possible because other people put in tons of work and made it freely available. For a list of sources, see the [Chinese Sources][] page.
+
+[Chinese Sources]: http://donkirkby.github.io/donkirkby/ChineseSources
 
 # The flashcards #
 
