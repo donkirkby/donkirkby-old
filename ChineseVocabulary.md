@@ -15,7 +15,7 @@ This project was only possible because other people put in tons of work and made
 
 The flashcard files are for importing into the [Mnemosyne project's](http://www.mnemosyne-proj.org/) flashcard software. Here's a screen shot of the card for 不:
 
-![screen shot](https://donkirkby.github.com/donkirkby-old/images/chvocab_screenshot.PNG)
+![screen shot](https://donkirkby.github.io/donkirkby-old/images/chvocab_screenshot.PNG)
 
 There are several types of flashcards:
 
