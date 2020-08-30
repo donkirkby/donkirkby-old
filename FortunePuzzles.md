@@ -39,6 +39,6 @@ If you play the game regularly, you can print out the _README.txt file and cross
 These puzzles were automatically generated from the files used by the Unix fortune command. There may be some that are incorrect, confusing, offensive, or just dumb. Contact me at [Google+][gplus],  [via e-mail][email], or log an issue here if you find a problem.
 
 [book]: http://www.amazon.com/Super-Party-Games-Original-Ideas/dp/0806959150
-[releases]: https://github.com/donkirkby/donkirkby/releases
+[releases]: https://github.com/donkirkby/donkirkby-old/releases
 [gplus]: http://profiles.google.com/donkirkby
 [email]: http://www.google.com/recaptcha/mailhide/d?k=01PxMhmzBXZ6RTE_q0gU-dEA==&c=x_pL0sQHAaTbWaBA2rGEX6F6mWc2ru6wZ0i4DcdrVz8=

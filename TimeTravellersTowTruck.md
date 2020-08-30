@@ -11,7 +11,7 @@ The game is is licensed under a [Creative Commons Attribution-NonCommercial-Shar
 
 ![Creative Commons][cclogo]
 
-[rules]: http://donkirkby.github.com/donkirkby/TheTimeTravellersTowTruck.html
-[pdf]: http://donkirkby.github.com/donkirkby/TheTimeTravellersTowTruck.pdf
-[cc]: http://creativecommons.org/licenses/by-nc-sa/3.0/
-[cclogo]: http://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png
+[rules]: https://donkirkby.github.io/donkirkby-old/TheTimeTravellersTowTruck.html
+[pdf]: https://donkirkby.github.io/donkirkby-old/TheTimeTravellersTowTruck.pdf
+[cc]: https://creativecommons.org/licenses/by-nc-sa/3.0/
+[cclogo]: https://i.creativecommons.org/l/by-nc-sa/3.0/88x31.png

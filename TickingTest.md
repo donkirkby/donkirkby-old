@@ -8,4 +8,4 @@ This library ports the [multithreadedtc library][origin] from Java to .NET. You 
 The library lets you declare a method for each thread that you want to run, and then coordinate the timing of the thread execution with checkpoints called ticks.
 
 [origin]: https://code.google.com/p/multithreadedtc/
-[repo]: https://github.com/donkirkby/donkirkby/tree/master/TickingTest
+[repo]: https://github.com/donkirkby/donkirkby-old/tree/master/TickingTest
