@@ -1,6 +1,7 @@
+remote_theme: chrisrhymes/bulma-clean-theme
+title: Don Kirkby
+google_analytics: UA-4644630-2
+
 defaults:
-  -
-    scope:
-      path: "" # an empty string here means all files in the project
-    values:
-      layout: "default"
+  - scope:
+      path: ""
